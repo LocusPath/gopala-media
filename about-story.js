@@ -12,77 +12,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Desktop (min-width: 768px)
   mm.add("(min-width: 768px)", () => {
-    // Set initial SVG properties
+    // Set initial SVG properties to hide active line
     gsap.set(activePath, {
       strokeDasharray: pathLength,
       strokeDashoffset: pathLength
     });
 
-    // Set initial canvas position (centering the starting coordinate 200, 300)
+    // Snap camera to start position (M 200, 200) immediately
+    const startPoint = activePath.getPointAtLength(0);
     gsap.set(".story_content", {
-      x: () => window.innerWidth / 2 - 200,
-      y: () => window.innerHeight / 2 - 300
+      x: window.innerWidth / 2 - startPoint.x,
+      y: window.innerHeight / 2 - startPoint.y
     });
 
-    // Create camera-tracking timeline
+    // Setup smooth quickTo targets for viewport translation (camera)
+    const xTo = gsap.quickTo(".story_content", "x", { duration: 0.6, ease: "power2.out" });
+    const yTo = gsap.quickTo(".story_content", "y", { duration: 0.6, ease: "power2.out" });
+
+    // Create drawing animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".about_story_wrap",
         start: "top top",
-        end: "+=3200", // Length of scrolling
+        end: "+=3200", // Scrolling track length
         pin: true,
-        scrub: 1, // Smooth scrolling scrubbing
-        invalidateOnRefresh: true, // Recalculate offsets on window resize
+        scrub: 1, // Smooth scrubbing
+        invalidateOnRefresh: true, // Recalculate on window resize
         onUpdate: (self) => {
           const progress = self.progress;
-          // Toggle milestone card and path circle node classes based on progress thresholds
+
+          // DYNAMIC CAMERA TRACKING: Query the exact coordinate at current path distance
+          const currentDistance = progress * pathLength;
+          const point = activePath.getPointAtLength(currentDistance);
+
+          // Update viewport target to keep the active tip centered in screen
+          xTo(window.innerWidth / 2 - point.x);
+          yTo(window.innerHeight / 2 - point.y);
+
+          // Active milestone states based on curve segment progress triggers
           toggleActive("milestone-1", "node-1", progress >= 0.18);
-          toggleActive("milestone-2", "node-2", progress >= 0.45);
-          toggleActive("milestone-3", "node-3", progress >= 0.70);
-          toggleActive("milestone-4", "node-4", progress >= 0.95);
+          toggleActive("milestone-2", "node-2", progress >= 0.38);
+          toggleActive("milestone-3", "node-3", progress >= 0.58);
+          toggleActive("milestone-4", "node-4", progress >= 0.78);
         }
       }
     });
 
-    // Helper to toggle active classes
-    function toggleActive(cardId, nodeId, active) {
-      const card = document.getElementById(cardId);
-      const node = document.getElementById(nodeId);
-      if (card) card.classList.toggle("active", active);
-      if (node) node.classList.toggle("active", active);
-    }
-
-    // Phase 1 (Horizontal Pan): Pan camera to the right from x=200 to x=1400 (y remains centered at 300)
-    tl.to(activePath, {
-      strokeDashoffset: pathLength * 0.5,
-      ease: "none",
-      duration: 1
-    }, 0);
-
-    tl.to(".story_content", {
-      x: () => window.innerWidth / 2 - 1400,
-      ease: "none",
-      duration: 1
-    }, 0);
-
-    // Phase 2 (Vertical Pan): Pan camera downwards from y=300 to y=1500 (x remains fixed at 1400)
+    // Animate drawing path stroke linearly with scrub
     tl.to(activePath, {
       strokeDashoffset: 0,
       ease: "none",
       duration: 1
     });
 
-    tl.to(".story_content", {
-      y: () => window.innerHeight / 2 - 1500,
-      ease: "none",
-      duration: 1
-    }, "<"); // Run in parallel with the strokeDashoffset tween
-
+    // Helper to toggle active CSS classes
+    function toggleActive(cardId, nodeId, active) {
+      const card = document.getElementById(cardId);
+      const node = document.getElementById(nodeId);
+      if (card) card.classList.toggle("active", active);
+      if (node) node.classList.toggle("active", active);
+    }
   });
 
   // Mobile (max-width: 767px)
   mm.add("(max-width: 767px)", () => {
-    // Reset properties in case of window resize transition from desktop
+    // Reset properties in case of resize transitions
     gsap.set(activePath, {
       strokeDasharray: "none",
       strokeDashoffset: "none"
@@ -110,6 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Refresh ScrollTrigger to sync measurements
+  // Refresh ScrollTrigger to sync coordinates
   ScrollTrigger.refresh();
 });

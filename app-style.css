@@ -1658,10 +1658,10 @@ a[data-underline-link="alt"]:hover::before {
 }
 
 /* Specific card alignments & active slide transitions */
-#milestone-1 {
+#milestone-1, #milestone-3 {
   transform: translate(-50%, 40px);
 }
-#milestone-1.active {
+#milestone-1.active, #milestone-3.active {
   transform: translate(-50%, 0);
 }
 
