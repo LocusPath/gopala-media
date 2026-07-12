@@ -514,7 +514,7 @@ a[data-underline-link="alt"]:hover::before {
   height: 1.5rem;
 }
 .nav_logo_img {
-  height: 4rem;
+  height: 7.5rem;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -1491,16 +1491,16 @@ a[data-underline-link="alt"]:hover::before {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: var(--nav--height);
-    padding: 0 var(--site--margin);
+    height: auto;
+    padding: 0.5rem var(--site--margin);
   }
   .nav_mobile_logo {
     display: flex;
     align-items: center;
     color: var(--swatch--brand-500) !important;
   }
-  .nav_mobile_logo svg {
-    height: 1.25rem;
+  .nav_mobile_logo .nav_logo_img {
+    height: 5rem;
   }
   .nav_mobile_links {
     background-color: rgba(26, 26, 26, 0.85);
