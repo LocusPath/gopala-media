@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #EDE8D7; /* Warm Linen/Cream - Main Background */
-  --swatch--light-100: #DDD1B0; /* Soft Sand-Beige - Secondary Card Background */
-  --swatch--brand-500: #3D3325; /* Deep Bronze-Brown - Primary Text & Accents */
-  --swatch--brand-text: #EDE8D7; /* Text on brand backgrounds */
-  --swatch--brand-600: #8E957E; /* Sage Green - Primary Brand Highlight Accent */
-  --swatch--brand-700: #8C7755; /* Bronze-Brown - Secondary Accent */
-  --swatch--brand-800: #3D3325; /* Deep Bronze-Brown */
-  --swatch--brand-900: #DDD1B0; /* Sand-Beige */
-  --swatch--dark-900: #8E957E;  /* Heading accent color (Sage Green) */
-  --swatch--dark-800: #6D5E4A;  /* Muted Bronze-Brown - Secondary text color */
+  --swatch--light-200: #2A0302; /* Deep Wine-Black - Main Background */
+  --swatch--light-100: #5B0906; /* Rich Burgundy - Secondary Card Background */
+  --swatch--brand-500: #FFF1CE; /* Warm Butter-Cream - Primary Text & Accents */
+  --swatch--brand-text: #2A0302; /* Text on brand backgrounds */
+  --swatch--brand-600: #FFF1CE; /* Warm Butter-Cream - Primary Brand Highlight Accent */
+  --swatch--brand-700: #950E07; /* Crimson-Red - Secondary Accent */
+  --swatch--brand-800: #2A0302; /* Deep Wine-Black */
+  --swatch--brand-900: #FFF1CE; /* Warm Butter-Cream */
+  --swatch--dark-900: #FFF1CE;  /* Heading accent color (Warm Butter-Cream) */
+  --swatch--dark-800: #E5C8B4;  /* Soft Warm Peach/Tan - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
