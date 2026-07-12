@@ -622,6 +622,10 @@ a[data-underline-link="alt"]:hover::before {
   align-items: center;
   padding-top: calc(var(--nav--height) + var(--nav--banner-height));
   box-sizing: border-box;
+  background-image: linear-gradient(rgba(249, 246, 240, 0.15), rgba(249, 246, 240, 0.15)), url('IMG_0153_converted.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero_main_wrap .u-section-spacer.w-variant-e359d2da-de19-6775-b122-3e06f925f39e {
   display: none;
