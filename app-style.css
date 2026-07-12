@@ -513,6 +513,15 @@ a[data-underline-link="alt"]:hover::before {
 .nav_desktop_logo svg {
   height: 1.5rem;
 }
+.nav_logo_img {
+  height: 4rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.nav_desktop_logo:hover .nav_logo_img, .nav_mobile_logo:hover .nav_logo_img {
+  transform: scale(1.05);
+}
 .nav_links_component {
   background-color: rgba(26, 26, 26, 0.75);
   backdrop-filter: blur(12px) saturate(180%);
@@ -1421,6 +1430,11 @@ a[data-underline-link="alt"]:hover::before {
   width: 6rem;
   height: auto;
   color: currentColor;
+}
+.footer_logo_img {
+  width: 6.5rem;
+  height: auto;
+  object-fit: contain;
 }
 .footer_group_list {
   display: flex;
