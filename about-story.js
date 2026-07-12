@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startPoint = activePath.getPointAtLength(0);
     gsap.set(".story_content", {
       x: window.innerWidth / 2 - startPoint.x,
-      y: window.innerHeight / 2 - startPoint.y
+      y: window.innerHeight * 0.35 - startPoint.y
     });
 
     // Setup smooth quickTo targets for viewport translation (camera)
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Update viewport target to keep the active tip centered in screen
           xTo(window.innerWidth / 2 - point.x);
-          yTo(window.innerHeight / 2 - point.y);
+          yTo(window.innerHeight * 0.35 - point.y);
 
           // Active milestone states based on curve segment progress triggers
           toggleActive("milestone-1", "node-1", progress >= 0.18);
