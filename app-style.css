@@ -558,14 +558,15 @@ a[data-underline-link="alt"]:hover::before {
 .nav_desktop_wrap [data-wf--button-main--variant="primary"] .button_main_element {
   padding: 0.5rem 1.75rem;
   font-size: 0.95rem;
-  background-color: var(--swatch--brand-900);
-  border-color: var(--swatch--brand-900);
-  color: var(--swatch--brand-800);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.85);
   white-space: nowrap;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"]:hover .button_main_element {
-  background-color: var(--swatch--light-200);
-  border-color: var(--swatch--light-200);
+  background-color: #ffffff;
+  border-color: #ffffff;
   color: var(--swatch--brand-800);
 }
 
