@@ -1,0 +1,30 @@
+[
+  {
+    "index": "01",
+    "title": "Beauty",
+    "tagline": "[Elevate your products through expert artistry.]",
+    "description": "I collaborate with skincare and makeup brands to bring their campaigns and editorials to life. Every look is crafted with a deep understanding of skin, light, and texture to showcase products at their very best. My approach enhances the brand’s identity, communicates its story, and creates visuals that are authentic, aspirational, and impactful.",
+    "img": "https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/6976bec73b45c301cffde864_MANON_TRENCH_18062022_278091%20copie.jpg"
+  },
+  {
+    "index": "02",
+    "title": "Fashion",
+    "tagline": "[Makeup that complements the vision of your collection]",
+    "description": "I work with fashion brands to translate their collections into editorial-ready imagery. From ready-to-wear to bridal couture, I design makeup that enhances garments, sets the mood, and elevates the models’ presence. Each photoshoot is concept-driven and collaborative, ensuring the brand’s aesthetic is reflected with subtlety, refinement, and lasting impact.",
+    "img": "https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/6976bf807a4fc9e79c8f5ae3_HAIRFLOW_JPG%20WEB8.jpg"
+  },
+  {
+    "index": "03",
+    "title": "Wedding",
+    "tagline": "[Timeless beauty, perfectly tailored for your day.]",
+    "description": "I create personalized, timeless looks for brides, enhancing natural beauty while respecting the style and atmosphere of the wedding. Every detail is intentional, from long-lasting makeup to subtle skin enhancement, so the bride feels confident, radiant, and truly herself on her most important day.",
+    "img": "https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/6976befeeef428a24230be01_IMG_5385%202.avif"
+  },
+  {
+    "index": "04",
+    "title": "They mentioned my work",
+    "tagline": "[Expert guidance from concept to launch.]",
+    "description": "I provide full-spectrum beauty consulting, helping brands develop products and campaigns that resonate with their audience. From formulation advice to application strategies and positioning insights, I ensure every product performs flawlessly while reflecting the brand’s identity. My approach combines professional artistry with strategic insight, turning ideas into refined, market-ready beauty solutions.",
+    "img": "https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/6976c0265669ac71131889e7_BALZAC-BEAUTE_PORTRAIT_02_0373%20(1).webp"
+  }
+]
