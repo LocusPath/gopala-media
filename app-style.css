@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #EEE5CF; /* Soft Sand - Main Background */
-  --swatch--light-100: #F9F6F0; /* Pure Light - Secondary Card Background */
-  --swatch--brand-500: #001F38; /* Deep Indigo - Primary Text & Accents */
-  --swatch--brand-text: #F9F6F0; /* Text on brand backgrounds */
-  --swatch--brand-600: #007EA7; /* Ocean Slate - Active Spline Line & Hover States */
-  --swatch--brand-700: #003459; /* Indigo - Secondary Accent & Buttons */
-  --swatch--brand-800: #001F38; /* Deep Indigo */
-  --swatch--brand-900: #FFC300; /* Golden - Highlights & Primary CTAs */
-  --swatch--dark-900: #003459;  /* Heading accent color (Indigo) */
-  --swatch--dark-800: #2C4C64;  /* Muted Indigo - Secondary text color */
+  --swatch--light-200: #FFF9EC; /* Bright Cream - Main Background */
+  --swatch--light-100: #F3EAD3; /* Warm Custard - Secondary Card Background */
+  --swatch--brand-500: #00284A; /* Deep Anchor - Primary Text & Accents */
+  --swatch--brand-text: #FFF9EC; /* Text on brand backgrounds */
+  --swatch--brand-600: #0096C7; /* Neon Sky - Active Spline Line & Hover States */
+  --swatch--brand-700: #004075; /* Electric Indigo - Secondary Accent & Buttons */
+  --swatch--brand-800: #00284A; /* Deep Anchor */
+  --swatch--brand-900: #FFC300; /* Vibrant Gold - Highlights & Primary CTAs */
+  --swatch--dark-900: #004075;  /* Heading accent color (Electric Indigo) */
+  --swatch--dark-800: #2E4C66;  /* Muted Anchor - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
@@ -523,7 +523,7 @@ a[data-underline-link="alt"]:hover::before {
   transform: scale(1.05);
 }
 .nav_links_component {
-  background-color: rgba(0, 52, 89, 0.85);
+  background-color: rgba(0, 64, 117, 0.85);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -546,7 +546,7 @@ a[data-underline-link="alt"]:hover::before {
 }
 .nav_links_link {
   font-size: 0.95rem;
-  color: rgba(238, 229, 207, 0.75);
+  color: rgba(255, 249, 236, 0.75);
   text-transform: uppercase;
   letter-spacing: var(--_typography---letter-spacing--spaced);
   white-space: nowrap;
@@ -1503,7 +1503,7 @@ a[data-underline-link="alt"]:hover::before {
     height: 5rem;
   }
   .nav_mobile_links {
-    background-color: rgba(0, 52, 89, 0.9);
+    background-color: rgba(0, 64, 117, 0.9);
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.12);
