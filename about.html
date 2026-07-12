@@ -107,9 +107,16 @@
               <svg viewBox="0 0 3000 3000" class="story_svg">
                 <!-- Faint background path -->
                 <path d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke-width="4" class="story_line_bg" />
-                <!-- Animated active drawing path -->
-                <path id="active-story-path" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke-width="6" class="story_line_active" stroke-linecap="round" />
+                <!-- Layered Animated active drawing paths (Neon Glow System) -->
+                <path id="active-story-path-glow-1" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke="var(--swatch--brand-600)" stroke-width="14" opacity="0.15" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path-glow-2" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke="var(--swatch--brand-600)" stroke-width="7" opacity="0.35" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke="var(--swatch--brand-600)" stroke-width="3.5" class="story_line_active_layer" stroke-linecap="round" />
                 
+                <!-- Traveling Glowing Lead Dot -->
+                <circle class="story_lead_dot glow_1" r="14" fill="var(--swatch--brand-600)" opacity="0.15" />
+                <circle class="story_lead_dot glow_2" r="8" fill="var(--swatch--brand-600)" opacity="0.4" />
+                <circle class="story_lead_dot core" r="4" fill="#fff" />
+
                 <!-- Circle node markers -->
                 <circle id="node-1" cx="300" cy="800" r="10" class="story_node" />
                 <circle id="node-2" cx="1200" cy="800" r="10" class="story_node" />

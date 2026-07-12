@@ -12,10 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Desktop (min-width: 768px)
   mm.add("(min-width: 768px)", () => {
+    const activePaths = document.querySelectorAll(".story_line_active_layer");
+    const leadDots = document.querySelectorAll(".story_lead_dot");
+
     // Set initial SVG properties to hide active line
-    gsap.set(activePath, {
-      strokeDasharray: pathLength,
-      strokeDashoffset: pathLength
+    activePaths.forEach(path => {
+      gsap.set(path, {
+        strokeDasharray: pathLength,
+        strokeDashoffset: pathLength
+      });
+    });
+
+    // Snap lead dots to starting coordinate
+    leadDots.forEach(dot => {
+      dot.setAttribute("cx", startPoint.x);
+      dot.setAttribute("cy", startPoint.y);
+      gsap.set(dot, { opacity: 0 });
     });
 
     // Snap camera to start position (M 200, 200) immediately
@@ -49,6 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
           xTo(window.innerWidth / 2 - point.x);
           yTo(window.innerHeight * 0.35 - point.y);
 
+          // Track traveling glowing lead dots
+          if (progress > 0.002 && progress < 0.998) {
+            leadDots.forEach(dot => {
+              gsap.set(dot, { opacity: 1 });
+              dot.setAttribute("cx", point.x);
+              dot.setAttribute("cy", point.y);
+            });
+          } else {
+            leadDots.forEach(dot => gsap.set(dot, { opacity: 0 }));
+          }
+
           // Active milestone states based on curve segment progress triggers
           toggleActive("milestone-1", "node-1", progress >= 0.18);
           toggleActive("milestone-2", "node-2", progress >= 0.38);
@@ -58,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Animate drawing path stroke linearly with scrub
-    tl.to(activePath, {
+    // Animate drawing path stroke layers linearly with scrub
+    tl.to(activePaths, {
       strokeDashoffset: 0,
       ease: "none",
       duration: 1
@@ -76,11 +99,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mobile (max-width: 767px)
   mm.add("(max-width: 767px)", () => {
+    const activePaths = document.querySelectorAll(".story_line_active_layer");
+    const leadDots = document.querySelectorAll(".story_lead_dot");
+
     // Reset properties in case of resize transitions
-    gsap.set(activePath, {
-      strokeDasharray: "none",
-      strokeDashoffset: "none"
+    activePaths.forEach(path => {
+      gsap.set(path, {
+        strokeDasharray: "none",
+        strokeDashoffset: "none"
+      });
     });
+    leadDots.forEach(dot => gsap.set(dot, { opacity: 0 }));
+
     gsap.set(".story_content", {
       clearProps: "all"
     });
