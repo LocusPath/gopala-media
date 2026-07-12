@@ -477,10 +477,10 @@ a[data-underline-link="alt"]:hover::before {
 /* NAV COMPONENT */
 .nav_component {
   position: fixed;
-  top: var(--nav--banner-height);
+  top: calc(var(--nav--banner-height) + 1.25rem);
   left: 0;
   width: 100%;
-  height: 4.5rem;
+  height: auto;
   z-index: 100;
   background-color: transparent;
   border-bottom: none;
@@ -488,7 +488,7 @@ a[data-underline-link="alt"]:hover::before {
 }
 .nav_desktop_wrap {
   width: 100%;
-  height: var(--nav--height);
+  height: auto;
   display: flex;
   align-items: center;
   padding: 0 var(--site--margin);
@@ -520,7 +520,7 @@ a[data-underline-link="alt"]:hover::before {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 100vw;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
-  padding: 0.75rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   display: flex;
   align-items: center;
   position: absolute;
@@ -547,7 +547,7 @@ a[data-underline-link="alt"]:hover::before {
   color: #ffffff;
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"] .button_main_element {
-  padding: 0.75rem 1.75rem;
+  padding: 0.5rem 1.75rem;
   font-size: 0.95rem;
   background-color: var(--swatch--brand-500);
   border-color: var(--swatch--brand-500);
