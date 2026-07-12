@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #0D0D0B; /* Deep Luxury Bronze-Black - Main Background */
-  --swatch--light-100: #1C1C18; /* Rich Charcoal-Bronze - Secondary Card Background */
-  --swatch--brand-500: #F4F0EA; /* Soft Warm Linen/Cream - Primary Text & Accents */
-  --swatch--brand-text: #0D0D0B; /* Text on brand backgrounds */
-  --swatch--brand-600: #D67A53; /* Elegant Terracotta-Copper - Primary Accent Brand Color */
-  --swatch--brand-700: #E6DFD3; /* Champagne / Warm Off-White */
-  --swatch--brand-800: #0D0D0B; /* Deep Luxury Bronze-Black */
-  --swatch--brand-900: #DFCBBA; /* Soft Champagne - Muted details & highlights */
-  --swatch--dark-900: #D67A53;  /* Heading accent color (Terracotta) */
-  --swatch--dark-800: #C1BCB6;  /* Muted Warm Linen - Secondary text color */
+  --swatch--light-200: #540804; /* Deep Chocolate-Maroon - Main Background */
+  --swatch--light-100: #81171B; /* Rich Wine/Maroon - Secondary Card Background */
+  --swatch--brand-500: #FBF3EC; /* Soft Warm Peach-Cream - Primary Text & Accents */
+  --swatch--brand-text: #540804; /* Text on brand backgrounds */
+  --swatch--brand-600: #EA8C55; /* Vibrant Apricot - Primary Accent */
+  --swatch--brand-700: #C75146; /* Terracotta - Secondary Accent */
+  --swatch--brand-800: #540804; /* Deep Chocolate-Maroon */
+  --swatch--brand-900: #DFCBBA; /* Champagne - Muted details & highlights */
+  --swatch--dark-900: #EA8C55;  /* Heading accent color (Apricot) */
+  --swatch--dark-800: #D5C6BA;  /* Muted Warm Gray/Linen - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
