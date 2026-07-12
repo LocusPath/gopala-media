@@ -1579,3 +1579,125 @@ a[data-underline-link="alt"]:hover::before {
     gap: var(--_spacing---space--4);
   }
 }
+
+/* ABOUT STORY LINE ANIMATION */
+.about_story_wrap {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width--main);
+  margin: 6rem auto;
+  padding: 0 var(--site--margin);
+}
+.story_timeline {
+  position: relative;
+  width: 100%;
+  height: 120rem; /* generous height for scroll room */
+  margin: 4rem 0;
+}
+.story_svg_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  pointer-events: none;
+}
+.story_svg {
+  width: 100%;
+  height: 100%;
+}
+.story_line_bg {
+  stroke: rgba(84, 8, 4, 0.15); /* Black Cherry base path, faint */
+}
+.story_line_active {
+  stroke: var(--swatch--brand-500); /* Brick Red active drawing line */
+  stroke-dasharray: 1000; /* initialized in CSS, exact value computed in JS */
+  stroke-dashoffset: 1000;
+}
+.story_node {
+  fill: var(--swatch--brand-800); /* Black Cherry node background */
+  stroke: var(--swatch--brand-500);
+  stroke-width: 3px;
+  transition: fill 0.3s ease, stroke 0.3s ease, r 0.3s ease;
+  transform-origin: center;
+}
+.story_node.active {
+  fill: var(--swatch--light-200); /* Light up Toasted Almond */
+  stroke: var(--swatch--brand-500);
+  r: 16; /* visually scale up node */
+}
+.story_milestones_list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.story_milestone_item {
+  position: absolute;
+  width: 40%;
+  max-width: 28rem;
+  background-color: var(--swatch--light-100); /* Rosy Copper card background */
+  border: 1px solid var(--_theme---border);
+  border-radius: var(--radius--main);
+  padding: 2.25rem;
+  opacity: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.story_milestone_item.left {
+  left: 2%;
+  transform: translateX(-50px);
+}
+.story_milestone_item.right {
+  right: 2%;
+  transform: translateX(50px);
+}
+.story_milestone_item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.story_milestone_year {
+  font-family: var(--_typography---font--secondary-family);
+  font-size: var(--_typography---font-size--h3);
+  color: var(--swatch--brand-800);
+  margin-bottom: 0.5rem;
+}
+.story_milestone_title {
+  font-family: var(--_typography---font--primary-family);
+  font-size: var(--_typography---font-size--h4);
+  color: var(--swatch--brand-500);
+  margin-bottom: 1rem;
+}
+.story_milestone_text {
+  font-family: var(--_typography---font--tertiary-family);
+  font-size: var(--_typography---font-size--text-main);
+  color: var(--swatch--brand-800);
+  line-height: 1.6;
+}
+
+/* Responsive fixes for story line */
+@media (max-width: 48em) {
+  .story_timeline {
+    height: 160rem; /* Give more vertical space for narrow viewports */
+  }
+  .story_svg_container {
+    left: 1.5rem;
+    transform: none;
+    width: 60px;
+  }
+  /* On mobile, adjust spline coordinates or let it scale. Since preserveAspectRatio is none, it scales nicely.
+     We just position mobile cards to the right of the line. */
+  .story_milestone_item {
+    width: calc(100% - 4.5rem);
+    left: 4.5rem !important;
+    right: auto !important;
+    transform: translateX(30px) !important;
+  }
+  .story_milestone_item.active {
+    transform: translateX(0) !important;
+  }
+}
