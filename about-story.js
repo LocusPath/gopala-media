@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const activePaths = document.querySelectorAll(".story_line_active_layer");
     const leadDots = document.querySelectorAll(".story_lead_dot");
 
+    // Snap camera to start position (M 200, 200) immediately
+    const startPoint = activePath.getPointAtLength(0);
+
     // Set initial SVG properties to hide active line
     activePaths.forEach(path => {
       gsap.set(path, {
@@ -30,8 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(dot, { opacity: 0 });
     });
 
-    // Snap camera to start position (M 200, 200) immediately
-    const startPoint = activePath.getPointAtLength(0);
     gsap.set(".story_content", {
       x: window.innerWidth / 2 - startPoint.x,
       y: window.innerHeight * 0.35 - startPoint.y
