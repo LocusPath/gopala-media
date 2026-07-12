@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #253237; /* Jet Black - Main Background */
-  --swatch--light-100: #5C6B73; /* Blue Slate - Secondary Card Background */
-  --swatch--brand-500: #E0FBFC; /* Light Cyan - Primary Text & Accents */
-  --swatch--brand-text: #253237; /* Text on brand backgrounds */
-  --swatch--brand-600: #E0FBFC; /* Light Cyan - Primary Brand Highlight Accent */
-  --swatch--brand-700: #9DB4C0; /* Cool Steel - Secondary Accent */
-  --swatch--brand-800: #253237; /* Jet Black */
-  --swatch--brand-900: #E0FBFC; /* Light Cyan */
-  --swatch--dark-900: #E0FBFC;  /* Heading accent color (Light Cyan) */
-  --swatch--dark-800: #C2DFE3;  /* Light Blue - Secondary text color */
+  --swatch--light-200: #EEE5CF; /* Soft Sand - Main Background */
+  --swatch--light-100: #F9F6F0; /* Pure Light - Secondary Card Background */
+  --swatch--brand-500: #001F38; /* Deep Indigo - Primary Text & Accents */
+  --swatch--brand-text: #F9F6F0; /* Text on brand backgrounds */
+  --swatch--brand-600: #007EA7; /* Ocean Slate - Active Spline Line & Hover States */
+  --swatch--brand-700: #003459; /* Indigo - Secondary Accent & Buttons */
+  --swatch--brand-800: #001F38; /* Deep Indigo */
+  --swatch--brand-900: #FFC300; /* Golden - Highlights & Primary CTAs */
+  --swatch--dark-900: #003459;  /* Heading accent color (Indigo) */
+  --swatch--dark-800: #2C4C64;  /* Muted Indigo - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
@@ -523,7 +523,7 @@ a[data-underline-link="alt"]:hover::before {
   transform: scale(1.05);
 }
 .nav_links_component {
-  background-color: rgba(26, 26, 26, 0.75);
+  background-color: rgba(0, 31, 56, 0.75);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -546,14 +546,14 @@ a[data-underline-link="alt"]:hover::before {
 }
 .nav_links_link {
   font-size: 0.95rem;
-  color: rgba(234, 140, 85, 0.75);
+  color: rgba(238, 229, 207, 0.75);
   text-transform: uppercase;
   letter-spacing: var(--_typography---letter-spacing--spaced);
   white-space: nowrap;
   transition: color 0.3s ease;
 }
 .nav_links_link:hover {
-  color: var(--swatch--light-200);
+  color: var(--swatch--light-100);
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"] .button_main_element {
   padding: 0.5rem 1.75rem;
@@ -1503,7 +1503,7 @@ a[data-underline-link="alt"]:hover::before {
     height: 5rem;
   }
   .nav_mobile_links {
-    background-color: rgba(26, 26, 26, 0.85);
+    background-color: rgba(0, 31, 56, 0.85);
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.12);
