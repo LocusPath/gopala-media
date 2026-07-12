@@ -1596,8 +1596,8 @@ a[data-underline-link="alt"]:hover::before {
 }
 .story_content {
   position: absolute;
-  width: 1800px;
-  height: 1800px;
+  width: 2800px;
+  height: 2800px;
   left: 0;
   top: 0;
   will-change: transform;
