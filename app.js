@@ -506,8 +506,10 @@ function initBannerClose() {
         
         // Slide fixed navigation header to the top
         document.querySelectorAll(".nav_component").forEach(nav => {
+          const isMobile = window.innerWidth <= 1040;
+          const targetTop = isMobile ? "1rem" : "1.25rem";
           gsap.to(nav, {
-            top: 0,
+            top: targetTop,
             duration: 0.4,
             ease: "power2.out"
           });
