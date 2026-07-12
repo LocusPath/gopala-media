@@ -507,7 +507,7 @@ function initBannerClose() {
         // Slide fixed navigation header to the top
         document.querySelectorAll(".nav_component").forEach(nav => {
           gsap.to(nav, {
-            top: "1.75rem",
+            top: "2.5rem",
             duration: 0.4,
             ease: "power2.out"
           });
