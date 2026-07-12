@@ -477,7 +477,7 @@ a[data-underline-link="alt"]:hover::before {
 /* NAV COMPONENT */
 .nav_component {
   position: fixed;
-  top: calc(var(--nav--banner-height) + 1.25rem);
+  top: calc(var(--nav--banner-height) + 1.75rem);
   left: 0;
   width: 100%;
   height: auto;
