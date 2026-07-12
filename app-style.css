@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #EA8C55; /* Toasted Almond - Main Background */
-  --swatch--light-100: #C75146; /* Rosy Copper - Secondary Light Background */
-  --swatch--brand-500: #AD2E24; /* Brick Red - Primary Brand Text & Accent */
-  --swatch--brand-text: var(--swatch--light-200);
-  --swatch--brand-600: #81171B; /* Dark Wine */
-  --swatch--brand-700: #81171B; /* Dark Wine */
-  --swatch--brand-800: #540804; /* Black Cherry - Dark Theme Background */
-  --swatch--brand-900: #540804; /* Black Cherry */
-  --swatch--dark-900: #540804;  /* Heading accent color */
-  --swatch--dark-800: #81171B;
+  --swatch--light-200: #0D0D0B; /* Deep Luxury Bronze-Black - Main Background */
+  --swatch--light-100: #1C1C18; /* Rich Charcoal-Bronze - Secondary Card Background */
+  --swatch--brand-500: #F4F0EA; /* Soft Warm Linen/Cream - Primary Text & Accents */
+  --swatch--brand-text: #0D0D0B; /* Text on brand backgrounds */
+  --swatch--brand-600: #D67A53; /* Elegant Terracotta-Copper - Primary Accent Brand Color */
+  --swatch--brand-700: #E6DFD3; /* Champagne / Warm Off-White */
+  --swatch--brand-800: #0D0D0B; /* Deep Luxury Bronze-Black */
+  --swatch--brand-900: #DFCBBA; /* Soft Champagne - Muted details & highlights */
+  --swatch--dark-900: #D67A53;  /* Heading accent color (Terracotta) */
+  --swatch--dark-800: #C1BCB6;  /* Muted Warm Linen - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
