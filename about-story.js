@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: ".about_story_wrap",
         start: "top top",
-        end: "+=4500", // Scrolling track length
+        end: "+=5000", // Scrolling track length
         pin: true,
         scrub: 1, // Smooth scrubbing
         invalidateOnRefresh: true, // Recalculate on window resize

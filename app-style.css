@@ -1596,8 +1596,8 @@ a[data-underline-link="alt"]:hover::before {
 }
 .story_content {
   position: absolute;
-  width: 2800px;
-  height: 2800px;
+  width: 3000px;
+  height: 3000px;
   left: 0;
   top: 0;
   will-change: transform;
@@ -1658,10 +1658,10 @@ a[data-underline-link="alt"]:hover::before {
 }
 
 /* Specific card alignments & active slide transitions */
-#milestone-1, #milestone-3 {
+#milestone-1, #milestone-2 {
   transform: translate(-50%, 40px);
 }
-#milestone-1.active, #milestone-3.active {
+#milestone-1.active, #milestone-2.active {
   transform: translate(-50%, 0);
 }
 
