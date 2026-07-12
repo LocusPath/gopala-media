@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #fffef0; /* Beige background */
-  --swatch--light-100: #ffffff;
-  --swatch--brand-500: #f20e0e; /* Red text */
+  --swatch--light-200: #EA8C55; /* Toasted Almond - Main Background */
+  --swatch--light-100: #C75146; /* Rosy Copper - Secondary Light Background */
+  --swatch--brand-500: #AD2E24; /* Brick Red - Primary Brand Text & Accent */
   --swatch--brand-text: var(--swatch--light-200);
-  --swatch--brand-600: color-mix(in srgb, var(--swatch--brand-500), black 20%);
-  --swatch--brand-700: color-mix(in srgb, var(--swatch--brand-500), black 65%);
-  --swatch--brand-800: color-mix(in srgb, var(--swatch--brand-500), black 75%);
-  --swatch--brand-900: color-mix(in srgb, var(--swatch--brand-500), black 80%);
-  --swatch--dark-900: #101010;
-  --swatch--dark-800: #505050;
+  --swatch--brand-600: #81171B; /* Dark Wine */
+  --swatch--brand-700: #81171B; /* Dark Wine */
+  --swatch--brand-800: #540804; /* Black Cherry - Dark Theme Background */
+  --swatch--brand-900: #540804; /* Black Cherry */
+  --swatch--dark-900: #540804;  /* Heading accent color */
+  --swatch--dark-800: #81171B;
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
@@ -537,26 +537,26 @@ a[data-underline-link="alt"]:hover::before {
 }
 .nav_links_link {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(234, 140, 85, 0.75);
   text-transform: uppercase;
   letter-spacing: var(--_typography---letter-spacing--spaced);
   white-space: nowrap;
   transition: color 0.3s ease;
 }
 .nav_links_link:hover {
-  color: #ffffff;
+  color: var(--swatch--light-200);
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"] .button_main_element {
   padding: 0.5rem 1.75rem;
   font-size: 0.95rem;
   background-color: var(--swatch--brand-500);
   border-color: var(--swatch--brand-500);
-  color: #ffffff;
+  color: var(--swatch--light-200);
   white-space: nowrap;
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"]:hover .button_main_element {
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: var(--swatch--light-200);
+  border-color: var(--swatch--light-200);
   color: var(--swatch--brand-500);
 }
 
@@ -1219,7 +1219,7 @@ a[data-underline-link="alt"]:hover::before {
 .guide_main_nav {
   position: sticky;
   top: 0;
-  background-color: #fffef0;
+  background-color: var(--_theme---background);
   border-bottom: var(--border-width--main) solid var(--_theme---border);
   z-index: 10;
   transition: top 0.3s;
@@ -1304,7 +1304,7 @@ a[data-underline-link="alt"]:hover::before {
   }
 }
 .guide_chapters_item {
-  background-color: #faf9f0;
+  background-color: var(--_theme---background-2);
   border: 1px solid var(--_theme---border);
   border-radius: var(--radius--main);
   padding: 2.5rem;
@@ -1314,7 +1314,7 @@ a[data-underline-link="alt"]:hover::before {
   gap: 1rem;
 }
 .tag {
-  background-color: #fffef0;
+  background-color: var(--_theme---background);
   border: 1px solid var(--_theme---border);
   border-radius: 100px;
   padding: 0.25rem 0.75rem;
@@ -1501,13 +1501,14 @@ a[data-underline-link="alt"]:hover::before {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
   .nav_mobile_links a {
-    color: rgba(255, 255, 255, 0.85) !important;
+    color: var(--swatch--light-200) !important;
+    opacity: 0.85;
     font-size: 0.75rem;
     white-space: nowrap;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
   }
   .nav_mobile_links a:hover {
-    color: #ffffff !important;
+    opacity: 1;
   }
   
   .work_cms_list {
