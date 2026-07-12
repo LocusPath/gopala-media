@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #08171E; /* Midnight Navy-Black - Main Background */
-  --swatch--light-100: #1D4F62; /* Deep Ocean Blue - Secondary Card Background */
-  --swatch--brand-500: #F4F6F6; /* Ice-White - Primary Text & Accents */
-  --swatch--brand-text: #08171E; /* Text on brand backgrounds */
-  --swatch--brand-600: #F4F6F6; /* Ice-White - Primary Brand Highlight Accent */
-  --swatch--brand-700: #5F9096; /* Muted Slate Teal - Secondary Accent */
-  --swatch--brand-800: #08171E; /* Midnight Navy-Black */
-  --swatch--brand-900: #F4F6F6; /* Ice-White */
-  --swatch--dark-900: #F4F6F6;  /* Heading accent color (Ice-White) */
-  --swatch--dark-800: #91A9B0;  /* Soft light slate-teal - Secondary text color */
+  --swatch--light-200: #253237; /* Jet Black - Main Background */
+  --swatch--light-100: #5C6B73; /* Blue Slate - Secondary Card Background */
+  --swatch--brand-500: #E0FBFC; /* Light Cyan - Primary Text & Accents */
+  --swatch--brand-text: #253237; /* Text on brand backgrounds */
+  --swatch--brand-600: #E0FBFC; /* Light Cyan - Primary Brand Highlight Accent */
+  --swatch--brand-700: #9DB4C0; /* Cool Steel - Secondary Accent */
+  --swatch--brand-800: #253237; /* Jet Black */
+  --swatch--brand-900: #E0FBFC; /* Light Cyan */
+  --swatch--dark-900: #E0FBFC;  /* Heading accent color (Light Cyan) */
+  --swatch--dark-800: #C2DFE3;  /* Light Blue - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
