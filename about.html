@@ -114,63 +114,65 @@
 
       <!-- INTERACTIVE STORY LINE SECTION -->
       <section class="about_story_wrap">
-        <div class="story_timeline">
-          
-          <!-- Root line SVG container -->
-          <div class="story_svg_container">
-            <svg viewBox="0 0 200 1000" preserveAspectRatio="none" class="story_svg">
-              <!-- Faint background path -->
-              <path d="M 100,0 C 60,150 50,150 60,250 C 70,350 150,350 140,500 C 130,650 50,650 60,750 C 70,850 150,850 100,1000" fill="none" stroke-width="4" class="story_line_bg" />
-              <!-- Animated active drawing path -->
-              <path id="active-story-path" d="M 100,0 C 60,150 50,150 60,250 C 70,350 150,350 140,500 C 130,650 50,650 60,750 C 70,850 150,850 100,1000" fill="none" stroke-width="6" class="story_line_active" stroke-linecap="round" />
-              
-              <!-- Circle node markers -->
-              <circle id="node-1" cx="60" cy="250" r="10" class="story_node" />
-              <circle id="node-2" cx="140" cy="500" r="10" class="story_node" />
-              <circle id="node-3" cx="60" cy="750" r="10" class="story_node" />
-              <circle id="node-4" cx="100" cy="1000" r="10" class="story_node" />
-            </svg>
+        <div class="story_viewport">
+          <div class="story_content">
+            
+            <!-- Root line SVG container -->
+            <div class="story_svg_container">
+              <svg viewBox="0 0 1800 1800" class="story_svg">
+                <!-- Faint background path -->
+                <path d="M 200,300 C 400,250 600,350 800,300 C 1000,250 1200,350 1400,300 C 1450,500 1350,700 1400,900 C 1450,1100 1350,1300 1400,1500" fill="none" stroke-width="4" class="story_line_bg" />
+                <!-- Animated active drawing path -->
+                <path id="active-story-path" d="M 200,300 C 400,250 600,350 800,300 C 1000,250 1200,350 1400,300 C 1450,500 1350,700 1400,900 C 1450,1100 1350,1300 1400,1500" fill="none" stroke-width="6" class="story_line_active" stroke-linecap="round" />
+                
+                <!-- Circle node markers -->
+                <circle id="node-1" cx="800" cy="300" r="10" class="story_node" />
+                <circle id="node-2" cx="1400" cy="300" r="10" class="story_node" />
+                <circle id="node-3" cx="1400" cy="900" r="10" class="story_node" />
+                <circle id="node-4" cx="1400" cy="1500" r="10" class="story_node" />
+              </svg>
+            </div>
+
+            <!-- Story milestones -->
+            <ul class="story_milestones_list">
+              <!-- 2021: The Seed -->
+              <li id="milestone-1" class="story_milestone_item" style="left: 800px; top: 400px;">
+                <div class="story_milestone_year">2021</div>
+                <h2 class="story_milestone_title">The Seed</h2>
+                <p class="story_milestone_text">
+                  Gopala Media was planted with a singular, clear vision: to merge the fine art of editorial makeup with progressive beauty consulting. Working from a small studio, we began helping brands discover their visual identities.
+                </p>
+              </li>
+
+              <!-- 2023: Branching Out -->
+              <li id="milestone-2" class="story_milestone_item left-aligned" style="left: 1020px; top: 300px;">
+                <div class="story_milestone_year">2023</div>
+                <h2 class="story_milestone_title">Branching Out</h2>
+                <p class="story_milestone_text">
+                  As our clients grew, so did our capabilities. We invested in premium production equipments, cameras, and lighting accessories, expanding from styling services into full digital content production and brand campaign shoots.
+                </p>
+              </li>
+
+              <!-- 2025: Deepening Roots -->
+              <li id="milestone-3" class="story_milestone_item left-aligned" style="left: 1020px; top: 900px;">
+                <div class="story_milestone_year">2025</div>
+                <h2 class="story_milestone_title">Deepening Roots</h2>
+                <p class="story_milestone_text">
+                  Establishing ourselves in the editorial beauty ecosystem, we unified our photography, makeup consultancies, and media assets under a brand identity designed to reflect our high-end, organic visual aesthetic.
+                </p>
+              </li>
+
+              <!-- 2026: The Canopy -->
+              <li id="milestone-4" class="story_milestone_item left-aligned" style="left: 1020px; top: 1500px;">
+                <div class="story_milestone_year">2026</div>
+                <h2 class="story_milestone_title">The Canopy</h2>
+                <p class="story_milestone_text">
+                  Today, we launch our prototype waitlist and editorial guide portal, allowing individuals and corporate brands to experience professional makeup and beauty wisdom on-demand. The story continues to bloom.
+                </p>
+              </li>
+            </ul>
+
           </div>
-
-          <!-- Story milestones -->
-          <ul class="story_milestones_list">
-            <!-- 2021: The Seed -->
-            <li id="milestone-1" class="story_milestone_item left" style="top: 18%;">
-              <div class="story_milestone_year">2021</div>
-              <h2 class="story_milestone_title">The Seed</h2>
-              <p class="story_milestone_text">
-                Gopala Media was planted with a singular, clear vision: to merge the fine art of editorial makeup with progressive beauty consulting. Working from a small studio, we began helping brands discover their visual identities.
-              </p>
-            </li>
-
-            <!-- 2023: Branching Out -->
-            <li id="milestone-2" class="story_milestone_item right" style="top: 43%;">
-              <div class="story_milestone_year">2023</div>
-              <h2 class="story_milestone_title">Branching Out</h2>
-              <p class="story_milestone_text">
-                As our clients grew, so did our capabilities. We invested in premium production equipments, cameras, and lighting accessories, expanding from styling services into full digital content production and brand campaign shoots.
-              </p>
-            </li>
-
-            <!-- 2025: Deepening Roots -->
-            <li id="milestone-3" class="story_milestone_item left" style="top: 68%;">
-              <div class="story_milestone_year">2025</div>
-              <h2 class="story_milestone_title">Deepening Roots</h2>
-              <p class="story_milestone_text">
-                Establishing ourselves in the editorial beauty ecosystem, we unified our photography, makeup consultancies, and media assets under a brand identity designed to reflect our high-end, organic visual aesthetic.
-              </p>
-            </li>
-
-            <!-- 2026: The Canopy -->
-            <li id="milestone-4" class="story_milestone_item right" style="top: 93%;">
-              <div class="story_milestone_year">2026</div>
-              <h2 class="story_milestone_title">The Canopy</h2>
-              <p class="story_milestone_text">
-                Today, we launch our prototype waitlist and editorial guide portal, allowing individuals and corporate brands to experience professional makeup and beauty wisdom on-demand. The story continues to bloom.
-              </p>
-            </li>
-          </ul>
-
         </div>
       </section>
 

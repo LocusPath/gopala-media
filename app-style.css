@@ -1580,27 +1580,33 @@ a[data-underline-link="alt"]:hover::before {
   }
 }
 
-/* ABOUT STORY LINE ANIMATION */
+/* ABOUT STORY LINE ANIMATION (CAMERA TRACKING VIEWPANEL) */
 .about_story_wrap {
   position: relative;
-  width: 100%;
-  max-width: var(--max-width--main);
-  margin: 6rem auto;
-  padding: 0 var(--site--margin);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--_theme---background);
 }
-.story_timeline {
+.story_viewport {
   position: relative;
   width: 100%;
-  height: 120rem; /* generous height for scroll room */
-  margin: 4rem 0;
+  height: 100%;
+  overflow: hidden;
+}
+.story_content {
+  position: absolute;
+  width: 1800px;
+  height: 1800px;
+  left: 0;
+  top: 0;
+  will-change: transform;
 }
 .story_svg_container {
   position: absolute;
+  left: 0;
   top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
+  width: 100%;
   height: 100%;
   pointer-events: none;
 }
@@ -1613,8 +1619,8 @@ a[data-underline-link="alt"]:hover::before {
 }
 .story_line_active {
   stroke: var(--swatch--brand-500); /* Brick Red active drawing line */
-  stroke-dasharray: 1000; /* initialized in CSS, exact value computed in JS */
-  stroke-dashoffset: 1000;
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
 }
 .story_node {
   fill: var(--swatch--brand-800); /* Black Cherry node background */
@@ -1638,28 +1644,34 @@ a[data-underline-link="alt"]:hover::before {
 }
 .story_milestone_item {
   position: absolute;
-  width: 40%;
-  max-width: 28rem;
+  width: 24rem;
   background-color: var(--swatch--light-100); /* Rosy Copper card background */
   border: 1px solid var(--_theme---border);
   border-radius: var(--radius--main);
-  padding: 2.25rem;
+  padding: 2rem;
   opacity: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.story_milestone_item.left {
-  left: 2%;
-  transform: translateX(-50px);
-}
-.story_milestone_item.right {
-  right: 2%;
-  transform: translateX(50px);
-}
 .story_milestone_item.active {
   opacity: 1;
-  transform: translateX(0);
 }
+
+/* Specific card alignments & active slide transitions */
+#milestone-1 {
+  transform: translate(-50%, 40px);
+}
+#milestone-1.active {
+  transform: translate(-50%, 0);
+}
+
+.story_milestone_item.left-aligned {
+  transform: translate(-40px, -50%);
+}
+.story_milestone_item.left-aligned.active {
+  transform: translate(0, -50%);
+}
+
 .story_milestone_year {
   font-family: var(--_typography---font--secondary-family);
   font-size: var(--_typography---font-size--h3);
@@ -1679,25 +1691,38 @@ a[data-underline-link="alt"]:hover::before {
   line-height: 1.6;
 }
 
-/* Responsive fixes for story line */
+/* Responsive side scroll styling for mobile - vertical layout stack */
 @media (max-width: 48em) {
-  .story_timeline {
-    height: 160rem; /* Give more vertical space for narrow viewports */
+  .about_story_wrap {
+    height: auto;
+    overflow: visible;
+  }
+  .story_viewport {
+    height: auto;
+    overflow: visible;
+  }
+  .story_content {
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
   }
   .story_svg_container {
-    left: 1.5rem;
-    transform: none;
-    width: 60px;
+    display: none; /* Hide drawing line on mobile */
   }
-  /* On mobile, adjust spline coordinates or let it scale. Since preserveAspectRatio is none, it scales nicely.
-     We just position mobile cards to the right of the line. */
   .story_milestone_item {
-    width: calc(100% - 4.5rem);
-    left: 4.5rem !important;
-    right: auto !important;
-    transform: translateX(30px) !important;
-  }
-  .story_milestone_item.active {
-    transform: translateX(0) !important;
+    position: relative !important;
+    width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-bottom: 2rem;
+    opacity: 1 !important;
   }
 }
