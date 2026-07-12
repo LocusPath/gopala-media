@@ -52,16 +52,16 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 14 * 1rem);
 
   /* Color Swatches */
-  --swatch--light-200: #EFE7DC; /* Warm Linen - Main Light Background */
-  --swatch--light-100: #FDFBF7; /* Pure Chalk - Input fields, active card highlights */
-  --swatch--brand-500: #05162B; /* Deep Anchor - Main Dark Background / Heavy Text */
-  --swatch--brand-text: #FDFBF7; /* Text on brand backgrounds */
-  --swatch--brand-600: #134074; /* Ice Blue - Active states, links, secondary buttons */
-  --swatch--brand-700: #0B2545; /* Midnight Indigo - Primary UI, headers, branding */
-  --swatch--brand-800: #05162B; /* Deep Anchor */
-  --swatch--brand-900: #134074; /* Ice Blue - Highlights & Active CTAs */
-  --swatch--dark-900: #0B2545;  /* Heading accent color (Midnight Indigo) */
-  --swatch--dark-800: #8DA9C4;  /* Mist Slate - Borders, subtle text, icons */
+  --swatch--light-200: #F9F6F0; /* Pure Light - Main Background */
+  --swatch--light-100: #EEE5CF; /* Soft Sand - Card surfaces */
+  --swatch--brand-500: #001F38; /* Deep Indigo - Primary Text & Accents */
+  --swatch--brand-text: #F9F6F0; /* Text on brand backgrounds */
+  --swatch--brand-600: #007EA7; /* Ocean Slate - Active Spline Line & Hover States */
+  --swatch--brand-700: #003459; /* Indigo - Secondary Accent & Buttons */
+  --swatch--brand-800: #001F38; /* Deep Indigo */
+  --swatch--brand-900: #FFC300; /* Golden - Highlights & Primary CTAs */
+  --swatch--dark-900: #003459;  /* Heading accent color (Indigo) */
+  --swatch--dark-800: #2C4C64;  /* Muted Indigo - Secondary text color */
   --swatch--transparent: transparent;
 
   /* Theme mappings (Default: Light Theme) */
@@ -523,10 +523,10 @@ a[data-underline-link="alt"]:hover::before {
   transform: scale(1.05);
 }
 .nav_links_component {
-  background-color: rgba(11, 37, 69, 0.88);
+  background-color: rgba(26, 26, 26, 0.75);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(141, 169, 196, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 100vw;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
   padding: 0.5rem 2.5rem;
@@ -546,14 +546,14 @@ a[data-underline-link="alt"]:hover::before {
 }
 .nav_links_link {
   font-size: 0.95rem;
-  color: rgba(141, 169, 196, 0.85);
+  color: rgba(255, 255, 255, 0.75);
   text-transform: uppercase;
   letter-spacing: var(--_typography---letter-spacing--spaced);
   white-space: nowrap;
   transition: color 0.3s ease;
 }
 .nav_links_link:hover {
-  color: #FDFBF7;
+  color: var(--swatch--light-200);
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"] .button_main_element {
   padding: 0.5rem 1.75rem;
@@ -564,9 +564,9 @@ a[data-underline-link="alt"]:hover::before {
   white-space: nowrap;
 }
 .nav_desktop_wrap [data-wf--button-main--variant="primary"]:hover .button_main_element {
-  background-color: var(--swatch--brand-700);
-  border-color: var(--swatch--brand-700);
-  color: var(--swatch--light-100);
+  background-color: var(--swatch--light-200);
+  border-color: var(--swatch--light-200);
+  color: var(--swatch--brand-800);
 }
 
 /* Announcement Banner */
@@ -1503,10 +1503,10 @@ a[data-underline-link="alt"]:hover::before {
     height: 5rem;
   }
   .nav_mobile_links {
-    background-color: rgba(11, 37, 69, 0.92);
+    background-color: rgba(26, 26, 26, 0.85);
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
-    border: 1px solid rgba(141, 169, 196, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 100vw;
     padding: 0.375rem 1rem;
     display: flex;
