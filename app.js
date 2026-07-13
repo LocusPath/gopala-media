@@ -1,14 +1,30 @@
-// Force scroll to top on refresh and disable browser scroll restoration
+// Force scroll to top on refresh (if no hash) and disable browser scroll restoration
 if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
-window.scrollTo(0, 0);
+if (!window.location.hash) {
+  window.scrollTo(0, 0);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Restore scroll to top on DOM load to be sure
-  window.scrollTo(0, 0);
-  if (window.lenis) {
-    window.lenis.scrollTo(0, { immediate: true });
+  // Restore scroll to top on DOM load to be sure (if no hash)
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    }
+  } else {
+    // Scroll to hash
+    setTimeout(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        if (window.lenis) {
+          window.lenis.scrollTo(target, { immediate: true });
+        } else {
+          target.scrollIntoView();
+        }
+      }
+    }, 50);
   }
 
   // 2. PAGE EXIT TRANSITIONS (FADE OUT ON LINK CLICK)
@@ -66,6 +82,24 @@ document.addEventListener("DOMContentLoaded", () => {
   initWorkFilters();
   initContactTrail();
   initAccordionSystem();
+  initLogoColorScroll();
+
+  // Smooth scroll to anchor links on the same page
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        if (window.lenis) {
+          window.lenis.scrollTo(targetEl);
+        } else {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
 });
 
 // ACCORDION SYSTEM FOR FAQ
@@ -507,7 +541,7 @@ function initBannerClose() {
         // Slide fixed navigation header to the top
         document.querySelectorAll(".nav_component").forEach(nav => {
           gsap.to(nav, {
-            top: "2.5rem",
+            top: "0.35rem",
             duration: 0.4,
             ease: "power2.out"
           });
@@ -515,4 +549,39 @@ function initBannerClose() {
       }
     });
   });
+}
+
+// DYNAMIC NAVBAR LOGO TEXT COLOR BASED ON OVERLAPPING BACKGROUNDS
+function initLogoColorScroll() {
+  const logoTexts = document.querySelectorAll(".nav_logo_text");
+  if (!logoTexts.length) return;
+
+  const updateColor = () => {
+    let color = "#ffffff"; // Default to white (visible on dark backgrounds)
+
+    // Select all light sections on the page
+    const lightSections = document.querySelectorAll(".brands-marquee-section, .about_section_wrap");
+
+    lightSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      // If the light section overlaps the floating header (from top y=0 to y=60)
+      if (rect.top <= 60 && rect.bottom >= 0) {
+        color = "#001F38"; // Change to dark indigo
+      }
+    });
+
+    logoTexts.forEach(el => {
+      el.style.color = color;
+    });
+  };
+
+  // Run on scroll, resize, and immediately
+  window.addEventListener("scroll", updateColor);
+  window.addEventListener("resize", updateColor);
+  updateColor();
+  
+  // Also run on Lenis scroll if Lenis is active to match high-frequency updates
+  if (window.lenis) {
+    window.lenis.on('scroll', updateColor);
+  }
 }
