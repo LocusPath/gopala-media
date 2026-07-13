@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Equipments | Gopala Media | Production Partner | India</title>
+  <meta name="description" content="Explore Gopala Media's premium equipment rental services: Cinema Cameras, Lenses, Lighting, Grip, and Audio Gear in India."/>
+  
+  <!-- Stylesheets -->
+  <link href="assets/css/app-style.css?v=15" rel="stylesheet" type="text/css"/>
+  <link href="assets/images/logo.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="assets/images/logo.png" rel="apple-touch-icon"/>
+  
+  <style>
+    /* Custom equipments page specific styling */
+    .equipments_hero_wrap {
+      padding: var(--_spacing---section-space--page-top) var(--site--margin) var(--_spacing---section-space--main);
+      background-color: var(--swatch--brand-500); /* Warm light-cream background */
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .equip_card_wrap {
+      background-color: var(--swatch--light-200); /* Clean White card background */
+      border: 1px solid var(--_theme---border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.4s var(--default-ease), box-shadow 0.4s var(--default-ease);
+    }
+    
+    .equip_card_wrap:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+    
+    .equip_card_visual {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: var(--swatch--brand-700); /* Soft light-cream base */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--_theme---border);
+    }
+    
+    .equip_card_image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.95;
+      transition: transform 0.6s ease;
+    }
+    
+    .equip_card_wrap:hover .equip_card_image {
+      transform: scale(1.05);
+    }
+    
+    .equip_card_category {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--swatch--brand-800); /* Dark blue tag */
+      color: var(--swatch--brand-500); /* Warm light text */
+      padding: 0.35rem 0.85rem;
+      border-radius: 100vw;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      z-index: 2;
+    }
+    
+    .equip_card_body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .equip_card_title {
+      font-family: var(--_typography---font--secondary-family);
+      font-size: clamp(1.2rem, 2vw, 1.45rem);
+      font-weight: 700;
+      color: var(--swatch--brand-800);
+      margin-bottom: 1rem;
+    }
+    
+    .equip_card_specs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .equip_card_spec_item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--swatch--dark-800);
+      border-bottom: 1px dashed rgba(0, 31, 56, 0.1);
+      padding-bottom: 0.25rem;
+    }
+    
+    .equip_card_spec_label {
+      font-weight: 500;
+      opacity: 0.7;
+    }
+    
+    .equip_card_spec_value {
+      font-weight: 600;
+      color: var(--swatch--brand-800);
+    }
+    
+    .equip_card_footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 31, 56, 0.05);
+    }
+    
+    .equip_card_price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--swatch--brand-800);
+    }
+    
+    .equip_card_price span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page_wrap">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="nav_desktop_wrap nav_component">
+      <div class="nav_desktop_contain">
+        <div class="nav_desktop_layout">
+          <!-- Logo -->
+          <a aria-label="Home Page" href="index.html" class="nav_desktop_logo">
+            <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
+            <span class="nav_logo_text">Gopala Media</span>
+          </a>
+
+          <!-- Nav Links -->
+          <nav aria-label="Main" class="nav_links_component">
+            <ul role="list" class="nav_links_wrap">
+              <li class="nav_links_item"><a href="index.html" class="nav_links_link">Home</a></li>
+              <li class="nav_links_item"><a href="about.html" class="nav_links_link">About Us</a></li>
+              <li class="nav_links_item"><a href="equipments.html" class="nav_links_link">Equipments</a></li>
+              <li class="nav_links_item"><a href="services.html" class="nav_links_link">Services</a></li>
+              <li class="nav_links_item"><a href="index.html#process" class="nav_links_link">Process</a></li>
+              <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
+              <li class="nav_links_item"><a href="index.html#social" class="nav_links_link">Social Media</a></li>
+              <li class="nav_buttons_item">
+                <div data-wf--button-main--variant="primary" class="button_main_wrap">
+                  <div class="clickable_wrap u-cover-absolute">
+                    <a href="contact.html" class="clickable_link"></a>
+                  </div>
+                  <div class="button_main_element">
+                    <div class="button_main_text">Contact Us</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="nav_mobile_wrap nav_component">
+      <a href="index.html" class="nav_mobile_logo">
+        <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
+        <span class="nav_logo_text">Gopala Media</span>
+      </a>
+      <div class="nav_mobile_links">
+        <a href="index.html" style="margin-right: 1rem; font-size: 0.8rem; text-transform: uppercase;">Home</a>
+        <a href="work.html" style="margin-right: 1rem; font-size: 0.8rem; text-transform: uppercase;">Work</a>
+        <a href="contact.html" style="font-size: 0.8rem; text-transform: uppercase;">Contact</a>
+      </div>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main id="main" class="page_main">
+      
+      <!-- HERO EQUIPMENTS SECTION -->
+      <section class="equipments_hero_wrap">
+        <div class="work_hero_contain u-container-full">
+          <div class="work_hero_layout u-position-relative u-flex-vertical-nowrap u-align-items-start">
+            
+            <div class="label_wrap u-margin-bottom-2">
+              <div class="label_line" style="width: 2rem;"></div>
+              <div class="label_text">Equipments</div>
+              <div class="label_line" style="width: 2rem;"></div>
+            </div>
+
+            <h1 class="u-text-style-h1 u-margin-bottom-8">Premium Rentals</h1>
+
+            <!-- FILTERS BAR -->
+            <div class="work_form_block u-margin-bottom-8 u-width-full">
+              <div class="work_form u-flex-horizontal-wrap u-justify-content-between u-align-items-center">
+                <div class="work_form_filters u-flex-horizontal-wrap u-gap-2">
+                  
+                  <label class="g_filter_wrap is-active" data-service="all">
+                    <input type="radio" name="service-filter" checked style="display:none;"/>
+                    <span class="u-text-style-xsmall">All</span>
+                  </label>
+                  
+                  <label class="g_filter_wrap" data-service="Cameras">
+                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <span class="u-text-style-xsmall">Cameras</span>
+                  </label>
+                  
+                  <label class="g_filter_wrap" data-service="Lenses">
+                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <span class="u-text-style-xsmall">Lenses</span>
+                  </label>
+                  
+                  <label class="g_filter_wrap" data-service="Lighting">
+                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <span class="u-text-style-xsmall">Lighting</span>
+                  </label>
+                  
+                  <label class="g_filter_wrap" data-service="Grip">
+                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <span class="u-text-style-xsmall">Grip &amp; Support</span>
+                  </label>
+                  
+                  <label class="g_filter_wrap" data-service="Audio">
+                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <span class="u-text-style-xsmall">Audio</span>
+                  </label>
+
+                </div>
+                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count">12</span>)</p>
+              </div>
+            </div>
+
+            <!-- PORTFOLIO LISTING -->
+            <div class="work_cms_wrapper u-width-full">
+              <div role="list" class="work_cms_list">
+                
+                <!-- Card 1: ARRI Alexa Mini LF (Cameras) -->
+                <div role="listitem" class="work_cms_item" data-service="Cameras">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Cameras</div>
+                      <img src="assets/images/cinema_camera.png" loading="lazy" alt="ARRI Alexa Mini LF" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">ARRI Alexa Mini LF</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Sensor</span>
+                          <span class="equip_card_spec_value">Full-Frame ALEV III</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Resolution</span>
+                          <span class="equip_card_spec_value">4.5K Recording</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Codec</span>
+                          <span class="equip_card_spec_value">ARRIRAW &amp; ProRes</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Mount</span>
+                          <span class="equip_card_spec_value">LPL &amp; PL Mount</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹45,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2: RED V-Raptor 8K VV (Cameras) -->
+                <div role="listitem" class="work_cms_item" data-service="Cameras">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Cameras</div>
+                      <img src="assets/images/cinema_camera.png" loading="lazy" alt="RED V-Raptor 8K VV" class="equip_card_image" style="transform: scaleX(-1);"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">RED V-Raptor 8K VV</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Sensor</span>
+                          <span class="equip_card_spec_value">8K Multi-Format</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Framerate</span>
+                          <span class="equip_card_spec_value">8K @ 120fps</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Codec</span>
+                          <span class="equip_card_spec_value">REDCODE RAW</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Mount</span>
+                          <span class="equip_card_spec_value">RF Mount</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹35,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3: Sony Venice 2 8K (Cameras) -->
+                <div role="listitem" class="work_cms_item" data-service="Cameras">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Cameras</div>
+                      <img src="assets/images/cinema_camera.png" loading="lazy" alt="Sony Venice 2 8K" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Sony Venice 2 8K</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Sensor</span>
+                          <span class="equip_card_spec_value">8.6K Full-Frame</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Resolution</span>
+                          <span class="equip_card_spec_value">8.6K Recording</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Base ISO</span>
+                          <span class="equip_card_spec_value">Dual 800 / 3200</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Mount</span>
+                          <span class="equip_card_spec_value">PL &amp; E-Mount</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹40,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4: ARRI Signature Primes (Lenses) -->
+                <div role="listitem" class="work_cms_item" data-service="Lenses">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Lenses</div>
+                      <img src="assets/images/cinema_lenses.png" loading="lazy" alt="ARRI Signature Primes" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Signature Prime Set</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Focal Range</span>
+                          <span class="equip_card_spec_value">18mm to 125mm</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Max Aperture</span>
+                          <span class="equip_card_spec_value">T1.8</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Mount</span>
+                          <span class="equip_card_spec_value">LPL Mount</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Coverage</span>
+                          <span class="equip_card_spec_value">Full-Frame / LF</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹55,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 5: Cooke S7/i Prime Set (Lenses) -->
+                <div role="listitem" class="work_cms_item" data-service="Lenses">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Lenses</div>
+                      <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Cooke S7/i Prime Set" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Cooke S7/i Prime Set</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Focal Range</span>
+                          <span class="equip_card_spec_value">25mm to 100mm</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Max Aperture</span>
+                          <span class="equip_card_spec_value">T2.0</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Mount</span>
+                          <span class="equip_card_spec_value">PL Mount</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Look</span>
+                          <span class="equip_card_spec_value">Warm &amp; Classic</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹45,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 6: Zeiss Supreme Primes (Lenses) -->
+                <div role="listitem" class="work_cms_item" data-service="Lenses">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Lenses</div>
+                      <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Zeiss Supreme Primes" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Zeiss Supreme Set</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Focal Range</span>
+                          <span class="equip_card_spec_value">25mm to 100mm</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Max Aperture</span>
+                          <span class="equip_card_spec_value">T1.5</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Mount</span>
+                          <span class="equip_card_spec_value">PL Mount</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Look</span>
+                          <span class="equip_card_spec_value">Modern High Res</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹38,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 7: Arri SkyPanel S60-C (Lighting) -->
+                <div role="listitem" class="work_cms_item" data-service="Lighting">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Lighting</div>
+                      <img src="assets/images/studio_lighting.png" loading="lazy" alt="Arri SkyPanel S60-C" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Arri SkyPanel S60-C</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Power Draw</span>
+                          <span class="equip_card_spec_value">450W LED</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Color Temp</span>
+                          <span class="equip_card_spec_value">2800K to 10000K</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Control</span>
+                          <span class="equip_card_spec_value">DMX / Wireless</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Type</span>
+                          <span class="equip_card_spec_value">RGBW Tunable Soft</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹8,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 8: Aputure LS 1200d Pro (Lighting) -->
+                <div role="listitem" class="work_cms_item" data-service="Lighting">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Lighting</div>
+                      <img src="assets/images/studio_lighting.png" loading="lazy" alt="Aputure LS 1200d Pro" class="equip_card_image" style="transform: scaleX(-1);"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Aputure LS 1200d Pro</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Power Draw</span>
+                          <span class="equip_card_spec_value">1200W COB LED</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Color Temp</span>
+                          <span class="equip_card_spec_value">5600K (Daylight)</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Beam Angle</span>
+                          <span class="equip_card_spec_value">15° / 30° / 45°</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Protection</span>
+                          <span class="equip_card_spec_value">IP54 Weatherproof</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹6,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 9: DJI Ronin 2 (Grip) -->
+                <div role="listitem" class="work_cms_item" data-service="Grip">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Grip &amp; Support</div>
+                      <img src="assets/images/grip_gimbal.png" loading="lazy" alt="DJI Ronin 2 Professional" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">DJI Ronin 2 Gimbal</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Max Payload</span>
+                          <span class="equip_card_spec_value">13.6 kg (30 lbs)</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Operation</span>
+                          <span class="equip_card_spec_value">Handheld / Car Mount</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Wireless</span>
+                          <span class="equip_card_spec_value">DJI Master Wheels</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Power</span>
+                          <span class="equip_card_spec_value">Hot-swap Batteries</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹12,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 10: Easyrig Vario 5 (Grip) -->
+                <div role="listitem" class="work_cms_item" data-service="Grip">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Grip &amp; Support</div>
+                      <img src="assets/images/grip_gimbal.png" loading="lazy" alt="Easyrig Vario 5" class="equip_card_image" style="transform: scaleX(-1);"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Easyrig Vario 5</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Payload Range</span>
+                          <span class="equip_card_spec_value">5 to 17 kg</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Arm</span>
+                          <span class="equip_card_spec_value">Flowcine Serene</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Line Tension</span>
+                          <span class="equip_card_spec_value">Adjustable Screw</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Ergonomic</span>
+                          <span class="equip_card_spec_value">Weight Distribution</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹5,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 11: Sound Devices 833 (Audio) -->
+                <div role="listitem" class="work_cms_item" data-service="Audio">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Audio</div>
+                      <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Sound Devices 833" class="equip_card_image"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Sound Devices 833</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Preamps</span>
+                          <span class="equip_card_spec_value">6 Mic/Line Preamps</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Channels</span>
+                          <span class="equip_card_spec_value">8 Record Channels</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Recording</span>
+                          <span class="equip_card_spec_value">SD Cards + SSD</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Timecode</span>
+                          <span class="equip_card_spec_value">Ultra Accurate</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹7,500<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 12: Sennheiser MKH416 Shotgun Mic (Audio) -->
+                <div role="listitem" class="work_cms_item" data-service="Audio">
+                  <div class="equip_card_wrap">
+                    <div class="equip_card_visual">
+                      <div class="equip_card_category">Audio</div>
+                      <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Sennheiser MKH416 Shotgun Mic" class="equip_card_image" style="transform: scaleX(-1);"/>
+                    </div>
+                    <div class="equip_card_body">
+                      <div class="equip_card_title">Sennheiser MKH416</div>
+                      <div class="equip_card_specs">
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Pattern</span>
+                          <span class="equip_card_spec_value">Supercardioid / Lobar</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Frequency</span>
+                          <span class="equip_card_spec_value">40Hz to 20kHz</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Self-Noise</span>
+                          <span class="equip_card_spec_value">Very Low (13 dBA)</span>
+                        </div>
+                        <div class="equip_card_spec_item">
+                          <span class="equip_card_spec_label">Connection</span>
+                          <span class="equip_card_spec_value">XLR 48V Phantom</span>
+                        </div>
+                      </div>
+                      <div class="equip_card_footer">
+                        <div class="equip_card_price">₹2,000<span> / day</span></div>
+                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
+                          <div class="clickable_wrap u-cover-absolute">
+                            <a href="contact.html" class="clickable_link"></a>
+                          </div>
+                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+                            <div class="button_main_text">Book</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="social" class="footer_wrap u-theme-brand">
+      <h2 class="footer_title u-sr-only">Footer</h2>
+      <div class="footer_contain">
+        <div class="footer_layout">
+          
+          <div class="footer_content">
+            <a aria-label="Go to the homepage" href="index.html" class="footer_logo_wrap">
+                <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img">
+              </a>
+          </div>
+
+          <!-- Footer Navigation -->
+          <div class="u-grid-wrapper u-column-span-8 u-column-start-5">
+            <div role="navigation" class="u-grid" style="grid-template-columns: repeat(3, 1fr); column-gap: 2rem;">
+              <section class="footer_group_wrap">
+                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Main Menu</div>
+                <div role="list" class="footer_group_list">
+                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><div class="footer_link_text">Home</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><div class="footer_link_text">About us</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><div class="footer_link_text">Services</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><div class="footer_link_text">Equipments</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><div class="footer_link_text">Projects</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><div class="footer_link_text">Articles</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><div class="footer_link_text">Contact</div></a></div>
+                </div>
+              </section>
+              <section class="footer_group_wrap">
+                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Connect with us</div>
+                <div role="list" class="footer_group_list" style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; line-height: 1.5; gap: 0.75rem; display: flex; flex-direction: column;">
+                  <div><a href="mailto:connect@gopalamedia.com" style="color: inherit; text-decoration: none;">connect@gopalamedia.com</a></div>
+                  <div><a href="tel:+9109999997219" style="color: inherit; text-decoration: none;">+91 099999 97219</a></div>
+                  <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 0.5rem;">House No.-69, near Om Panchayati Shiv Mandir, Gautam Nagar, New Delhi, Delhi 110049</div>
+                </div>
+              </section>
+              <section class="footer_group_wrap">
+                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Socials &amp; Legal</div>
+                <div role="list" class="footer_group_list">
+                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Facebook</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Instagram</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">LinkedIn</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><div class="footer_link_text">Privacy Policy</div></a></div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer_bottom_wrap">
+        <div class="footer_bottom_contain">
+          <div class="footer_bottom_layout">
+            <div class="footer_bottom_text">
+              <span>Copyright: Gopala Media | All Rights Reserved</span>
+            </div>
+            <div class="footer_btn_wrap">
+              <div class="footer_credit_text">
+                <p class="u-text-style-xsmall"><a href="https://www.swordagency.com/" target="_blank">Site by SWORD</a></p>
+              </div>
+              <div data-wf--button-main--variant="primary" class="button_main_wrap">
+                <div class="clickable_wrap u-cover-absolute">
+                  <a href="contact.html" class="clickable_link"></a>
+                </div>
+                <div class="button_main_element">
+                  <div class="button_main_text">Get in touch</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- CDN Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
+  
+  <!-- Custom Script -->
+  <script src="assets/js/app.js?v=15"></script>
+</body>
+</html>

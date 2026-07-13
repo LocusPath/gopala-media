@@ -3,56 +3,45 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Journal | Margot Priolet | Makeup Artist &amp; Beauty Consultant</title>
-  <meta name="description" content="Read beauty guides, skincare recommendations, and behind-the-scenes features by makeup artist Margot Priolet."/>
+  <title>Journal | Gopala Media | Production Partner | India</title>
+  <meta name="description" content="Read production insights, film/video guides, and behind-the-scenes features by Gopala Media."/>
   
   <!-- Stylesheets -->
-  <link href="app-style.css?v=15" rel="stylesheet" type="text/css"/>
-  <link href="https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/69719bb979f4e33c258b7162_favicon_margotpriolet.png" rel="shortcut icon" type="image/x-icon"/>
-  <link href="https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/69719bbfa433d423c43e50b4_webclip_margotpriolet.jpg" rel="apple-touch-icon"/>
+  <link href="assets/css/app-style.css?v=15" rel="stylesheet" type="text/css"/>
+  <link href="assets/images/logo.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="assets/images/logo.png" rel="apple-touch-icon"/>
 </head>
 <body>
 
   <div class="page_wrap">
     
-    <!-- ANNOUNCEMENT BANNER -->
-    <div aria-label="Announcement" role="region" class="nav_banner_wrap">
-      <div class="nav_banner_contain">
-        <a href="guide.html" class="nav_banner_link u-alignment-center">
-          <span class="nav_banner_text">Skin Before Makeup: early access with $10 privilege</span>
-        </a>
-        <button role="button" class="nav_banner_close_wrap" aria-label="Close Announcement Banner">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 19" fill="none" aria-hidden="true" class="nav_banner_close_svg">
-            <path d="M1.51471 1.01465L18.4853 17.9852" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
-            <path d="M1.51471 17.9851L18.4853 1.01454" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-
     <!-- NAVIGATION HEADER -->
     <header class="nav_desktop_wrap nav_component">
       <div class="nav_desktop_contain">
         <div class="nav_desktop_layout">
           <!-- Logo -->
           <a aria-label="Home Page" href="index.html" class="nav_desktop_logo">
-            <img src="logo.png" alt="Gopala Media" class="nav_logo_img">
+            <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
+            <span class="nav_logo_text">Gopala Media</span>
           </a>
 
           <!-- Nav Links -->
           <nav aria-label="Main" class="nav_links_component">
             <ul role="list" class="nav_links_wrap">
-              <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
+              <li class="nav_links_item"><a href="index.html" class="nav_links_link">Home</a></li>
+              <li class="nav_links_item"><a href="about.html" class="nav_links_link">About Us</a></li>
+              <li class="nav_links_item"><a href="equipments.html" class="nav_links_link">Equipments</a></li>
               <li class="nav_links_item"><a href="services.html" class="nav_links_link">Services</a></li>
-              <li class="nav_links_item"><a href="journal.html" class="nav_links_link">Journal</a></li>
-              <li class="nav_links_item"><a href="guide.html" class="nav_links_link">Skin Before Makeup</a></li>
+              <li class="nav_links_item"><a href="index.html#process" class="nav_links_link">Process</a></li>
+              <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
+              <li class="nav_links_item"><a href="index.html#social" class="nav_links_link">Social Media</a></li>
               <li class="nav_buttons_item">
                 <div data-wf--button-main--variant="primary" class="button_main_wrap">
                   <div class="clickable_wrap u-cover-absolute">
                     <a href="contact.html" class="clickable_link"></a>
                   </div>
                   <div class="button_main_element">
-                    <div class="button_main_text">Get in touch</div>
+                    <div class="button_main_text">Contact Us</div>
                   </div>
                 </div>
               </li>
@@ -65,9 +54,11 @@
     <!-- MOBILE NAVIGATION -->
     <div class="nav_mobile_wrap nav_component">
       <a href="index.html" class="nav_mobile_logo">
-        <img src="logo.png" alt="Gopala Media" class="nav_logo_img">
+        <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
+        <span class="nav_logo_text">Gopala Media</span>
       </a>
       <div class="nav_mobile_links">
+        <a href="index.html" style="margin-right: 1rem; font-size: 0.8rem; text-transform: uppercase;">Home</a>
         <a href="work.html" style="margin-right: 1rem; font-size: 0.8rem; text-transform: uppercase;">Work</a>
         <a href="contact.html" style="font-size: 0.8rem; text-transform: uppercase;">Contact</a>
       </div>
@@ -284,14 +275,14 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer_wrap u-theme-brand">
+    <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
       <div class="footer_contain">
         <div class="footer_layout">
           
           <div class="footer_content">
             <a aria-label="Go to the homepage" href="index.html" class="footer_logo_wrap">
-                <img src="logo.png" alt="Gopala Media" class="footer_logo_img">
+                <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img">
               </a>
           </div>
 
@@ -299,24 +290,31 @@
           <div class="u-grid-wrapper u-column-span-8 u-column-start-5">
             <div role="navigation" class="u-grid" style="grid-template-columns: repeat(3, 1fr); column-gap: 2rem;">
               <section class="footer_group_wrap">
+                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Main Menu</div>
                 <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><div class="footer_link_text">Work</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><div class="footer_link_text">Home</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><div class="footer_link_text">About us</div></a></div>
                   <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><div class="footer_link_text">Services</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><div class="footer_link_text">Journal</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><div class="footer_link_text">Equipments</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><div class="footer_link_text">Projects</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><div class="footer_link_text">Articles</div></a></div>
                   <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><div class="footer_link_text">Contact</div></a></div>
                 </div>
               </section>
               <section class="footer_group_wrap">
-                <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="guide.html" class="footer_link_wrap"><div class="footer_link_text">Skin Before Makeup</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="https://www.instagram.com/margotpriolet/" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Instagram</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="https://au.pinterest.com/margotpriolet/" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Pinterest</div></a></div>
+                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Connect with us</div>
+                <div role="list" class="footer_group_list" style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; line-height: 1.5; gap: 0.75rem; display: flex; flex-direction: column;">
+                  <div><a href="mailto:connect@gopalamedia.com" style="color: inherit; text-decoration: none;">connect@gopalamedia.com</a></div>
+                  <div><a href="tel:+9109999997219" style="color: inherit; text-decoration: none;">+91 099999 97219</a></div>
+                  <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 0.5rem;">House No.-69, near Om Panchayati Shiv Mandir, Gautam Nagar, New Delhi, Delhi 110049</div>
                 </div>
               </section>
               <section class="footer_group_wrap">
+                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Socials &amp; Legal</div>
                 <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><div class="footer_link_text">Legal Notice</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><div class="footer_link_text">Terms of Use</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Facebook</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Instagram</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">LinkedIn</div></a></div>
                   <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><div class="footer_link_text">Privacy Policy</div></a></div>
                 </div>
               </section>
@@ -331,7 +329,7 @@
         <div class="footer_bottom_contain">
           <div class="footer_bottom_layout">
             <div class="footer_bottom_text">
-              <span>&copy; </span><span data-dynamic-year="">2026</span><span> Copyright. All Rights Reserved.</span>
+              <span>Copyright: Gopala Media | All Rights Reserved</span>
             </div>
             <div class="footer_btn_wrap">
               <div class="footer_credit_text">
@@ -351,57 +349,6 @@
       </div>
     </footer>
 
-    <!-- WAITLIST POPUP DIALOG -->
-    <dialog data-modal-target="skin-guide-modal" class="modal_dialog">
-      <div class="modal_backdrop"></div>
-      <div class="modal_inner">
-        <div class="modal_close">
-          <button type="button" data-modal-close="" class="button_close_wrap" aria-label="Close modal">
-            <div class="button_close_icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-                <path d="M2 2L24.6274 24.6274" stroke="currentColor" stroke-width="2"></path>
-                <path d="M2 25L24.6274 2.37258" stroke="currentColor" stroke-width="2"></path>
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div class="modal_content">
-          <form class="form_wrap" id="Skin-Guide-Form" method="post">
-            <div class="u-alignment-center" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-              <img src="https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/6979bafbc03f2b3ab70f9ad0_skin_before_makeup_mockup.png" alt="Skin guide mockup" class="form_visual_guide u-margin-bottom-4"/>
-              <h3 class="u-text-style-h3 u-margin-bottom-4">Skin Before Makeup Guide &mdash; Join the waitlist</h3>
-            </div>
-            
-            <label class="form_label_wrap">
-              <span class="form_label_text">First Name*</span>
-              <input name="FIRSTNAME" type="text" placeholder="Jessie" required class="form_field"/>
-            </label>
-            <label class="form_label_wrap">
-              <span class="form_label_text">Email*</span>
-              <input name="EMAIL" type="email" placeholder="jessie.work@email.com" required class="form_field"/>
-            </label>
-            
-            <p class="u-text-style-xsmall u-color-faded">*required fields</p>
-
-            <div data-wf--button-main--variant="primary" class="button_main_wrap u-width-full">
-              <div class="clickable_wrap u-cover-absolute">
-                <button type="submit" class="clickable_btn"></button>
-              </div>
-              <div class="button_main_element" style="width: 100%; justify-content: center;">
-                <div class="button_main_text">Join the waitlist | Get $10 off</div>
-              </div>
-            </div>
-          </form>
-
-          <div class="success-message u-flex-vertical-nowrap u-alignment-center" style="display: none; flex-direction: column; align-items: center;">
-            <h3 class="u-text-style-h3 u-margin-bottom-4">Thanks for joining the waitlist!</h3>
-            <img src="https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/69744ab02334bee2720e125e_IMG_7820%20(1).jpg" alt="Success visual" style="width: 100%; border-radius: var(--radius-main); margin-bottom: 1rem;"/>
-            <p class="u-text-style-main">You'll receive your discount shortly via email. If it doesn't appear, please check your spam or promotions folder.</p>
-          </div>
-        </div>
-      </div>
-    </dialog>
-
   </div>
 
   <!-- CDN Scripts -->
@@ -409,6 +356,6 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
   
   <!-- Custom Script -->
-  <script src="app.js?v=15"></script>
+  <script src="assets/js/app.js?v=15"></script>
 </body>
 </html>
