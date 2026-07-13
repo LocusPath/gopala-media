@@ -88,10 +88,10 @@
             <div class="label_text">Our Story</div>
             <div class="label_line" style="width: 2rem;"></div>
           </div>
-          <h1 class="u-text-style-display u-text-transform-uppercase u-margin-bottom-6" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1; color: var(--swatch--brand-500);">
+          <h1 class="u-text-style-display u-text-transform-uppercase u-margin-bottom-6" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1; color: var(--_theme---text);">
             Built on Faith &amp; Family
           </h1>
-          <p class="u-text-style-large u-color-faded" style="max-width: 42rem; margin: 0 auto; line-height: 1.6; color: var(--swatch--brand-800);">
+          <p class="u-text-style-large u-color-faded" style="max-width: 42rem; margin: 0 auto; line-height: 1.6; color: var(--_theme---text); opacity: 0.85;">
             For 22+ years, Gopala Media has been the trusted production partner for brands, creators, corporates, and storytellers across India. Follow our winding journey.
           </p>
         </div>
@@ -99,6 +99,7 @@
 
       <!-- INTERACTIVE STORY LINE SECTION -->
       <section class="about_story_wrap">
+
         <div class="story_viewport">
           <div class="story_content">
             
@@ -106,29 +107,38 @@
             <div class="story_svg_container">
               <svg viewBox="0 0 3000 3000" class="story_svg">
                 <!-- Faint background path -->
-                <path d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke-width="4" class="story_line_bg" />
+                <path d="M 1500,0 L 1500,300 C 1100,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke-width="4" class="story_line_bg" />
                 <!-- Layered Animated active drawing paths (Neon Glow System) -->
-                <path id="active-story-path-glow-1" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke="var(--swatch--brand-600)" stroke-width="14" opacity="0.15" class="story_line_active_layer" stroke-linecap="round" />
-                <path id="active-story-path-glow-2" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke="var(--swatch--brand-600)" stroke-width="7" opacity="0.35" class="story_line_active_layer" stroke-linecap="round" />
-                <path id="active-story-path" d="M 200,200 C 100,400 400,600 300,800 C 500,900 800,700 1200,800 C 1600,900 1800,750 2200,1000 C 2400,1400 2000,1700 2200,2000 C 2400,2300 1800,2600 2000,2900" fill="none" stroke="var(--swatch--brand-600)" stroke-width="3.5" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path-glow-1" d="M 1500,0 L 1500,300 C 1100,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke="var(--swatch--brand-600)" stroke-width="14" opacity="0.15" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path-glow-2" d="M 1500,0 L 1500,300 C 1100,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke="var(--swatch--brand-600)" stroke-width="7" opacity="0.35" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path" d="M 1500,0 L 1500,300 C 1100,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke="var(--swatch--brand-600)" stroke-width="3.5" class="story_line_active_layer" stroke-linecap="round" />
                 
-                <!-- Traveling Glowing Lead Dot -->
-                <circle class="story_lead_dot glow_1" r="14" fill="var(--swatch--brand-600)" opacity="0.15" />
-                <circle class="story_lead_dot glow_2" r="8" fill="var(--swatch--brand-600)" opacity="0.4" />
-                <circle class="story_lead_dot core" r="4" fill="#fff" />
+                <!-- Traveling Glowing Lead Dot (Enlarged) -->
+                <circle class="story_lead_dot glow_1" r="28" fill="var(--swatch--brand-600)" opacity="0.15" />
+                <circle class="story_lead_dot glow_2" r="16" fill="var(--swatch--brand-600)" opacity="0.4" />
+                <circle class="story_lead_dot core" r="7" fill="#fff" />
 
                 <!-- Circle node markers -->
-                <circle id="node-1" cx="300" cy="800" r="10" class="story_node" />
-                <circle id="node-2" cx="1200" cy="800" r="10" class="story_node" />
-                <circle id="node-3" cx="2200" cy="1000" r="10" class="story_node" />
-                <circle id="node-4" cx="2200" cy="2000" r="10" class="story_node" />
+                <circle id="node-1" cx="1200" cy="800" r="10" class="story_node" />
+                <circle id="node-2" cx="1500" cy="1400" r="10" class="story_node" />
+                <circle id="node-3" cx="1800" cy="2000" r="10" class="story_node" />
+                <circle id="node-4" cx="1500" cy="2500" r="10" class="story_node" />
               </svg>
+            </div>
+
+            <!-- Scroll indicator next to the starting dot -->
+            <div class="timeline_scroll_indicator">
+              <span class="timeline_scroll_text">Scroll down</span>
+              <div class="timeline_scroll_arrow">&darr;</div>
             </div>
 
             <!-- Story milestones -->
             <ul class="story_milestones_list">
               <!-- 2002: A Leap of Faith -->
-              <li id="milestone-1" class="story_milestone_item" style="left: 300px; top: 920px;">
+              <li id="milestone-1-img" class="story_milestone_image align-left" style="left: 1050px; top: 800px;">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Gopala Media Start 2002" class="story_image_element" />
+              </li>
+              <li id="milestone-1" class="story_milestone_item align-right" style="left: 1350px; top: 800px;">
                 <div class="story_milestone_year">2002</div>
                 <h2 class="story_milestone_title">A Leap of Faith</h2>
                 <p class="story_milestone_text">
@@ -137,25 +147,34 @@
               </li>
 
               <!-- Why the name "Gopala"? -->
-              <li id="milestone-2" class="story_milestone_item" style="left: 1200px; top: 600px; transform: translate(-50%, 0);">
+              <li id="milestone-2" class="story_milestone_item align-left" style="left: 1350px; top: 1400px;">
                 <div class="story_milestone_year">The Name</div>
                 <h2 class="story_milestone_title">Why "Gopala"?</h2>
                 <p class="story_milestone_text">
                   The name "Gopala" represents two deeply personal blessings: their family devotion to Lord Krishna, and their love for their younger child, lovingly called Gopala at home. It became a promise to build something meaningful.
                 </p>
               </li>
+              <li id="milestone-2-img" class="story_milestone_image align-right" style="left: 1650px; top: 1400px;">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Why Gopala" class="story_image_element" />
+              </li>
 
               <!-- DD News & One Camera -->
-              <li id="milestone-3" class="story_milestone_item left-aligned" style="left: 1850px; top: 1000px;">
+              <li id="milestone-3" class="story_milestone_item align-left" style="left: 1650px; top: 2000px;">
                 <div class="story_milestone_year">The Spark</div>
                 <h2 class="story_milestone_title">From One PD Camera</h2>
                 <p class="story_milestone_text">
                   We started with just one PD Camera. Placed with DD News—one of the biggest news channels at the time—through built goodwill, it marked our first crucial step. Long travel days, endless pitches, and pitches followed, but consistency prevailed.
                 </p>
               </li>
+              <li id="milestone-3-img" class="story_milestone_image align-right" style="left: 1950px; top: 2000px;">
+                <img src="https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?auto=format&fit=crop&w=800&q=80" alt="News Production Setup" class="story_image_element" />
+              </li>
 
               <!-- 22+ Years Later -->
-              <li id="milestone-4" class="story_milestone_item left-aligned" style="left: 1850px; top: 2000px;">
+              <li id="milestone-4-img" class="story_milestone_image align-left" style="left: 1350px; top: 2500px;">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" alt="Gopala Media Today" class="story_image_element" />
+              </li>
+              <li id="milestone-4" class="story_milestone_item align-right" style="left: 1650px; top: 2500px;">
                 <div class="story_milestone_year">Today</div>
                 <h2 class="story_milestone_title">22+ Years of Trust</h2>
                 <p class="story_milestone_text">

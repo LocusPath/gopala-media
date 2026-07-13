@@ -30,12 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
     leadDots.forEach(dot => {
       dot.setAttribute("cx", startPoint.x);
       dot.setAttribute("cy", startPoint.y);
-      gsap.set(dot, { opacity: 0 });
+      gsap.set(dot, { opacity: 1 });
     });
 
     gsap.set(".story_content", {
       x: window.innerWidth / 2 - startPoint.x,
-      y: window.innerHeight * 0.35 - startPoint.y
+      y: window.innerHeight * 0.15 - startPoint.y
+    });
+
+    // Fade out the scroll down text indicator as the user scrolls
+    gsap.to(".timeline_scroll_indicator", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".about_story_wrap",
+        start: "top top",
+        end: "+=150",
+        scrub: true
+      }
     });
 
     // Setup smooth quickTo targets for viewport translation (camera)
@@ -50,35 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         end: "+=5000", // Scrolling track length
         pin: true,
         scrub: 1, // Smooth scrubbing
-        invalidateOnRefresh: true, // Recalculate on window resize
-        onUpdate: (self) => {
-          const progress = self.progress;
-
-          // DYNAMIC CAMERA TRACKING: Query the exact coordinate at current path distance
-          const currentDistance = progress * pathLength;
-          const point = activePath.getPointAtLength(currentDistance);
-
-          // Update viewport target to keep the active tip centered in screen
-          xTo(window.innerWidth / 2 - point.x);
-          yTo(window.innerHeight * 0.35 - point.y);
-
-          // Track traveling glowing lead dots
-          if (progress > 0.002 && progress < 0.998) {
-            leadDots.forEach(dot => {
-              gsap.set(dot, { opacity: 1 });
-              dot.setAttribute("cx", point.x);
-              dot.setAttribute("cy", point.y);
-            });
-          } else {
-            leadDots.forEach(dot => gsap.set(dot, { opacity: 0 }));
-          }
-
-          // Active milestone states based on curve segment progress triggers
-          toggleActive("milestone-1", "node-1", progress >= 0.18);
-          toggleActive("milestone-2", "node-2", progress >= 0.38);
-          toggleActive("milestone-3", "node-3", progress >= 0.58);
-          toggleActive("milestone-4", "node-4", progress >= 0.78);
-        }
+        invalidateOnRefresh: true // Recalculate on window resize
       }
     });
 
@@ -86,15 +69,45 @@ document.addEventListener("DOMContentLoaded", () => {
     tl.to(activePaths, {
       strokeDashoffset: 0,
       ease: "none",
-      duration: 1
+      duration: 1,
+      onUpdate: function() {
+        const progress = this.progress();
+
+        // DYNAMIC CAMERA TRACKING: Query the exact coordinate at current path distance
+        const currentDistance = progress * pathLength;
+        const point = activePath.getPointAtLength(currentDistance);
+
+        // Update viewport target to keep the active tip centered in screen
+        xTo(window.innerWidth / 2 - point.x);
+        yTo(window.innerHeight * 0.15 - point.y);
+
+        // Track traveling glowing lead dots
+        if (progress > 0.002 && progress < 0.998) {
+          leadDots.forEach(dot => {
+            gsap.set(dot, { opacity: 1 });
+            dot.setAttribute("cx", point.x);
+            dot.setAttribute("cy", point.y);
+          });
+        } else {
+          leadDots.forEach(dot => gsap.set(dot, { opacity: 0 }));
+        }
+
+        // Active milestone states based on curve segment progress triggers
+        toggleActive("milestone-1", "node-1", progress >= 0.18);
+        toggleActive("milestone-2", "node-2", progress >= 0.38);
+        toggleActive("milestone-3", "node-3", progress >= 0.58);
+        toggleActive("milestone-4", "node-4", progress >= 0.78);
+      }
     });
 
     // Helper to toggle active CSS classes
     function toggleActive(cardId, nodeId, active) {
       const card = document.getElementById(cardId);
       const node = document.getElementById(nodeId);
+      const img = document.getElementById(cardId + "-img");
       if (card) card.classList.toggle("active", active);
       if (node) node.classList.toggle("active", active);
+      if (img) img.classList.toggle("active", active);
     }
   });
 
