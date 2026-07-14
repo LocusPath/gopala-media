@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccordionSystem();
   initLogoColorScroll();
   initCardFlip();
+  initMobileMenu();
 
   // Smooth scroll to anchor links on the same page
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -627,4 +628,28 @@ function initCardFlip() {
       });
     }
   });
+}
+
+// MOBILE HAMBURGER MENU SYSTEM
+function initMobileMenu() {
+  const hamburger = document.querySelector(".nav_mobile_hamburger");
+  const drawer = document.querySelector(".nav_mobile_drawer");
+  
+  if (hamburger && drawer) {
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = hamburger.classList.toggle("is-open");
+      drawer.classList.toggle("is-open", isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+
+    // Close menu when clicking on drawer links
+    drawer.querySelectorAll(".nav_mobile_drawer_link").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("is-open");
+        drawer.classList.remove("is-open");
+        document.body.style.overflow = "";
+      });
+    });
+  }
 }
