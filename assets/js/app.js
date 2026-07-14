@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactTrail();
   initAccordionSystem();
   initLogoColorScroll();
+  initCardFlip();
 
   // Smooth scroll to anchor links on the same page
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -591,4 +592,39 @@ function initLogoColorScroll() {
   if (window.lenis) {
     window.lenis.on('scroll', updateColor);
   }
+}
+
+// CLICK TO FLIP PROJECT CARDS
+function initCardFlip() {
+  document.querySelectorAll('.work_card_wrap').forEach(card => {
+    card.addEventListener('click', function(e) {
+      const visual = this.querySelector('.work_card_visual');
+      if (!visual) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Toggle flipped state on click
+      if (visual.classList.contains('is-flipped')) {
+        visual.classList.remove('is-flipped');
+      } else {
+        // Unflip all other cards first
+        document.querySelectorAll('.work_card_visual.is-flipped').forEach(f => {
+          if (f !== visual) {
+            f.classList.remove('is-flipped');
+          }
+        });
+        visual.classList.add('is-flipped');
+      }
+    });
+  });
+
+  // Tap outside anywhere unflipped all cards
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.work_card_wrap')) {
+      document.querySelectorAll('.work_card_visual.is-flipped').forEach(f => {
+        f.classList.remove('is-flipped');
+      });
+    }
+  });
 }
