@@ -93,13 +93,13 @@
             
             <!-- Root line SVG container -->
             <div class="story_svg_container">
-              <svg viewBox="0 0 3000 3000" class="story_svg">
+              <svg viewBox="0 0 3000 4100" class="story_svg">
                 <!-- Faint background path -->
-                <path d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke-width="4" class="story_line_bg" />
+                <path d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500 C 1100,2800 1100,3300 1500,3600 C 1540,3630 1590,3660 1615,3700" fill="none" stroke-width="4" class="story_line_bg" />
                 <!-- Layered Animated active drawing paths (Neon Glow System) -->
-                <path id="active-story-path-glow-1" d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke="var(--swatch--brand-600)" stroke-width="14" opacity="0.15" class="story_line_active_layer" stroke-linecap="round" />
-                <path id="active-story-path-glow-2" d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke="var(--swatch--brand-600)" stroke-width="7" opacity="0.35" class="story_line_active_layer" stroke-linecap="round" />
-                <path id="active-story-path" d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500" fill="none" stroke="var(--swatch--brand-600)" stroke-width="3.5" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path-glow-1" d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500 C 1100,2800 1100,3300 1500,3600 C 1540,3630 1590,3660 1615,3700" fill="none" stroke="var(--swatch--brand-600)" stroke-width="14" opacity="0.15" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path-glow-2" d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500 C 1100,2800 1100,3300 1500,3600 C 1540,3630 1590,3660 1615,3700" fill="none" stroke="var(--swatch--brand-600)" stroke-width="7" opacity="0.35" class="story_line_active_layer" stroke-linecap="round" />
+                <path id="active-story-path" d="M 1500,0 L 1500,300 C 1500,600 1100,1100 1500,1400 C 1900,1700 1900,2200 1500,2500 C 1100,2800 1100,3300 1500,3600 C 1540,3630 1590,3660 1615,3700" fill="none" stroke="var(--swatch--brand-600)" stroke-width="3.5" class="story_line_active_layer" stroke-linecap="round" />
                 
                 <!-- Traveling Glowing Lead Dot (Enlarged) -->
                 <circle class="story_lead_dot glow_1" r="28" fill="var(--swatch--brand-600)" opacity="0.15" />
@@ -107,28 +107,28 @@
                 <circle class="story_lead_dot core" r="7" fill="#fff" />
 
                 <!-- Circle node markers -->
-                <circle id="node-1" cx="1363" cy="800" r="10" class="story_node" />
-                <circle id="node-2" cx="1500" cy="1400" r="10" class="story_node" />
-                <circle id="node-3" cx="1800" cy="2000" r="10" class="story_node" />
-                <circle id="node-4" cx="1500" cy="2500" r="10" class="story_node" />
+                <circle id="node-1" cx="1462" cy="500" r="10" class="story_node" />
+                <circle id="node-2" cx="1400" cy="1300" r="10" class="story_node" />
+                <circle id="node-3" cx="1781" cy="2100" r="10" class="story_node" />
+                <circle id="node-4" cx="1219" cy="2900" r="10" class="story_node" />
+                <circle id="node-5" cx="1615" cy="3700" r="10" class="story_node" />
               </svg>
             </div>
 
             <!-- Scroll indicator next to the starting dot -->
             <div class="timeline_scroll_indicator">
-              <span class="timeline_scroll_text">Scroll down</span>
-              <div class="timeline_scroll_arrow">&darr;</div>
+              <span class="timeline_scroll_text">Scroll down to explore our story</span>
             </div>
 
             <!-- Story milestones -->
             <ul class="story_milestones_list">
               <!-- 2002: A Leap of Faith -->
-              <li id="milestone-1-img" class="story_milestone_image align-left" style="left: 1213px; top: 800px;">
+              <li id="milestone-1-img" class="story_milestone_image align-left" style="left: 1362px; top: 500px;">
                 <div class="story_image_inner">
                   <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Gopala Media Start 2002" class="story_image_element" loading="lazy" />
                 </div>
               </li>
-              <li id="milestone-1" class="story_milestone_item align-right" style="left: 1513px; top: 800px;">
+              <li id="milestone-1" class="story_milestone_item align-right" style="left: 1562px; top: 500px;">
                 <div class="story_card_inner">
                   <div class="story_milestone_year">2002</div>
                   <h2 class="story_milestone_title">A Leap of Faith</h2>
@@ -139,7 +139,7 @@
               </li>
 
               <!-- Why the name "Gopala"? -->
-              <li id="milestone-2" class="story_milestone_item align-left" style="left: 1350px; top: 1400px;">
+              <li id="milestone-2" class="story_milestone_item align-left" style="left: 1300px; top: 1300px;">
                 <div class="story_card_inner">
                   <div class="story_milestone_year">The Name</div>
                   <h2 class="story_milestone_title">Why "Gopala"?</h2>
@@ -148,14 +148,14 @@
                   </p>
                 </div>
               </li>
-              <li id="milestone-2-img" class="story_milestone_image align-right" style="left: 1650px; top: 1400px;">
+              <li id="milestone-2-img" class="story_milestone_image align-right" style="left: 1500px; top: 1300px;">
                 <div class="story_image_inner">
                   <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Why Gopala" class="story_image_element" loading="lazy" />
                 </div>
               </li>
 
               <!-- DD News & One Camera -->
-              <li id="milestone-3" class="story_milestone_item align-left" style="left: 1650px; top: 2000px;">
+              <li id="milestone-3" class="story_milestone_item align-left" style="left: 1681px; top: 2100px;">
                 <div class="story_card_inner">
                   <div class="story_milestone_year">The Spark</div>
                   <h2 class="story_milestone_title">From One PD Camera</h2>
@@ -164,19 +164,19 @@
                   </p>
                 </div>
               </li>
-              <li id="milestone-3-img" class="story_milestone_image align-right" style="left: 1950px; top: 2000px;">
+              <li id="milestone-3-img" class="story_milestone_image align-right" style="left: 1881px; top: 2100px;">
                 <div class="story_image_inner">
                   <img src="https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?auto=format&fit=crop&w=800&q=80" alt="News Production Setup" class="story_image_element" loading="lazy" />
                 </div>
               </li>
 
               <!-- 22+ Years Later -->
-              <li id="milestone-4-img" class="story_milestone_image align-left" style="left: 1350px; top: 2500px;">
+              <li id="milestone-4-img" class="story_milestone_image align-left" style="left: 1119px; top: 2900px;">
                 <div class="story_image_inner">
                   <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" alt="Gopala Media Today" class="story_image_element" loading="lazy" />
                 </div>
               </li>
-              <li id="milestone-4" class="story_milestone_item align-right" style="left: 1650px; top: 2500px;">
+              <li id="milestone-4" class="story_milestone_item align-right" style="left: 1319px; top: 2900px;">
                 <div class="story_card_inner">
                   <div class="story_milestone_year">Today</div>
                   <h2 class="story_milestone_title">22+ Years of Trust</h2>
@@ -185,82 +185,121 @@
                   </p>
                 </div>
               </li>
+
+              <!-- Milestone 5: Partnering with Global Brands -->
+              <li id="milestone-5" class="story_milestone_item align-left" style="left: 1515px; top: 3700px;">
+                <div class="story_card_inner">
+                  <div class="story_milestone_year">Partnerships</div>
+                  <h2 class="story_milestone_title">Trusted by Global Brands</h2>
+                  <p class="story_milestone_text">
+                    Gopala Media is now the preferred production and gear partner for the world's leading brands. From executing high-profile commercial campaigns for BMW, Mercedes-Benz, and Flipkart, to supporting streaming production scales for Google and Netflix, we deliver world-class execution.
+                  </p>
+                </div>
+              </li>
+              <li id="milestone-5-img" class="story_milestone_image align-right" style="left: 1715px; top: 3700px;">
+                <div class="story_image_inner">
+                  <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Premium Brand Commercial Production" class="story_image_element" loading="lazy" />
+                </div>
+              </li>
             </ul>
 
           </div>
         </div>
       </section>
 
+      <!-- Cream transition space before footer -->
+      <div style="height: 200px; background-color: var(--_theme---background);"></div>
+
     </main>
 
     <!-- FOOTER -->
-        <!-- FOOTER -->
     <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
+      
       <div class="footer_contain">
+
         <div class="footer_layout">
           
-          <div class="footer_content">
-            <a aria-label="Go to the homepage" href="index.html" class="footer_logo_wrap">
-              <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img" width="104" height="42">
-            </a>
-            <p class="footer_desc u-margin-top-4">India's trusted production partner for brands, creators, and storytellers. Over 23 years of delivering world-class visual content and equipment rentals.</p>
-          </div>
-
-          <!-- Footer Navigation -->
-          <div class="u-grid-wrapper u-column-span-8 u-column-start-5">
-            <div role="navigation" class="u-grid" style="grid-template-columns: repeat(3, 1fr); column-gap: 2rem;">
-              <section class="footer_group_wrap">
-                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Main Menu</div>
-                <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><span class="footer_link_text">Home</span></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><span class="footer_link_text">About us</span></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Services</span></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><span class="footer_link_text">Equipments</span></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><span class="footer_link_text">Projects</span></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><span class="footer_link_text">Articles</span></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><span class="footer_link_text">Contact</span></a></div>
+          <!-- Column 1: Contact -->
+          <div class="footer_content footer_col_contact">
+            <h4 class="footer_col_title">Contact</h4>
+            <div class="contact_info_list">
+              <div class="contact_info_item">
+                <div class="contact_icon_circle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
-              </section>
-              <section class="footer_group_wrap">
-                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Connect with us</div>
-                <div role="list" class="footer_group_list" style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; line-height: 1.5; gap: 0.75rem; display: flex; flex-direction: column;">
-                  <div><a href="mailto:connect@gopalamedia.com" class="footer_connect_link">connect@gopalamedia.com</a></div>
-                  <div><a href="tel:+9109999997219" class="footer_connect_link">+91 099999 97219</a></div>
-                  <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 0.5rem;">House No.-69, near Om Panchayati Shiv Mandir, Gautam Nagar, New Delhi, Delhi 110049</div>
+                <a href="tel:+9109999997219" class="footer_connect_link">+91 099999 97219</a>
+              </div>
+              <div class="contact_info_item">
+                <div class="contact_icon_circle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
-              </section>
-              <section class="footer_group_wrap">
-                <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Socials &amp; Legal</div>
-                <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item">
-                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="Facebook">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                      <span class="footer_link_text">Facebook</span>
-                    </a>
-                  </div>
-                  <div role="listitem" class="footer_group_item">
-                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="Instagram">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                      <span class="footer_link_text">Instagram</span>
-                    </a>
-                  </div>
-                  <div role="listitem" class="footer_group_item">
-                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="LinkedIn">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                      <span class="footer_link_text">LinkedIn</span>
-                    </a>
-                  </div>
-                  <div role="listitem" class="footer_group_item">
-                    <a href="#" class="footer_link_wrap" aria-label="Privacy Policy">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                      <span class="footer_link_text">Privacy Policy</span>
-                    </a>
-                  </div>
+                <a href="mailto:connect@gopalamedia.com" class="footer_connect_link">connect@gopalamedia.com</a>
+              </div>
+              <div class="contact_info_item">
+                <div class="contact_icon_circle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
-              </section>
+                <span class="contact_address_text">House No.-69, near Om Panchayati Shiv Mandir, Gautam Nagar, New Delhi, Delhi 110049</span>
+              </div>
             </div>
           </div>
+
+          <!-- Column 2: Navigate -->
+          <section class="footer_group_wrap footer_col_navigate">
+            <h4 class="footer_col_title">Navigate</h4>
+            <div role="list" class="footer_group_list">
+              <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><span class="footer_link_text">Home</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><span class="footer_link_text">About us</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Services</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><span class="footer_link_text">Equipments</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><span class="footer_link_text">Projects</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><span class="footer_link_text">Contact</span></a></div>
+            </div>
+          </section>
+
+          <!-- Column 3: Services -->
+          <section class="footer_group_wrap footer_col_services">
+            <h4 class="footer_col_title">Services</h4>
+            <div role="list" class="footer_group_list">
+              <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Camera Rentals</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Lighting Kits</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Sound Rentals</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Crew Services</span></a></div>
+            </div>
+          </section>
+
+          <!-- Column 4: Follow Us -->
+          <section class="footer_group_wrap footer_col_follow">
+            <h4 class="footer_col_title">Follow Us</h4>
+            <div role="list" class="footer_group_list">
+              <div role="listitem" class="footer_group_item">
+                <a href="https://www.facebook.com/gopalamedia" target="_blank" class="footer_link_wrap" aria-label="Facebook">
+                  <span class="footer_link_text">Facebook</span>
+                </a>
+              </div>
+              <div role="listitem" class="footer_group_item">
+                <a href="https://www.instagram.com/gopalamedia" target="_blank" class="footer_link_wrap" aria-label="Instagram">
+                  <span class="footer_link_text">Instagram</span>
+                </a>
+              </div>
+              <div role="listitem" class="footer_group_item">
+                <a href="https://www.linkedin.com/company/gopalamedia" target="_blank" class="footer_link_wrap" aria-label="LinkedIn">
+                  <span class="footer_link_text">LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Column 5: Legal -->
+          <section class="footer_group_wrap footer_col_legal">
+            <h4 class="footer_col_title">Legal</h4>
+            <div role="list" class="footer_group_list">
+              <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><span class="footer_link_text">Privacy Policy</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><span class="footer_link_text">Terms of Service</span></a></div>
+              <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><span class="footer_link_text">Rental Guide</span></a></div>
+            </div>
+          </section>
 
         </div>
       </div>
@@ -270,20 +309,10 @@
         <div class="footer_bottom_contain">
           <div class="footer_bottom_layout">
             <div class="footer_bottom_text">
-              <span>Copyright: Gopala Media | All Rights Reserved</span>
+              <span>Copyright © Gopala Media. All Rights Reserved.</span>
             </div>
-            <div class="footer_btn_wrap">
-              <div class="footer_credit_text">
-                <p class="u-text-style-xsmall"><a href="https://www.swordagency.com/" target="_blank">Site by SWORD</a></p>
-              </div>
-              <div data-wf--button-main--variant="primary" class="button_main_wrap">
-                <div class="clickable_wrap u-cover-absolute">
-                  <a href="contact.html" class="clickable_link" aria-label="Get in touch"></a>
-                </div>
-                <div class="button_main_element">
-                  <div class="button_main_text">Get in touch</div>
-                </div>
-              </div>
+            <div class="footer_credit_text">
+              <p class="u-text-style-xsmall">Site by <a href="https://www.swordagency.com/" target="_blank" style="text-decoration: underline;">SWORD</a></p>
             </div>
           </div>
         </div>

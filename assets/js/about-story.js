@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.set(".story_content", {
       x: window.innerWidth / 2 - startPoint.x,
-      y: window.innerHeight * 0.15 - startPoint.y
+      y: 80 - startPoint.y
     });
 
     // Fade out the scroll down text indicator as the user scrolls
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: ".about_story_wrap",
         start: "top top",
-        end: "+=5000", // Scrolling track length
+        end: "+=8000", // Scrolling track length
         pin: true,
         scrub: 1.2, // Smooth scrubbing
         invalidateOnRefresh: true // Recalculate on window resize
@@ -78,8 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const point = activePath.getPointAtLength(currentDistance);
 
         // Update viewport target to keep the active tip centered in screen
+        let centerY = window.innerHeight * 0.5;
+        if (progress < 0.15) {
+          const ratio = progress / 0.15;
+          centerY = gsap.utils.interpolate(80, window.innerHeight * 0.5, ratio);
+        }
+
         xTo(window.innerWidth / 2 - point.x);
-        yTo(window.innerHeight * 0.15 - point.y);
+        yTo(centerY - point.y);
 
         // Track traveling glowing lead dots
         if (progress > 0.002 && progress < 0.998) {
@@ -93,10 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Active milestone states based on curve segment progress triggers
-        toggleActive("milestone-1", "node-1", progress >= 0.18);
-        toggleActive("milestone-2", "node-2", progress >= 0.38);
-        toggleActive("milestone-3", "node-3", progress >= 0.58);
-        toggleActive("milestone-4", "node-4", progress >= 0.78);
+        toggleActive("milestone-1", "node-1", progress >= 0.11);
+        toggleActive("milestone-2", "node-2", progress >= 0.31);
+        toggleActive("milestone-3", "node-3", progress >= 0.53);
+        toggleActive("milestone-4", "node-4", progress >= 0.77);
+        toggleActive("milestone-5", "node-5", progress >= 0.98);
       }
     });
 
@@ -130,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Simple scroll reveal for mobile stacked story cards
-    const milestones = ["milestone-1", "milestone-2", "milestone-3", "milestone-4"];
+    const milestones = ["milestone-1", "milestone-2", "milestone-3", "milestone-4", "milestone-5"];
     milestones.forEach((id) => {
       gsap.fromTo(`#${id}`, 
         { opacity: 0, y: 30 },
