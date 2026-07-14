@@ -140,6 +140,7 @@
   </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
   <div class="page_wrap">
 
@@ -160,13 +161,13 @@
               <li class="nav_links_item"><a href="about.html" class="nav_links_link">About Us</a></li>
               <li class="nav_links_item"><a href="equipments.html" class="nav_links_link">Equipments</a></li>
               <li class="nav_links_item"><a href="services.html" class="nav_links_link">Services</a></li>
-              <li class="nav_links_item"><a href="index.html#process" class="nav_links_link">Process</a></li>
+              <li class="nav_links_item"><a href="process.html" class="nav_links_link">Process</a></li>
               <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
               <li class="nav_links_item"><a href="index.html#social" class="nav_links_link">Social Media</a></li>
               <li class="nav_buttons_item">
                 <div data-wf--button-main--variant="primary" class="button_main_wrap">
                   <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link"></a>
+                    <a href="contact.html" class="clickable_link" aria-label="Contact Us"></a>
                   </div>
                   <div class="button_main_element">
                     <div class="button_main_text">Contact Us</div>
@@ -208,43 +209,44 @@
 
             <h1 class="u-text-style-h1 u-margin-bottom-8">Premium Rentals</h1>
 
+            <h2 class="u-sr-only">Equipment Catalog</h2>
             <!-- FILTERS BAR -->
             <div class="work_form_block u-margin-bottom-8 u-width-full">
               <div class="work_form u-flex-horizontal-wrap u-justify-content-between u-align-items-center">
                 <div class="work_form_filters u-flex-horizontal-wrap u-gap-2">
                   
                   <label class="g_filter_wrap is-active" data-service="all">
-                    <input type="radio" name="service-filter" checked style="display:none;"/>
+                    <input type="radio" name="service-filter" checked class="sr-only"/>
                     <span class="u-text-style-xsmall">All</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Cameras">
-                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <input type="radio" name="service-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Cameras</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Lenses">
-                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <input type="radio" name="service-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Lenses</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Lighting">
-                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <input type="radio" name="service-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Lighting</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Grip">
-                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <input type="radio" name="service-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Grip &amp; Support</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Audio">
-                    <input type="radio" name="service-filter" style="display:none;"/>
+                    <input type="radio" name="service-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Audio</span>
                   </label>
 
                 </div>
-                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count">12</span>)</p>
+                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count" aria-live="polite">12</span>)</p>
               </div>
             </div>
 
@@ -260,7 +262,7 @@
                       <img src="assets/images/cinema_camera.png" loading="lazy" alt="ARRI Alexa Mini LF" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">ARRI Alexa Mini LF</div>
+                      <h3 class="equip_card_title">ARRI Alexa Mini LF</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Sensor</span>
@@ -283,7 +285,7 @@
                         <div class="equip_card_price">₹45,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book ARRI Alexa Mini LF"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -302,7 +304,7 @@
                       <img src="assets/images/cinema_camera.png" loading="lazy" alt="RED V-Raptor 8K VV" class="equip_card_image" style="transform: scaleX(-1);"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">RED V-Raptor 8K VV</div>
+                      <h3 class="equip_card_title">RED V-Raptor 8K VV</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Sensor</span>
@@ -325,7 +327,7 @@
                         <div class="equip_card_price">₹35,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book RED V-Raptor 8K VV"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -344,7 +346,7 @@
                       <img src="assets/images/cinema_camera.png" loading="lazy" alt="Sony Venice 2 8K" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Sony Venice 2 8K</div>
+                      <h3 class="equip_card_title">Sony Venice 2 8K</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Sensor</span>
@@ -367,7 +369,7 @@
                         <div class="equip_card_price">₹40,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Sony Venice 2 8K"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -386,7 +388,7 @@
                       <img src="assets/images/cinema_lenses.png" loading="lazy" alt="ARRI Signature Primes" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Signature Prime Set</div>
+                      <h3 class="equip_card_title">Signature Prime Set</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Focal Range</span>
@@ -409,7 +411,7 @@
                         <div class="equip_card_price">₹55,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Signature Prime Set"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -428,7 +430,7 @@
                       <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Cooke S7/i Prime Set" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Cooke S7/i Prime Set</div>
+                      <h3 class="equip_card_title">Cooke S7/i Prime Set</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Focal Range</span>
@@ -451,7 +453,7 @@
                         <div class="equip_card_price">₹45,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Cooke S7/i Prime Set"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -470,7 +472,7 @@
                       <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Zeiss Supreme Primes" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Zeiss Supreme Set</div>
+                      <h3 class="equip_card_title">Zeiss Supreme Set</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Focal Range</span>
@@ -493,7 +495,7 @@
                         <div class="equip_card_price">₹38,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Zeiss Supreme Set"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -512,7 +514,7 @@
                       <img src="assets/images/studio_lighting.png" loading="lazy" alt="Arri SkyPanel S60-C" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Arri SkyPanel S60-C</div>
+                      <h3 class="equip_card_title">Arri SkyPanel S60-C</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Power Draw</span>
@@ -535,7 +537,7 @@
                         <div class="equip_card_price">₹8,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Arri SkyPanel S60-C"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -554,7 +556,7 @@
                       <img src="assets/images/studio_lighting.png" loading="lazy" alt="Aputure LS 1200d Pro" class="equip_card_image" style="transform: scaleX(-1);"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Aputure LS 1200d Pro</div>
+                      <h3 class="equip_card_title">Aputure LS 1200d Pro</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Power Draw</span>
@@ -577,7 +579,7 @@
                         <div class="equip_card_price">₹6,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Aputure LS 1200d Pro"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -596,7 +598,7 @@
                       <img src="assets/images/grip_gimbal.png" loading="lazy" alt="DJI Ronin 2 Professional" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">DJI Ronin 2 Gimbal</div>
+                      <h3 class="equip_card_title">DJI Ronin 2 Gimbal</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Max Payload</span>
@@ -619,7 +621,7 @@
                         <div class="equip_card_price">₹12,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book DJI Ronin 2 Gimbal"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -638,7 +640,7 @@
                       <img src="assets/images/grip_gimbal.png" loading="lazy" alt="Easyrig Vario 5" class="equip_card_image" style="transform: scaleX(-1);"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Easyrig Vario 5</div>
+                      <h3 class="equip_card_title">Easyrig Vario 5</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Payload Range</span>
@@ -661,7 +663,7 @@
                         <div class="equip_card_price">₹5,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Easyrig Vario 5"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -680,7 +682,7 @@
                       <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Sound Devices 833" class="equip_card_image"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Sound Devices 833</div>
+                      <h3 class="equip_card_title">Sound Devices 833</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Preamps</span>
@@ -703,7 +705,7 @@
                         <div class="equip_card_price">₹7,500<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Sound Devices 833"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -722,7 +724,7 @@
                       <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Sennheiser MKH416 Shotgun Mic" class="equip_card_image" style="transform: scaleX(-1);"/>
                     </div>
                     <div class="equip_card_body">
-                      <div class="equip_card_title">Sennheiser MKH416</div>
+                      <h3 class="equip_card_title">Sennheiser MKH416</h3>
                       <div class="equip_card_specs">
                         <div class="equip_card_spec_item">
                           <span class="equip_card_spec_label">Pattern</span>
@@ -745,7 +747,7 @@
                         <div class="equip_card_price">₹2,000<span> / day</span></div>
                         <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
                           <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link"></a>
+                            <a href="contact.html" class="clickable_link" aria-label="Book Sennheiser MKH416"></a>
                           </div>
                           <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
                             <div class="button_main_text">Book</div>
@@ -757,6 +759,9 @@
                 </div>
 
               </div>
+              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:60px 20px; color:#666; font-size:18px;">
+                No items match your selected filter.
+              </div>
             </div>
 
           </div>
@@ -765,7 +770,7 @@
 
     </main>
 
-    <!-- FOOTER -->
+        <!-- FOOTER -->
     <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
       <div class="footer_contain">
@@ -773,8 +778,9 @@
           
           <div class="footer_content">
             <a aria-label="Go to the homepage" href="index.html" class="footer_logo_wrap">
-                <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img">
-              </a>
+              <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img" width="104" height="42">
+            </a>
+            <p class="footer_desc u-margin-top-4">India's trusted production partner for brands, creators, and storytellers. Over 23 years of delivering world-class visual content and equipment rentals.</p>
           </div>
 
           <!-- Footer Navigation -->
@@ -783,30 +789,50 @@
               <section class="footer_group_wrap">
                 <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Main Menu</div>
                 <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><div class="footer_link_text">Home</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><div class="footer_link_text">About us</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><div class="footer_link_text">Services</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><div class="footer_link_text">Equipments</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><div class="footer_link_text">Projects</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><div class="footer_link_text">Articles</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><div class="footer_link_text">Contact</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><span class="footer_link_text">Home</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><span class="footer_link_text">About us</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Services</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><span class="footer_link_text">Equipments</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><span class="footer_link_text">Projects</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><span class="footer_link_text">Articles</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><span class="footer_link_text">Contact</span></a></div>
                 </div>
               </section>
               <section class="footer_group_wrap">
                 <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Connect with us</div>
                 <div role="list" class="footer_group_list" style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; line-height: 1.5; gap: 0.75rem; display: flex; flex-direction: column;">
-                  <div><a href="mailto:connect@gopalamedia.com" style="color: inherit; text-decoration: none;">connect@gopalamedia.com</a></div>
-                  <div><a href="tel:+9109999997219" style="color: inherit; text-decoration: none;">+91 099999 97219</a></div>
+                  <div><a href="mailto:connect@gopalamedia.com" class="footer_connect_link">connect@gopalamedia.com</a></div>
+                  <div><a href="tel:+9109999997219" class="footer_connect_link">+91 099999 97219</a></div>
                   <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 0.5rem;">House No.-69, near Om Panchayati Shiv Mandir, Gautam Nagar, New Delhi, Delhi 110049</div>
                 </div>
               </section>
               <section class="footer_group_wrap">
                 <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Socials &amp; Legal</div>
                 <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Facebook</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Instagram</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">LinkedIn</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><div class="footer_link_text">Privacy Policy</div></a></div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="Facebook">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                      <span class="footer_link_text">Facebook</span>
+                    </a>
+                  </div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="Instagram">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                      <span class="footer_link_text">Instagram</span>
+                    </a>
+                  </div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="LinkedIn">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                      <span class="footer_link_text">LinkedIn</span>
+                    </a>
+                  </div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" class="footer_link_wrap" aria-label="Privacy Policy">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                      <span class="footer_link_text">Privacy Policy</span>
+                    </a>
+                  </div>
                 </div>
               </section>
             </div>
@@ -828,7 +854,7 @@
               </div>
               <div data-wf--button-main--variant="primary" class="button_main_wrap">
                 <div class="clickable_wrap u-cover-absolute">
-                  <a href="contact.html" class="clickable_link"></a>
+                  <a href="contact.html" class="clickable_link" aria-label="Get in touch"></a>
                 </div>
                 <div class="button_main_element">
                   <div class="button_main_text">Get in touch</div>

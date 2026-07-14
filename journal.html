@@ -12,6 +12,7 @@
   <link href="assets/images/logo.png" rel="apple-touch-icon"/>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
   <div class="page_wrap">
     
@@ -32,13 +33,13 @@
               <li class="nav_links_item"><a href="about.html" class="nav_links_link">About Us</a></li>
               <li class="nav_links_item"><a href="equipments.html" class="nav_links_link">Equipments</a></li>
               <li class="nav_links_item"><a href="services.html" class="nav_links_link">Services</a></li>
-              <li class="nav_links_item"><a href="index.html#process" class="nav_links_link">Process</a></li>
+              <li class="nav_links_item"><a href="process.html" class="nav_links_link">Process</a></li>
               <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
               <li class="nav_links_item"><a href="index.html#social" class="nav_links_link">Social Media</a></li>
               <li class="nav_buttons_item">
                 <div data-wf--button-main--variant="primary" class="button_main_wrap">
                   <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link"></a>
+                    <a href="contact.html" class="clickable_link" aria-label="Contact Us"></a>
                   </div>
                   <div class="button_main_element">
                     <div class="button_main_text">Contact Us</div>
@@ -81,33 +82,34 @@
 
             <h1 class="u-text-style-h1 u-margin-bottom-8">Journal</h1>
 
+            <h2 class="u-sr-only">Articles</h2>
             <!-- FILTERS BAR -->
             <div class="work_form_block u-margin-bottom-8 u-width-full">
               <div class="work_form u-flex-horizontal-wrap u-justify-content-between u-align-items-center">
                 <div class="work_form_filters u-flex-horizontal-wrap u-gap-2">
                   
                   <label class="g_filter_wrap is-active" data-service="all">
-                    <input type="radio" name="journal-filter" checked style="display:none;"/>
+                    <input type="radio" name="journal-filter" checked class="sr-only"/>
                     <span class="u-text-style-xsmall">All</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Featuring">
-                    <input type="radio" name="journal-filter" style="display:none;"/>
+                    <input type="radio" name="journal-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Featuring</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Skincare">
-                    <input type="radio" name="journal-filter" style="display:none;"/>
+                    <input type="radio" name="journal-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Skincare</span>
                   </label>
                   
                   <label class="g_filter_wrap" data-service="Wedding">
-                    <input type="radio" name="journal-filter" style="display:none;"/>
+                    <input type="radio" name="journal-filter" class="sr-only"/>
                     <span class="u-text-style-xsmall">Wedding</span>
                   </label>
 
                 </div>
-                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count">5</span>)</p>
+                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count" aria-live="polite">5</span>)</p>
               </div>
             </div>
 
@@ -121,7 +123,7 @@
                     <div class="journal_card_visual_wrap">
                       <img src="https://cdn.prod.website-files.com/696d9fe2916191f8248eb8c9/697bf2159335f96d4ed79dab_CARTON_MAG_18072022302966-min.jpg" loading="lazy" alt="Skincare routine" class="journal_card_visual u-cover-absolute"/>
                       <div class="clickable_wrap u-cover-absolute">
-                        <a href="guide.html" class="clickable_link"></a>
+                        <a href="guide.html" class="clickable_link" aria-label="Read article: Why you don’t need a 10-step skincare routine"></a>
                       </div>
                     </div>
                     <div class="journal_card_header">
@@ -135,7 +137,7 @@
                       </div>
                       <div data-wf--button-main--variant="link" data-underline-link="alt" class="button_main_wrap u-margin-top-4">
                         <div class="clickable_wrap u-cover-absolute">
-                          <a href="guide.html" class="clickable_link"></a>
+                          <a href="guide.html" class="clickable_link" aria-label="Read article: Why you don’t need a 10-step skincare routine"></a>
                         </div>
                         <div class="button_main_element">
                           <div class="button_main_text u-text-style-small">Read more</div>
@@ -151,7 +153,7 @@
                     <div class="journal_card_visual_wrap">
                       <img src="https://cdn.prod.website-files.com/696d9fe2916191f8248eb8c9/696f04e8930332c759cb8d52_thumbnail-inside-a-fashion-photographers-dreamy-fresco-filled-wedding.avif" loading="lazy" alt="Fresco-filled wedding" class="journal_card_visual u-cover-absolute"/>
                       <div class="clickable_wrap u-cover-absolute">
-                        <a target="_blank" href="https://www.vogue.com.au/fashion/news/india-hartford-davis-wedding/image-gallery/de849d69ea95396a1cf53ee766c17280" class="clickable_link"></a>
+                        <a target="_blank" href="https://www.vogue.com.au/fashion/news/india-hartford-davis-wedding/image-gallery/de849d69ea95396a1cf53ee766c17280" class="clickable_link" aria-label="Read article: Inside a fashion photographer’s dreamy, fresco-filled wedding"></a>
                       </div>
                     </div>
                     <div class="journal_card_header">
@@ -165,7 +167,7 @@
                       </div>
                       <div data-wf--button-main--variant="link" data-underline-link="alt" class="button_main_wrap u-margin-top-4">
                         <div class="clickable_wrap u-cover-absolute">
-                          <a target="_blank" href="https://www.vogue.com.au/fashion/news/india-hartford-davis-wedding/image-gallery/de849d69ea95396a1cf53ee766c17280" class="clickable_link"></a>
+                          <a target="_blank" href="https://www.vogue.com.au/fashion/news/india-hartford-davis-wedding/image-gallery/de849d69ea95396a1cf53ee766c17280" class="clickable_link" aria-label="Read article: Inside a fashion photographer’s dreamy, fresco-filled wedding"></a>
                         </div>
                         <div class="button_main_element">
                           <div class="button_main_text u-text-style-small">Read more</div>
@@ -181,7 +183,7 @@
                     <div class="journal_card_visual_wrap">
                       <img src="https://cdn.prod.website-files.com/696b392ebadaf7c8b375f9c3/6972b16ba9c5fbd1af7db293_The_Skincare_Tools16021.avif" loading="lazy" alt="Makeup tips" class="journal_card_visual u-cover-absolute"/>
                       <div class="clickable_wrap u-cover-absolute">
-                        <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/5-astuces-make-up-pour-sublimer-ce-qui-nous-rend-unique" class="clickable_link"></a>
+                        <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/5-astuces-make-up-pour-sublimer-ce-qui-nous-rend-unique" class="clickable_link" aria-label="Read article: Five makeup tips to enhance what makes us unique"></a>
                       </div>
                     </div>
                     <div class="journal_card_header">
@@ -195,7 +197,7 @@
                       </div>
                       <div data-wf--button-main--variant="link" data-underline-link="alt" class="button_main_wrap u-margin-top-4">
                         <div class="clickable_wrap u-cover-absolute">
-                          <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/5-astuces-make-up-pour-sublimer-ce-qui-nous-rend-unique" class="clickable_link"></a>
+                          <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/5-astuces-make-up-pour-sublimer-ce-qui-nous-rend-unique" class="clickable_link" aria-label="Read article: Five makeup tips to enhance what makes us unique"></a>
                         </div>
                         <div class="button_main_element">
                           <div class="button_main_text u-text-style-small">Read more</div>
@@ -211,7 +213,7 @@
                     <div class="journal_card_visual_wrap">
                       <img src="https://cdn.prod.website-files.com/696d9fe2916191f8248eb8c9/696f035b678a75a15648531c_thumbnail-beauty-the-makeup-artists-revolution.avif" loading="lazy" alt="Makeup artists revolution" class="journal_card_visual u-cover-absolute"/>
                       <div class="clickable_wrap u-cover-absolute">
-                        <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/Beaute-la-revolution-des-make-up-artists" class="clickable_link"></a>
+                        <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/Beaute-la-revolution-des-make-up-artists" class="clickable_link" aria-label="Read article: Beauty: the &quot;makeup artists&quot; revolution"></a>
                       </div>
                     </div>
                     <div class="journal_card_header">
@@ -225,7 +227,7 @@
                       </div>
                       <div data-wf--button-main--variant="link" data-underline-link="alt" class="button_main_wrap u-margin-top-4">
                         <div class="clickable_wrap u-cover-absolute">
-                          <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/Beaute-la-revolution-des-make-up-artists" class="clickable_link"></a>
+                          <a target="_blank" href="https://www.elle.fr/Beaute/News-beaute/Make-up/Beaute-la-revolution-des-make-up-artists" class="clickable_link" aria-label="Read article: Beauty: the &quot;makeup artists&quot; revolution"></a>
                         </div>
                         <div class="button_main_element">
                           <div class="button_main_text u-text-style-small">Read more</div>
@@ -241,7 +243,7 @@
                     <div class="journal_card_visual_wrap">
                       <img src="https://cdn.prod.website-files.com/696d9fe2916191f8248eb8c9/696f02d6bb66ddd55163afdb_thumbnail-inside-margot-priolets-makeup-vanity.avif" loading="lazy" alt="Margot makeup vanity" class="journal_card_visual u-cover-absolute"/>
                       <div class="clickable_wrap u-cover-absolute">
-                        <a target="_blank" href="https://www.ohmycream.com/blogs/journal/interview-margot-priolet-make-up" class="clickable_link"></a>
+                        <a target="_blank" href="https://www.ohmycream.com/blogs/journal/interview-margot-priolet-make-up" class="clickable_link" aria-label="Read article: Inside Margot Priolet's makeup vanity"></a>
                       </div>
                     </div>
                     <div class="journal_card_header">
@@ -255,7 +257,7 @@
                       </div>
                       <div data-wf--button-main--variant="link" data-underline-link="alt" class="button_main_wrap u-margin-top-4">
                         <div class="clickable_wrap u-cover-absolute">
-                          <a target="_blank" href="https://www.ohmycream.com/blogs/journal/interview-margot-priolet-make-up" class="clickable_link"></a>
+                          <a target="_blank" href="https://www.ohmycream.com/blogs/journal/interview-margot-priolet-make-up" class="clickable_link" aria-label="Read article: Inside Margot Priolet's makeup vanity"></a>
                         </div>
                         <div class="button_main_element">
                           <div class="button_main_text u-text-style-small">Read more</div>
@@ -266,6 +268,9 @@
                 </div>
 
               </div>
+              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:60px 20px; color:#666; font-size:18px;">
+                No items match your selected filter.
+              </div>
             </div>
 
           </div>
@@ -274,7 +279,7 @@
 
     </main>
 
-    <!-- FOOTER -->
+        <!-- FOOTER -->
     <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
       <div class="footer_contain">
@@ -282,8 +287,9 @@
           
           <div class="footer_content">
             <a aria-label="Go to the homepage" href="index.html" class="footer_logo_wrap">
-                <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img">
-              </a>
+              <img src="assets/images/logo.png" alt="Gopala Media" class="footer_logo_img" width="104" height="42">
+            </a>
+            <p class="footer_desc u-margin-top-4">India's trusted production partner for brands, creators, and storytellers. Over 23 years of delivering world-class visual content and equipment rentals.</p>
           </div>
 
           <!-- Footer Navigation -->
@@ -292,30 +298,50 @@
               <section class="footer_group_wrap">
                 <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Main Menu</div>
                 <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><div class="footer_link_text">Home</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><div class="footer_link_text">About us</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><div class="footer_link_text">Services</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><div class="footer_link_text">Equipments</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><div class="footer_link_text">Projects</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><div class="footer_link_text">Articles</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><div class="footer_link_text">Contact</div></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="index.html" class="footer_link_wrap"><span class="footer_link_text">Home</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="about.html" class="footer_link_wrap"><span class="footer_link_text">About us</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="services.html" class="footer_link_wrap"><span class="footer_link_text">Services</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="equipments.html" class="footer_link_wrap"><span class="footer_link_text">Equipments</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="work.html" class="footer_link_wrap"><span class="footer_link_text">Projects</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="journal.html" class="footer_link_wrap"><span class="footer_link_text">Articles</span></a></div>
+                  <div role="listitem" class="footer_group_item"><a href="contact.html" class="footer_link_wrap"><span class="footer_link_text">Contact</span></a></div>
                 </div>
               </section>
               <section class="footer_group_wrap">
                 <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Connect with us</div>
                 <div role="list" class="footer_group_list" style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; line-height: 1.5; gap: 0.75rem; display: flex; flex-direction: column;">
-                  <div><a href="mailto:connect@gopalamedia.com" style="color: inherit; text-decoration: none;">connect@gopalamedia.com</a></div>
-                  <div><a href="tel:+9109999997219" style="color: inherit; text-decoration: none;">+91 099999 97219</a></div>
+                  <div><a href="mailto:connect@gopalamedia.com" class="footer_connect_link">connect@gopalamedia.com</a></div>
+                  <div><a href="tel:+9109999997219" class="footer_connect_link">+91 099999 97219</a></div>
                   <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 0.5rem;">House No.-69, near Om Panchayati Shiv Mandir, Gautam Nagar, New Delhi, Delhi 110049</div>
                 </div>
               </section>
               <section class="footer_group_wrap">
                 <div class="footer_link_text" style="font-weight: 700; color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Socials &amp; Legal</div>
                 <div role="list" class="footer_group_list">
-                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Facebook</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">Instagram</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" target="_blank" class="footer_link_wrap"><div class="footer_link_text">LinkedIn</div></a></div>
-                  <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><div class="footer_link_text">Privacy Policy</div></a></div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="Facebook">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                      <span class="footer_link_text">Facebook</span>
+                    </a>
+                  </div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="Instagram">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                      <span class="footer_link_text">Instagram</span>
+                    </a>
+                  </div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" target="_blank" class="footer_link_wrap" aria-label="LinkedIn">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                      <span class="footer_link_text">LinkedIn</span>
+                    </a>
+                  </div>
+                  <div role="listitem" class="footer_group_item">
+                    <a href="#" class="footer_link_wrap" aria-label="Privacy Policy">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 0.85rem; height: 0.85rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                      <span class="footer_link_text">Privacy Policy</span>
+                    </a>
+                  </div>
                 </div>
               </section>
             </div>
@@ -337,7 +363,7 @@
               </div>
               <div data-wf--button-main--variant="primary" class="button_main_wrap">
                 <div class="clickable_wrap u-cover-absolute">
-                  <a href="contact.html" class="clickable_link"></a>
+                  <a href="contact.html" class="clickable_link" aria-label="Get in touch"></a>
                 </div>
                 <div class="button_main_element">
                   <div class="button_main_text">Get in touch</div>

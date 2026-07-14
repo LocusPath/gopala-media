@@ -233,11 +233,15 @@ function initWorkFilters() {
   const filters = filterForm.querySelectorAll('.g_filter_wrap');
   const items = document.querySelectorAll('.work_cms_item, .journal_cms_item');
   const resultsCount = filterForm.querySelector('[fs-list-element="results-count"]');
+  const emptyState = document.querySelector('.empty-state');
 
   function updateResultsCount() {
+    const visibleCount = Array.from(items).filter(item => item.style.display !== 'none').length;
     if (resultsCount) {
-      const visibleCount = Array.from(items).filter(item => item.style.display !== 'none').length;
       resultsCount.textContent = visibleCount;
+    }
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
     }
   }
 
