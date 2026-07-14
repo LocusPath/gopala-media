@@ -314,6 +314,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, ul, li {
   grid-template-columns: repeat(12, 1fr);
   column-gap: var(--site--gutter);
 }
+.u-grid {
+  display: grid;
+}
 .u-column-span-8 {
   grid-column: span 8;
 }
@@ -1767,6 +1770,10 @@ a[data-underline-link="alt"]:hover::before {
     flex-direction: column;
     gap: var(--_spacing---space--8);
   }
+  .u-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: var(--_spacing---space--6);
+  }
   .footer_bottom_layout {
     flex-direction: column;
     gap: var(--_spacing---space--4);
@@ -1874,50 +1881,74 @@ a[data-underline-link="alt"]:hover::before {
   position: absolute;
   width: 44rem;
   max-width: 90vw;
-  background-color: var(--swatch--light-100); /* Rosy Copper card background */
-  border: 1px solid var(--_theme---border);
-  border-radius: 24px; /* Curved corners */
-  padding: 3rem; /* Expanded padding */
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: 8px;
   opacity: 0;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.6s ease;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1), transform 0.8s cubic-bezier(0.32, 0.72, 0, 1);
   pointer-events: none;
   z-index: 10;
 }
-.story_milestone_item.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Card horizontal alignments relative to the path line */
-.story_milestone_item.align-right,
-.story_milestone_image.align-right {
-  transform: translate(0, -50%);
-}
-.story_milestone_item.align-left,
-.story_milestone_image.align-left {
-  transform: translate(-100%, -50%);
-}
-
 .story_milestone_image {
   position: absolute;
   width: 32rem;
   height: 22rem;
   max-width: 90vw;
-  background-color: var(--swatch--light-100);
-  border: 1px solid var(--_theme---border);
-  border-radius: 24px;
-  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: 8px;
   opacity: 0;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.6s ease;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1), transform 0.8s cubic-bezier(0.32, 0.72, 0, 1);
   pointer-events: none;
   z-index: 9;
 }
-.story_milestone_image.active {
+
+/* Base horizontal alignments (inactive state, slightly offset and scaled down) */
+.story_milestone_item.align-right {
+  transform: translate(30px, -50%) scale(0.95);
+}
+.story_milestone_image.align-right {
+  transform: translate(30px, -50%) scale(0.95);
+}
+.story_milestone_item.align-left {
+  transform: translate(-100%, -50%) translate(-30px, 0) scale(0.95);
+}
+.story_milestone_image.align-left {
+  transform: translate(-100%, -50%) translate(-30px, 0) scale(0.95);
+}
+
+/* Active states (resolve to standard alignment, scale to 1) */
+.story_milestone_item.align-right.active,
+.story_milestone_image.align-right.active {
   opacity: 1;
   pointer-events: all;
+  transform: translate(0, -50%) scale(1);
 }
+.story_milestone_item.align-left.active,
+.story_milestone_image.align-left.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-100%, -50%) scale(1);
+}
+
+.story_card_inner {
+  background-color: var(--swatch--light-100);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.story_image_inner {
+  border-radius: 24px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
 .story_image_element {
   width: 100%;
   height: 100%;
@@ -1984,6 +2015,9 @@ a[data-underline-link="alt"]:hover::before {
   .story_milestone_image {
     height: 15rem !important; /* Fixed height for image stacked on mobile */
   }
+  .story_card_inner {
+    padding: 1.5rem !important;
+  }
 }
 
 /* BRANDS LOGO MARQUEE */
@@ -2008,7 +2042,7 @@ a[data-underline-link="alt"]:hover::before {
   font-size: var(--_typography---font-size--h6);
   font-weight: 700;
   text-align: center;
-  color: var(--swatch--brand-500);
+  color: var(--swatch--dark-800);
   margin: 0 0 1.5rem 0;
   letter-spacing: 0.05em;
 }
@@ -2105,7 +2139,7 @@ a[data-underline-link="alt"]:hover::before {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   font-weight: 500;
-  color: var(--swatch--brand-500);
+  color: var(--swatch--dark-900);
   margin-top: 1.5rem;
 }
 .about_body_text {
@@ -2169,7 +2203,7 @@ a[data-underline-link="alt"]:hover::before {
   font-size: 1.25rem;
   font-weight: 500;
   font-style: italic;
-  color: var(--swatch--brand-500);
+  color: var(--swatch--dark-900);
 }
 
 .polaroid_meta {

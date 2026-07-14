@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Setup smooth quickTo targets for viewport translation (camera)
-    const xTo = gsap.quickTo(".story_content", "x", { duration: 0.6, ease: "power2.out" });
-    const yTo = gsap.quickTo(".story_content", "y", { duration: 0.6, ease: "power2.out" });
+    const xTo = gsap.quickTo(".story_content", "x", { duration: 0.8, ease: "power3.out" });
+    const yTo = gsap.quickTo(".story_content", "y", { duration: 0.8, ease: "power3.out" });
 
     // Create drawing animation
     const tl = gsap.timeline({
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top top",
         end: "+=5000", // Scrolling track length
         pin: true,
-        scrub: 1, // Smooth scrubbing
+        scrub: 1.2, // Smooth scrubbing
         invalidateOnRefresh: true // Recalculate on window resize
       }
     });
