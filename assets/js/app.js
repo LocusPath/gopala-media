@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLogoColorScroll();
   initCardFlip();
   initMobileMenu();
+  initTestimonialsSlider();
 
   // Smooth scroll to anchor links on the same page
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -652,4 +653,119 @@ function initMobileMenu() {
       });
     });
   }
+}
+
+// TESTIMONIALS SLIDER
+function initTestimonialsSlider() {
+  const track = document.querySelector('.testimonials_slider_track');
+  const prevBtn = document.querySelector('.slider_arrow.arrow_prev');
+  const nextBtn = document.querySelector('.slider_arrow.arrow_next');
+  const dots = document.querySelectorAll('.testimonials_dots_container .dot');
+  const slides = document.querySelectorAll('.testimonial_slide');
+
+  if (!track || slides.length === 0) return;
+
+  const slideCount = slides.length;
+
+  // Clone first and last slides for infinite loop
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slideCount - 1].cloneNode(true);
+
+  // Add clones to track
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  // Track state
+  let currentSlide = 1; // Start at first original slide (index 1)
+  let isTransitioning = false;
+
+  // Set initial position
+  track.style.transition = 'none';
+  track.style.transform = `translateX(-100%)`;
+  
+  // Force reflow
+  track.offsetHeight;
+
+  function updateSlider(animate = true) {
+    if (animate) {
+      track.style.transition = 'transform 0.22s cubic-bezier(0.25, 1, 0.5, 1)';
+      isTransitioning = true;
+    } else {
+      track.style.transition = 'none';
+    }
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Map currentSlide index to actual dot index
+    let dotActiveIndex = currentSlide - 1;
+    if (currentSlide === 0) {
+      dotActiveIndex = slideCount - 1;
+    } else if (currentSlide === slideCount + 1) {
+      dotActiveIndex = 0;
+    }
+
+    // Update active dot
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === dotActiveIndex);
+    });
+  }
+
+  // Handle transition end to jump seamlessly
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+    if (currentSlide === 0) {
+      currentSlide = slideCount;
+      updateSlider(false); // jump without animation
+    } else if (currentSlide === slideCount + 1) {
+      currentSlide = 1;
+      updateSlider(false); // jump without animation
+    }
+  });
+
+  // Next Slide
+  nextBtn?.addEventListener('click', () => {
+    if (isTransitioning) return;
+    currentSlide++;
+    updateSlider();
+  });
+
+  // Prev Slide
+  prevBtn?.addEventListener('click', () => {
+    if (isTransitioning) return;
+    currentSlide--;
+    updateSlider();
+  });
+
+  // Dot Clicks
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      if (isTransitioning) return;
+      currentSlide = index + 1;
+      updateSlider();
+    });
+  });
+
+  // Touch Swipe support
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener('touchstart', (e) => {
+    if (isTransitioning) return;
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    if (!isDragging || isTransitioning) return;
+    const diffX = e.changedTouches[0].clientX - startX;
+    isDragging = false;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        currentSlide--;
+      } else {
+        currentSlide++;
+      }
+      updateSlider();
+    }
+  }, { passive: true });
 }
