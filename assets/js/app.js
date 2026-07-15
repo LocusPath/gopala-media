@@ -478,29 +478,91 @@ window.lenis.on('scroll', updateColor);
 }
 }
 function initCardFlip() {
-document.querySelectorAll('.work_card_wrap').forEach(card => {
+const cards = document.querySelectorAll('.work_card_wrap');
+cards.forEach(card => {
+let isFlipped = false;
+let isAnimating = false;
 card.addEventListener('click', function(e) {
-const visual = this.querySelector('.work_card_visual');
-if (!visual) return;
-e.preventDefault();
-e.stopPropagation();
-if (visual.classList.contains('is-flipped')) {
-visual.classList.remove('is-flipped');
-} else {
-document.querySelectorAll('.work_card_visual.is-flipped').forEach(f => {
-if (f !== visual) {
-f.classList.remove('is-flipped');
-}
+  const btn = e.target.closest('.work_card_back_btn');
+  if (btn) return; // let modal handler through
+  e.preventDefault();
+  e.stopPropagation();
+  if (isAnimating) return;
+  const inner = this.querySelector('.work_card_inner');
+  if (!inner) return;
+
+  isAnimating = true;
+
+  if (!isFlipped) {
+    // Close any other flipped cards first
+    cards.forEach(otherCard => {
+      if (otherCard !== card) {
+        const otherInner = otherCard.querySelector('.work_card_inner');
+        if (otherInner && otherCard._isFlipped) {
+          gsap.to(otherInner, {
+            rotateY: 0, y: 0, scale: 1,
+            boxShadow: '0 8px 30px rgba(16, 14, 10, 0.08)',
+            duration: 0.5, ease: 'power2.inOut'
+          });
+          otherCard._isFlipped = false;
+        }
+      }
+    });
+
+    // Flip open: lift → rotate → settle
+    const tl = gsap.timeline({
+      onComplete: () => { isFlipped = true; card._isFlipped = true; isAnimating = false; }
+    });
+    tl.to(inner, {
+      y: -12, scale: 1.03,
+      boxShadow: '0 25px 60px rgba(16, 14, 10, 0.18)',
+      duration: 0.18, ease: 'power2.out'
+    })
+    .to(inner, {
+      rotateY: 180,
+      duration: 0.6, ease: 'power2.inOut'
+    }, 0.06)
+    .to(inner, {
+      y: 0, scale: 1,
+      boxShadow: '0 12px 40px rgba(16, 14, 10, 0.12)',
+      duration: 0.3, ease: 'power2.out'
+    }, 0.55);
+  } else {
+    // Flip back
+    const tl = gsap.timeline({
+      onComplete: () => { isFlipped = false; card._isFlipped = false; isAnimating = false; }
+    });
+    tl.to(inner, {
+      y: -12, scale: 1.03,
+      boxShadow: '0 25px 60px rgba(16, 14, 10, 0.18)',
+      duration: 0.18, ease: 'power2.out'
+    })
+    .to(inner, {
+      rotateY: 0,
+      duration: 0.6, ease: 'power2.inOut'
+    }, 0.06)
+    .to(inner, {
+      y: 0, scale: 1,
+      boxShadow: '0 8px 30px rgba(16, 14, 10, 0.08)',
+      duration: 0.3, ease: 'power2.out'
+    }, 0.55);
+  }
 });
-visual.classList.add('is-flipped');
-}
 });
-});
+// Click outside to flip any open cards back
 document.addEventListener('click', (e) => {
 if (!e.target.closest('.work_card_wrap')) {
-document.querySelectorAll('.work_card_visual.is-flipped').forEach(f => {
-f.classList.remove('is-flipped');
-});
+  cards.forEach(card => {
+    const inner = card.querySelector('.work_card_inner');
+    if (inner && card._isFlipped) {
+      gsap.to(inner, {
+        rotateY: 0, y: 0, scale: 1,
+        boxShadow: '0 8px 30px rgba(16, 14, 10, 0.08)',
+        duration: 0.55, ease: 'power2.inOut'
+      });
+      card._isFlipped = false;
+    }
+  });
 }
 });
 }

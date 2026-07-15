@@ -7,24 +7,383 @@
   <meta name="description" content="Explore Gopala Media's production & equipment rental services: Film, Video, Podcast, and Camera Rentals in India."/>
   
   <!-- Stylesheets -->
-    <!-- Connection preconnects for faster font and script loading -->
   <link rel="preconnect" href="https://cdn.prod.website-files.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="assets/css/app-style.css?v=17" rel="stylesheet" type="text/css"/>
   <link href="assets/images/logo.png" rel="shortcut icon" type="image/x-icon"/>
   <link href="assets/images/logo.png" rel="apple-touch-icon"/>
+
+  <!-- Google Fonts for Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <style>
-    .services_hero_image_wrap {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: var(--radius--main);
+    /* Editorial Brand-Color Custom Styling */
+    :root {
+      --bg-cream: #ECEBE8;
+      --bg-card: #ffffff;
+      --color-charcoal: #100E0A;
+      --color-bronze: #53432F;
+      --color-sage: #C2C3B7;
+      --color-dark-grey: #635E55;
+      
+      --font-syne: 'Syne', sans-serif;
+      --font-outfit: 'Outfit', sans-serif;
     }
-    .services_hero_image {
+    
+    body {
+      background-color: var(--bg-cream) !important;
+      color: var(--color-charcoal) !important;
+      font-family: var(--font-outfit), sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    
+    .page_wrap {
+      background-color: var(--bg-cream) !important;
+    }
+    
+    /* Hero section */
+    .services_hero_wrap {
+      padding: 180px var(--site--margin) 80px !important;
+      background-color: var(--bg-cream) !important;
+      position: relative;
+    }
+    
+    .services_hero_layout {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 5rem;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    @media (max-width: 56rem) {
+      .services_hero_layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .services_hero_left {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .u-text-style-h1 {
+      font-family: var(--font-syne) !important;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+      letter-spacing: -0.04em;
+      color: var(--color-charcoal) !important;
+      margin-bottom: 2rem !important;
+      line-height: 0.95;
+    }
+    
+    .services_hero_desc {
+      color: var(--color-dark-grey);
+      max-width: 600px;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+    
+    /* Editorial Anchor index menu on the right */
+    .services_hero_index {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border-left: 1.5px solid rgba(16, 14, 10, 0.12);
+      padding-left: 2.5rem;
+      margin-top: 1rem;
+    }
+    
+    @media (max-width: 56rem) {
+      .services_hero_index {
+        border-left: none;
+        border-top: 1.5px solid rgba(16, 14, 10, 0.12);
+        padding-left: 0;
+        padding-top: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+    }
+    
+    .services_hero_index_item {
+      color: var(--color-charcoal);
+      text-decoration: none;
+      font-family: var(--font-syne);
+      font-weight: 700;
+      font-size: 1.35rem;
+      transition: color 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .services_hero_index_item:hover {
+      color: var(--color-bronze);
+      transform: translateX(8px);
+    }
+    
+    @media (max-width: 56rem) {
+      .services_hero_index_item:hover {
+        transform: translateY(-4px);
+      }
+    }
+    
+    .services_hero_index_item .index_num {
+      font-family: var(--font-outfit);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-bronze);
+    }
+    
+    /* Alternating Full-Bleed Section Backgrounds */
+    .services_wrap {
+      padding: 0 !important; /* Full bleed layout */
+      background-color: var(--bg-cream) !important;
+    }
+    
+    .services_item {
+      position: relative;
+      overflow: hidden;
+      padding: 150px var(--site--margin);
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(16, 14, 10, 0.15);
+      box-sizing: border-box;
+    }
+    
+    .services_item:last-child {
+      border-bottom: none;
+    }
+    
+    .services_hero_contain {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .services_item_contain {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      box-sizing: border-box;
+    }
+    
+    .services_item.align-left .services_item_contain {
+      justify-content: flex-start;
+    }
+    
+    .services_item.align-right .services_item_contain {
+      justify-content: flex-end;
+    }
+    
+    /* Cover Image Wrap stretches background of the entire row */
+    .services_img_wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .services_img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0.9;
+      transform: scale(1.08);
+      will-change: transform;
+    }
+    
+    /* Custom Gradients to optimize text contrast depending on alignment */
+    .services_img_overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      transition: background 0.3s;
+    }
+    
+    .services_item.align-left .services_img_overlay {
+      background: linear-gradient(to right, rgba(16, 14, 10, 0.88) 35%, rgba(16, 14, 10, 0.45) 100%);
+    }
+    
+    .services_item.align-right .services_img_overlay {
+      background: linear-gradient(to left, rgba(16, 14, 10, 0.88) 35%, rgba(16, 14, 10, 0.45) 100%);
+    }
+    
+    @media (max-width: 56rem) {
+      .services_item.align-left .services_img_overlay,
+      .services_item.align-right .services_img_overlay {
+        background: rgba(16, 14, 10, 0.8);
+      }
+    }
+    
+    .services_content {
+      position: relative;
+      z-index: 3;
+      max-width: 580px;
+      width: 100%;
+      color: #ECEBE8 !important;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .services_index {
+      font-family: var(--font-outfit);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-sage);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .services_index::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background-color: var(--color-sage);
+      display: inline-block;
+    }
+    
+    .services_title {
+      font-family: var(--font-syne);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #ffffff !important;
+      margin-bottom: 1.5rem;
+    }
+    
+    .services_desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #C2C3B7 !important;
+      margin-bottom: 2rem;
+    }
+    
+    /* Specific capabilities bullet grid list */
+    .services_caps_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 0 0 2.5rem;
+      padding: 0;
+      list-style: none;
+      perspective: 1000px;
+    }
+    
+    @media (max-width: 32rem) {
+      .services_caps_list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .services_caps_list li {
+      font-size: 0.9rem;
+      font-weight: 550;
+      color: #ffffff !important;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+    }
+    
+    .cap_bullet {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-sage);
+      font-family: var(--font-outfit);
+    }
+    
+    /* Premium white button to stand out on dark background images */
+    .services_btn {
+      background-color: #ffffff !important;
+      color: var(--color-charcoal) !important;
+      font-family: var(--font-outfit);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 100px;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s, border-color 0.3s;
+      align-self: flex-start;
+      text-align: center;
+      border: 1.5px solid #ffffff !important;
+    }
+    
+    .services_btn:hover {
+      background-color: transparent !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+    }
+    
+    /* CTA section */
+    .services_cta_wrap {
+      padding: 120px var(--site--margin);
+      background-color: var(--bg-cream);
+      text-align: center;
+      border-top: 1px solid rgba(16, 14, 10, 0.08);
+    }
+    
+    .services_cta_title {
+      font-family: var(--font-syne);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: var(--color-charcoal);
+      margin-bottom: 1.5rem;
+    }
+    
+    .services_cta_desc {
+      color: var(--color-dark-grey);
+      max-width: 600px;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      margin: 0 auto 3rem;
+    }
+    
+    .services_cta_btn {
+      display: inline-block;
+      background-color: var(--color-charcoal);
+      color: var(--bg-cream);
+      font-family: var(--font-outfit);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 100px;
+      box-shadow: 0 10px 30px rgba(16, 14, 10, 0.08);
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    
+    .services_cta_btn:hover {
+      background-color: var(--color-bronze);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 45px rgba(16, 14, 10, 0.15);
+    }
+    
+    /* Scroll reveal reveal triggers */
+    .services_hero_left, .services_hero_index {
+      opacity: 0;
+      transform: translateY(40px);
     }
   </style>
 </head>
@@ -32,7 +391,7 @@
 <a href="#main" class="skip-link">Skip to content</a>
 
   <div class="page_wrap">
-    
+
     <!-- NAVIGATION HEADER -->
     <header class="nav_desktop_wrap nav_component">
       <div class="nav_desktop_contain">
@@ -69,7 +428,7 @@
       </div>
     </header>
 
-        <!-- MOBILE NAVIGATION -->
+    <!-- MOBILE NAVIGATION -->
     <div class="nav_mobile_wrap nav_component">
       <a href="index.html" class="nav_mobile_logo">
         <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
@@ -101,117 +460,137 @@
       
       <!-- SERVICES HERO SECTION -->
       <section class="services_hero_wrap">
-        <div class="u-section-spacer w-variant-e359d2da-de19-6775-b122-3e06f925f39e"></div>
         <div class="services_hero_contain u-container-full">
-          <div class="services_hero_layout u-flex-vertical-nowrap u-align-items-start">
+          <div class="services_hero_layout">
             
+            <div class="services_hero_left">
+              <h1 class="u-text-style-h1">End-to-End Production &amp; Rentals.</h1>
+              <p class="services_hero_desc">
+                23+ years of commercial execution, location logistics, and certified gear supply. Serving international and domestic creators across India.
+              </p>
+            </div>
 
-
-            <h1 class="u-text-style-h1 u-margin-bottom-8">End-to-end production &amp; rentals.</h1>
-
-            <!-- Large Hero Visual -->
-            <div class="services_hero_image_wrap u-margin-bottom-8">
-              <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Gopala Media Services Cover Banner" class="services_hero_image"/>
+            <!-- Right Column Index Nav -->
+            <div class="services_hero_index">
+              <a href="#service-01" class="services_hero_index_item"><span class="index_num">01 /</span> Film Production</a>
+              <a href="#service-02" class="services_hero_index_item"><span class="index_num">02 /</span> Podcast Studio</a>
+              <a href="#service-03" class="services_hero_index_item"><span class="index_num">03 /</span> Gear Rentals</a>
+              <a href="#service-04" class="services_hero_index_item"><span class="index_num">04 /</span> Line Production</a>
             </div>
 
           </div>
         </div>
       </section>
 
-      <!-- SERVICES LIST SECTION (Brand/Red Theme) -->
-      <section class="services_wrap u-theme-brand">
-        <div class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490"></div>
-        <div class="services_contain u-container-full">
-          <div class="services_layout">
-            
-            <!-- Service 1: Film & Video Production -->
-            <div class="services_item">
-              <div class="services_index u-text-style-xsmall">01</div>
-              <div class="services_img_wrap">
-                <img src="assets/images/cinema_camera.png" loading="lazy" alt="Film and video production services"/>
-              </div>
+      <!-- SERVICES LIST SECTION -->
+      <section class="services_wrap">
+        <div class="services_layout">
+          
+          <!-- Service 1: Film & Video Production -->
+          <div id="service-01" class="services_item align-left">
+            <div class="services_img_wrap">
+              <img src="assets/images/services/IMG_9279.jpg" loading="lazy" alt="Film and video production services" class="services_img"/>
+              <div class="services_img_overlay"></div>
+            </div>
+            <div class="services_item_contain">
               <div class="services_content">
-                <h2 class="u-text-style-h2">Film &amp; Video Production</h2>
-                <p class="u-text-style-main u-margin-bottom-6">End-to-end creative visual storytelling from concept to final cut. Our team coordinates everything from script development, location scouting, casting, directing, cinematography, and full post-production (editing, color grading, sound design, and VFX).</p>
-                <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="align-self: flex-start;">
-                  <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link" aria-label="Get in touch"></a>
-                  </div>
-                  <div class="button_main_element">
-                    <div class="button_main_text">Get in touch</div>
-                  </div>
-                </div>
+                <div class="services_index">01</div>
+                <h2 class="services_title">Film &amp; Video Production</h2>
+                <p class="services_desc">End-to-end creative visual storytelling from concept to final cut. Our team coordinates everything from script development, location scouting, casting, directing, cinematography, and full post-production.</p>
+                <ul class="services_caps_list">
+                  <li><span class="cap_bullet">01 /</span> Scripting &amp; Pre-Production</li>
+                  <li><span class="cap_bullet">02 /</span> Directing &amp; Cinematography</li>
+                  <li><span class="cap_bullet">03 /</span> Post-Production &amp; VFX</li>
+                  <li><span class="cap_bullet">04 /</span> Color Grading &amp; Sound Design</li>
+                </ul>
+                <a href="contact.html?service=Film%20Production" class="services_btn">Get in touch</a>
               </div>
             </div>
-
-            <!-- Service 2: Podcast & Audio Production -->
-            <div class="services_item">
-              <div class="services_index u-text-style-xsmall">02</div>
-              <div class="services_img_wrap">
-                <img src="assets/images/podcast_studio.png" loading="lazy" alt="Podcast and audio production studio"/>
-              </div>
-              <div class="services_content">
-                <h2 class="u-text-style-h2">Podcast &amp; Audio Production</h2>
-                <p class="u-text-style-main u-margin-bottom-6">State-of-the-art studio recording, high-fidelity editing, sound engineering, and multi-camera video podcast production. We provide clean acoustic environments, industry-standard microphones, and professional mixers to ensure your audio brand sounds premium.</p>
-                <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="align-self: flex-start;">
-                  <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link" aria-label="Book Studio"></a>
-                  </div>
-                  <div class="button_main_element">
-                    <div class="button_main_text">Book Studio</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Service 3: Premium Equipment Rentals -->
-            <div class="services_item">
-              <div class="services_index u-text-style-xsmall">03</div>
-              <div class="services_img_wrap">
-                <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Cinema equipment rental services"/>
-              </div>
-              <div class="services_content">
-                <h2 class="u-text-style-h2">Premium Equipment Rentals</h2>
-                <p class="u-text-style-main u-margin-bottom-6">Professional camera rigs, large-format cinema lenses, lighting set-ups, audio gears, and specialized grip equipment. We rent certified equipment from leading industry brands (ARRI, RED, Sony, Cooke, Zeiss, SkyPanel, Ronin) to production companies, creators, and freelancers.</p>
-                <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="align-self: flex-start;">
-                  <div class="clickable_wrap u-cover-absolute">
-                    <a href="equipments.html" class="clickable_link" aria-label="Rent Gear"></a>
-                  </div>
-                  <div class="button_main_element">
-                    <div class="button_main_text">Rent Gear</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Service 4: Line Production & Logistics -->
-            <div class="services_item">
-              <div class="services_index u-text-style-xsmall">04</div>
-              <div class="services_img_wrap">
-                <img src="assets/images/line_production.png" loading="lazy" alt="Line production and logistics support"/>
-              </div>
-              <div class="services_content">
-                <h2 class="u-text-style-h2">Line Production &amp; Logistics</h2>
-                <p class="u-text-style-main u-margin-bottom-6">Comprehensive line production services in India for international and domestic crews. We manage shoot permissions, local casting, crew hiring, travel logistics, equipment custom clearance, and on-ground scheduling, ensuring a smooth, secure production workflow.</p>
-                <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="align-self: flex-start;">
-                  <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link" aria-label="Consult Production"></a>
-                  </div>
-                  <div class="button_main_element">
-                    <div class="button_main_text">Consult Production</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Service 2: Podcast & Audio Production -->
+          <div id="service-02" class="services_item align-right">
+            <div class="services_img_wrap">
+              <img src="assets/images/services/service_podcast_audio.png" loading="lazy" alt="Podcast and audio production studio" class="services_img"/>
+              <div class="services_img_overlay"></div>
+            </div>
+            <div class="services_item_contain">
+              <div class="services_content">
+                <div class="services_index">02</div>
+                <h2 class="services_title">Podcast &amp; Audio Production</h2>
+                <p class="services_desc">State-of-the-art studio recording, high-fidelity editing, sound engineering, and multi-camera video podcast production. We provide clean acoustic environments, industry-standard microphones, and professional mixers.</p>
+                <ul class="services_caps_list">
+                  <li><span class="cap_bullet">01 /</span> Acoustic Recording Rooms</li>
+                  <li><span class="cap_bullet">02 /</span> Multi-Cam Video Podcast</li>
+                  <li><span class="cap_bullet">03 /</span> Audio Engineering &amp; Editing</li>
+                  <li><span class="cap_bullet">04 /</span> Voiceover &amp; Ad Production</li>
+                </ul>
+                <a href="contact.html?service=Podcast%20Studio" class="services_btn">Book Studio</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3: Premium Equipment Rentals -->
+          <div id="service-03" class="services_item align-left">
+            <div class="services_img_wrap">
+              <img src="assets/images/services/service_equipment_rentals.png" loading="lazy" alt="Cinema equipment rental services" class="services_img"/>
+              <div class="services_img_overlay"></div>
+            </div>
+            <div class="services_item_contain">
+              <div class="services_content">
+                <div class="services_index">03</div>
+                <h2 class="services_title">Premium Equipment Rentals</h2>
+                <p class="services_desc">Professional camera rigs, large-format cinema lenses, lighting set-ups, audio gears, and specialized grip equipment. We rent certified equipment from leading industry brands to production companies and creators.</p>
+                <ul class="services_caps_list">
+                  <li><span class="cap_bullet">01 /</span> Cinema Cameras &amp; Rigs</li>
+                  <li><span class="cap_bullet">02 /</span> Large-Format Prime Lenses</li>
+                  <li><span class="cap_bullet">03 /</span> Professional Lighting Kits</li>
+                  <li><span class="cap_bullet">04 /</span> Location Audio &amp; Grip Gear</li>
+                </ul>
+                <a href="equipments.html" class="services_btn">Rent Gear</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4: Line Production & Logistics -->
+          <div id="service-04" class="services_item align-right">
+            <div class="services_img_wrap">
+              <img src="assets/images/services/service_line_production.png" loading="lazy" alt="Line production and logistics support" class="services_img"/>
+              <div class="services_img_overlay"></div>
+            </div>
+            <div class="services_item_contain">
+              <div class="services_content">
+                <div class="services_index">04</div>
+                <h2 class="services_title">Line Production &amp; Logistics</h2>
+                <p class="services_desc">Comprehensive line production services in India for international and domestic crews. We manage shoot permissions, local casting, crew hiring, travel logistics, equipment custom clearance, and on-ground scheduling.</p>
+                <ul class="services_caps_list">
+                  <li><span class="cap_bullet">01 /</span> Shoot Permits &amp; Clearances</li>
+                  <li><span class="cap_bullet">02 /</span> Local Crew &amp; Talent Casting</li>
+                  <li><span class="cap_bullet">03 /</span> Logistics &amp; Travel Booking</li>
+                  <li><span class="cap_bullet">04 /</span> Equipment Custom Clearance</li>
+                </ul>
+                <a href="contact.html?service=Line%20Production" class="services_btn">Consult Production</a>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490"></div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="services_cta_wrap">
+        <div class="u-container-full">
+          <h2 class="services_cta_title">Let's Create Together</h2>
+          <p class="services_cta_desc">
+            Tell us about your production goals and we will help you map out the equipment, logistics, and crew.
+          </p>
+          <a href="contact.html" class="services_cta_btn">Start a Project</a>
+        </div>
       </section>
 
     </main>
 
-        <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
       
@@ -322,9 +701,12 @@
 
   <!-- CDN Scripts -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
   
-  <!-- Custom Script -->
+  <!-- Main app script -->
   <script defer src="assets/js/app.js?v=15"></script>
+  <!-- Redesigned Services Animation script -->
+  <script defer src="assets/js/services-anim.js"></script>
 </body>
 </html>

@@ -4,141 +4,592 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Equipments | Gopala Media | Production Partner | India</title>
-  <meta name="description" content="Explore Gopala Media's premium equipment rental services: Cinema Cameras, Lenses, Lighting, Grip, and Audio Gear in India."/>
+  <meta name="description" content="Explore Gopala Media's premium equipment rental catalog: professional cinema cameras, prime lenses, lighting, and audio gear in India."/>
   
   <!-- Stylesheets -->
-    <!-- Connection preconnects for faster font and script loading -->
   <link rel="preconnect" href="https://cdn.prod.website-files.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="assets/css/app-style.css?v=17" rel="stylesheet" type="text/css"/>
   <link href="assets/images/logo.png" rel="shortcut icon" type="image/x-icon"/>
   <link href="assets/images/logo.png" rel="apple-touch-icon"/>
+
+  <!-- Google Fonts for Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* Custom equipments page specific styling */
-    .equipments_hero_wrap {
-      padding: var(--_spacing---section-space--page-top) var(--site--margin) var(--_spacing---section-space--main);
-      background-color: var(--swatch--brand-500); /* Warm light-cream background */
+    /* Allied Maker-inspired Minimalist Editorial Styling */
+    :root {
+      --bg-cream: #F4F1EA;
+      --bg-card: #EAE7E1; /* Centered warm beige image boxes */
+      --color-charcoal: #2A2421; /* Soft natural charcoal */
+      --color-bronze: #7D6B58; /* Warm bronze/brown */
+      --color-sage: #C2C3B7;
+      --color-dark-grey: #8A827A; /* Muted warm grey */
+      
+      --font-syne: 'Syne', sans-serif;
+      --font-outfit: 'Outfit', sans-serif;
+    }
+    
+    body {
+      background-color: var(--bg-cream) !important;
+      color: var(--color-charcoal) !important;
+      font-family: var(--font-outfit), sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    
+    .page_wrap {
+      background-color: var(--bg-cream) !important;
+    }
+    
+    /* Unified Catalog Wrapper */
+    .equipments_catalog_wrap {
+      padding: 180px var(--site--margin) 100px !important;
+      max-width: 1300px;
+      margin: 0 auto;
       width: 100%;
       box-sizing: border-box;
     }
     
-    .equip_card_wrap {
-      background-color: var(--swatch--light-200); /* Clean White card background */
-      border: 1px solid var(--_theme---border);
-      border-radius: 20px;
+    /* Header Bar layout */
+    .equip_header_bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid rgba(16, 14, 10, 0.1);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+    
+    @media (max-width: 38rem) {
+      .equip_header_bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+      }
+    }
+    
+    .equip_header_title {
+      font-family: "Roslindale Condensed", serif;
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--color-charcoal);
+      letter-spacing: -0.01em;
+      margin: 0;
+      line-height: 1;
+    }
+    
+    .equip_count_sup {
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-family: var(--font-outfit);
+      vertical-align: super;
+      margin-left: 0.15rem;
+      color: var(--color-bronze);
+    }
+    
+    /* Filter Trigger */
+    .equip_filter_trigger {
+      background: transparent;
+      border: none;
+      font-family: var(--font-outfit);
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      transition: opacity 0.3s;
+      margin: 0;
+    }
+    
+    .equip_filter_trigger:hover {
+      opacity: 0.7;
+    }
+    
+    .plus_icon {
+      font-size: 1.1rem;
+      line-height: 1;
+      font-weight: 400;
+      color: var(--color-bronze);
+    }
+    
+    /* View Selectors S / M / L */
+    .equip_view_selectors {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: var(--font-outfit);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    .view_label {
+      color: var(--color-dark-grey);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    
+    .view_btn {
+      background: transparent;
+      border: none;
+      font-family: var(--font-outfit);
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--color-dark-grey);
+      cursor: pointer;
+      padding: 0 0.1rem;
+      transition: color 0.3s;
+    }
+    
+    .view_btn:hover {
+      color: var(--color-charcoal);
+    }
+    
+    .view_btn.is-active {
+      color: var(--color-charcoal);
+      font-weight: 700;
+      border-bottom: 1.5px solid var(--color-charcoal);
+    }
+    
+    /* Toggleable Filter tag drawer */
+    .equip_filters_drawer {
+      max-height: 0;
       overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin-bottom 0.4s;
+      margin-bottom: 0;
+      width: 100%;
+    }
+    
+    .equip_filters_drawer.is-active {
+      max-height: 250px;
+      margin-bottom: 2.5rem;
+    }
+    
+    .equip_filters_list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.75rem 0 1.25rem;
+      border-bottom: 1.5px solid rgba(16, 14, 10, 0.08);
+    }
+    
+    .filter_tag_btn {
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: var(--font-outfit);
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--color-dark-grey);
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .filter_tag_btn:hover {
+      color: var(--color-charcoal);
+    }
+    
+    .filter_tag_btn.is-active {
+      color: var(--color-charcoal);
+      font-weight: 600;
+    }
+    
+    .filter_tag_btn.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--color-charcoal);
+    }
+    
+    /* Interactive Column templates for view modes */
+    .equip_grid_list {
+      display: grid;
+      gap: 3.5rem 2rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: grid-template-columns 0.4s ease;
+    }
+    
+    /* Medium view (4 columns) - Default */
+    .equip_grid_list.view-m {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Small view (5 columns) */
+    .equip_grid_list.view-s {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    
+    /* Large view (3 columns) */
+    .equip_grid_list.view-l {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (max-width: 64rem) {
+      .equip_grid_list.view-m, .equip_grid_list.view-s, .equip_grid_list.view-l {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 48rem) {
+      .equip_grid_list.view-m, .equip_grid_list.view-s, .equip_grid_list.view-l {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+    
+    @media (max-width: 28rem) {
+      .equip_grid_list.view-m, .equip_grid_list.view-s, .equip_grid_list.view-l {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+    }
+    
+    /* Grid items entrance transitions */
+    .equip_item {
+      will-change: transform, opacity;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    /* Minimalist Allied Maker Card Styling */
+    .equip_card_wrap {
+      width: 100%;
+      border-radius: 0px;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
-      height: 100%;
-      transition: transform 0.4s var(--default-ease), box-shadow 0.4s var(--default-ease);
+      text-align: left;
     }
     
-    .equip_card_wrap:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    }
-    
+    /* Contained product centered photo box */
     .equip_card_visual {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background-color: var(--swatch--brand-700); /* Soft light-cream base */
+      background-color: var(--bg-card);
+      aspect-ratio: 1 / 1.25;
+      border-radius: 0px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       overflow: hidden;
-      border-bottom: 1px solid var(--_theme---border);
+      position: relative;
+      width: 100%;
+      border: 1px solid rgba(16, 14, 10, 0.04);
+      box-sizing: border-box;
+      will-change: clip-path;
     }
     
     .equip_card_image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.95;
-      transition: transform 0.6s ease;
+      width: 82% !important;
+      height: 82% !important;
+      object-fit: contain !important;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      mix-blend-mode: multiply;
+      filter: drop-shadow(0 8px 16px rgba(16, 14, 10, 0.03));
     }
     
     .equip_card_wrap:hover .equip_card_image {
-      transform: scale(1.05);
+      transform: scale(1.04);
+    }
+    
+    /* Card Floating Details */
+    .equip_card_details {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .equip_card_name {
+      font-family: "Roslindale Condensed", serif !important;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      color: var(--color-charcoal) !important;
+      margin: 0 !important;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
     }
     
     .equip_card_category {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background-color: var(--swatch--brand-800); /* Dark blue tag */
-      color: var(--swatch--brand-500); /* Warm light text */
-      padding: 0.35rem 0.85rem;
-      border-radius: 100vw;
-      font-size: 0.7rem;
+      font-family: var(--font-outfit);
+      font-size: 0.8rem;
+      color: var(--color-dark-grey);
+    }
+    
+    /* Expanded morph details (specs grid) */
+    .card_expanded_content {
+      display: none;
+      opacity: 0;
+      margin-top: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .expanded_desc_wrap {
+      margin-bottom: 2rem;
+    }
+    
+    .expanded_desc_text {
+      font-family: var(--font-outfit);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-dark-grey);
+      margin: 0;
+    }
+    
+    .expanded_specs_wrap {
+      width: 100%;
+    }
+    
+    .expanded_specs_title {
+      font-family: var(--font-syne);
+      font-size: 1.25rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      z-index: 2;
+      color: var(--color-charcoal);
+      border-bottom: 1.5px solid rgba(16, 14, 10, 0.1);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
     }
     
-    .equip_card_body {
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+    .expanded_specs_grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
     
-    .equip_card_title {
-      font-family: var(--_typography---font--secondary-family);
-      font-size: clamp(1.2rem, 2vw, 1.45rem);
-      font-weight: 700;
-      color: var(--swatch--brand-800);
-      margin-bottom: 1rem;
-    }
-    
-    .equip_card_specs {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-    
-    .equip_card_spec_item {
+    .spec_item {
       display: flex;
       justify-content: space-between;
-      font-size: 0.85rem;
-      color: var(--swatch--dark-800);
-      border-bottom: 1px dashed rgba(16, 14, 10, 0.1);
-      padding-bottom: 0.25rem;
+      align-items: center;
+      border-bottom: 1px solid rgba(16, 14, 10, 0.05);
+      padding-bottom: 0.75rem;
+      font-size: 0.95rem;
     }
     
-    .equip_card_spec_label {
-      font-weight: 500;
-      opacity: 0.7;
+    .spec_item:last-child {
+      border-bottom: none;
     }
     
-    .equip_card_spec_value {
+    .spec_label {
+      font-family: var(--font-outfit);
       font-weight: 600;
-      color: var(--swatch--brand-800);
+      color: var(--color-bronze);
     }
     
-    .equip_card_footer {
+    .spec_val {
+      font-family: var(--font-outfit);
+      color: var(--color-charcoal);
+      text-align: right;
+    }
+    
+    /* Equipment Page Layout and Sliding Side Panel */
+    .equip_page_layout {
+      display: flex;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .equip_catalog_side {
+      width: 100%;
+      flex-shrink: 0;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    
+    .equip_panel_side {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 480px;
+      height: 100vh;
+      background-color: #ffffff;
+      border-left: 1.5px solid rgba(16, 14, 10, 0.08);
+      z-index: 10000;
+      padding: 6.5rem 2.5rem 3rem;
+      box-sizing: border-box;
+      transform: translateX(100%);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Layout State: Panel Open */
+    .equip_page_layout.is-panel-open .equip_catalog_side {
+      transform: translateX(-300px);
+    }
+    
+    .equip_page_layout.is-panel-open .equip_panel_side {
+      transform: translateX(0);
+    }
+    
+    /* Hide legacy drag handle and close buttons inside cards */
+    .card-drag-handle, .card-close-btn {
+      display: none !important;
+    }
+    
+    /* Active highlighted card state in grid */
+    .equip_card_wrap.is-active .equip_card_visual {
+      border: 1.5px solid var(--color-charcoal) !important;
+      outline: 1.5px solid var(--color-charcoal) !important;
+      outline-offset: -1px;
+    }
+    
+    /* Sidebar Details Styling */
+    .panel_close_btn {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--color-charcoal);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(16, 14, 10, 0.05);
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(16, 14, 10, 0.08);
+      transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+      z-index: 10;
+      padding: 0;
     }
     
-    .equip_card_price {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--swatch--brand-800);
+    .panel_close_btn:hover {
+      background-color: rgba(16, 14, 10, 0.03);
+      border-color: var(--color-charcoal);
     }
     
-    .equip_card_price span {
-      font-size: 0.75rem;
-      font-weight: 500;
-      opacity: 0.7;
+    .panel_content_scroll {
+      overflow-y: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-right: 0.5rem;
+      opacity: 1;
+      transform: none;
+      box-sizing: border-box;
+    }
+    
+    .panel_img_box {
+      background-color: var(--bg-card);
+      aspect-ratio: 16 / 11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border: 1px solid rgba(16, 14, 10, 0.04);
+      box-sizing: border-box;
+    }
+    
+    .panel_product_img {
+      width: 58% !important;
+      height: auto !important;
+      max-height: 220px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    
+    .panel_meta_wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .panel_product_title {
+      font-family: "Roslindale Condensed", serif !important;
+      font-size: 2.2rem !important;
+      font-weight: 300 !important;
+      color: var(--color-charcoal);
+      margin: 0;
+      line-height: 1.15;
+    }
+    
+    .panel_product_category {
+      font-family: var(--font-outfit);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-bronze);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .panel_product_desc {
+      font-family: var(--font-outfit);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-dark-grey);
+      margin: 0;
+    }
+    
+    .panel_specs_section {
+      width: 100%;
+    }
+    
+    .panel_specs_title {
+      font-family: "Roslindale Condensed", serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--color-charcoal);
+      border-bottom: 1.5px solid rgba(16, 14, 10, 0.08);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .panel_specs_grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    
+    /* Clickable catalog-side transparent overlay (Disabled, using document delegation) */
+    .panel_overlay {
+      display: none !important;
+    }
+    
+    /* Responsive overrides for side panel */
+    @media (max-width: 48rem) {
+      .equip_panel_side {
+        width: 100vw;
+        padding: 5.5rem 1.5rem 2rem;
+        border-left: none;
+      }
+      .equip_page_layout.is-panel-open .equip_catalog_side {
+        transform: translateX(-100vw);
+      }
+      .panel_close_btn {
+        top: 2rem;
+        left: 1.5rem;
+      }
+    }
+    
+    /* Footer Styling Override */
+    .footer_wrap {
+      background-color: #100E0A !important;
+      border-top: 1px solid rgba(16, 14, 10, 0.1) !important;
+    }
+    
+    .footer_link_text, .footer_col_title, .footer_connect_link, .contact_address_text, .footer_bottom_text {
+      color: var(--bg-cream) !important;
+      opacity: 0.8;
+    }
+    
+    .footer_link_wrap:hover .footer_link_text, .footer_connect_link:hover {
+      color: var(--color-sage) !important;
     }
   </style>
 </head>
@@ -183,7 +634,7 @@
       </div>
     </header>
 
-        <!-- MOBILE NAVIGATION -->
+    <!-- MOBILE NAVIGATION -->
     <div class="nav_mobile_wrap nav_component">
       <a href="index.html" class="nav_mobile_logo">
         <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
@@ -213,577 +664,508 @@
     <!-- MAIN PAGE CONTENT -->
     <main id="main" class="page_main">
       
-      <!-- HERO EQUIPMENTS SECTION -->
-      <section class="equipments_hero_wrap">
-        <div class="work_hero_contain u-container-full">
-          <div class="work_hero_layout u-position-relative u-flex-vertical-nowrap u-align-items-start">
-            
-
-
-            <h1 class="u-text-style-h1 u-margin-bottom-8">Premium Rentals</h1>
-
-            <h2 class="u-sr-only">Equipment Catalog</h2>
-            <!-- FILTERS BAR -->
-            <div class="work_form_block u-margin-bottom-8 u-width-full">
-              <div class="work_form u-flex-horizontal-wrap u-justify-content-between u-align-items-center">
-                <div class="work_form_filters u-flex-horizontal-wrap u-gap-2">
-                  
-                  <label class="g_filter_wrap is-active" data-service="all">
-                    <input type="radio" name="service-filter" checked class="sr-only"/>
-                    <span class="u-text-style-xsmall">All</span>
-                  </label>
-                  
-                  <label class="g_filter_wrap" data-service="Cameras">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Cameras</span>
-                  </label>
-                  
-                  <label class="g_filter_wrap" data-service="Lenses">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Lenses</span>
-                  </label>
-                  
-                  <label class="g_filter_wrap" data-service="Lighting">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Lighting</span>
-                  </label>
-                  
-                  <label class="g_filter_wrap" data-service="Grip">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Grip &amp; Support</span>
-                  </label>
-                  
-                  <label class="g_filter_wrap" data-service="Audio">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Audio</span>
-                  </label>
-
-                </div>
-                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count" aria-live="polite">12</span>)</p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO LISTING -->
-            <div class="work_cms_wrapper u-width-full">
-              <div role="list" class="work_cms_list">
-                
-                <!-- Card 1: ARRI Alexa Mini LF (Cameras) -->
-                <div role="listitem" class="work_cms_item" data-service="Cameras">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Cameras</div>
-                      <img src="assets/images/arri_alexa_mini_lf.png" loading="lazy" alt="ARRI Alexa Mini LF" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">ARRI Alexa Mini LF</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Sensor</span>
-                          <span class="equip_card_spec_value">Full-Frame ALEV III</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Resolution</span>
-                          <span class="equip_card_spec_value">4.5K Recording</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Codec</span>
-                          <span class="equip_card_spec_value">ARRIRAW &amp; ProRes</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Mount</span>
-                          <span class="equip_card_spec_value">LPL &amp; PL Mount</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹45,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book ARRI Alexa Mini LF"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 2: RED V-Raptor 8K VV (Cameras) -->
-                <div role="listitem" class="work_cms_item" data-service="Cameras">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Cameras</div>
-                      <img src="assets/images/red_v_raptor.png" loading="lazy" alt="RED V-Raptor 8K VV" class="equip_card_image" style="transform: scaleX(-1);"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">RED V-Raptor 8K VV</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Sensor</span>
-                          <span class="equip_card_spec_value">8K Multi-Format</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Framerate</span>
-                          <span class="equip_card_spec_value">8K @ 120fps</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Codec</span>
-                          <span class="equip_card_spec_value">REDCODE RAW</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Mount</span>
-                          <span class="equip_card_spec_value">RF Mount</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹35,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book RED V-Raptor 8K VV"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 3: Sony Venice 2 8K (Cameras) -->
-                <div role="listitem" class="work_cms_item" data-service="Cameras">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Cameras</div>
-                      <img src="assets/images/sony_venice_2.png" loading="lazy" alt="Sony Venice 2 8K" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Sony Venice 2 8K</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Sensor</span>
-                          <span class="equip_card_spec_value">8.6K Full-Frame</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Resolution</span>
-                          <span class="equip_card_spec_value">8.6K Recording</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Base ISO</span>
-                          <span class="equip_card_spec_value">Dual 800 / 3200</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Mount</span>
-                          <span class="equip_card_spec_value">PL &amp; E-Mount</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹40,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Sony Venice 2 8K"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 4: ARRI Signature Primes (Lenses) -->
-                <div role="listitem" class="work_cms_item" data-service="Lenses">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Lenses</div>
-                      <img src="assets/images/arri_signature_primes.png" loading="lazy" alt="ARRI Signature Primes" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Signature Prime Set</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Focal Range</span>
-                          <span class="equip_card_spec_value">18mm to 125mm</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Max Aperture</span>
-                          <span class="equip_card_spec_value">T1.8</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Mount</span>
-                          <span class="equip_card_spec_value">LPL Mount</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Coverage</span>
-                          <span class="equip_card_spec_value">Full-Frame / LF</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹55,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Signature Prime Set"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 5: Cooke S7/i Prime Set (Lenses) -->
-                <div role="listitem" class="work_cms_item" data-service="Lenses">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Lenses</div>
-                      <img src="assets/images/cooke_s7i_primes.png" loading="lazy" alt="Cooke S7/i Prime Set" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Cooke S7/i Prime Set</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Focal Range</span>
-                          <span class="equip_card_spec_value">25mm to 100mm</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Max Aperture</span>
-                          <span class="equip_card_spec_value">T2.0</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Mount</span>
-                          <span class="equip_card_spec_value">PL Mount</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Look</span>
-                          <span class="equip_card_spec_value">Warm &amp; Classic</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹45,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Cooke S7/i Prime Set"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 6: Zeiss Supreme Primes (Lenses) -->
-                <div role="listitem" class="work_cms_item" data-service="Lenses">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Lenses</div>
-                      <img src="assets/images/zeiss_supreme_primes.png" loading="lazy" alt="Zeiss Supreme Primes" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Zeiss Supreme Set</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Focal Range</span>
-                          <span class="equip_card_spec_value">25mm to 100mm</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Max Aperture</span>
-                          <span class="equip_card_spec_value">T1.5</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Mount</span>
-                          <span class="equip_card_spec_value">PL Mount</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Look</span>
-                          <span class="equip_card_spec_value">Modern High Res</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹38,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Zeiss Supreme Set"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 7: Arri SkyPanel S60-C (Lighting) -->
-                <div role="listitem" class="work_cms_item" data-service="Lighting">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Lighting</div>
-                      <img src="assets/images/arri_skypanel_s60c.png" loading="lazy" alt="Arri SkyPanel S60-C" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Arri SkyPanel S60-C</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Power Draw</span>
-                          <span class="equip_card_spec_value">450W LED</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Color Temp</span>
-                          <span class="equip_card_spec_value">2800K to 10000K</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Control</span>
-                          <span class="equip_card_spec_value">DMX / Wireless</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Type</span>
-                          <span class="equip_card_spec_value">RGBW Tunable Soft</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹8,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Arri SkyPanel S60-C"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 8: Aputure LS 1200d Pro (Lighting) -->
-                <div role="listitem" class="work_cms_item" data-service="Lighting">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Lighting</div>
-                      <img src="assets/images/aputure_ls_1200d_pro.png" loading="lazy" alt="Aputure LS 1200d Pro" class="equip_card_image" style="transform: scaleX(-1);"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Aputure LS 1200d Pro</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Power Draw</span>
-                          <span class="equip_card_spec_value">1200W COB LED</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Color Temp</span>
-                          <span class="equip_card_spec_value">5600K (Daylight)</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Beam Angle</span>
-                          <span class="equip_card_spec_value">15° / 30° / 45°</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Protection</span>
-                          <span class="equip_card_spec_value">IP54 Weatherproof</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹6,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Aputure LS 1200d Pro"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 9: DJI Ronin 2 (Grip) -->
-                <div role="listitem" class="work_cms_item" data-service="Grip">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Grip &amp; Support</div>
-                      <img src="assets/images/dji_ronin_2.png" loading="lazy" alt="DJI Ronin 2 Professional" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">DJI Ronin 2 Gimbal</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Max Payload</span>
-                          <span class="equip_card_spec_value">13.6 kg (30 lbs)</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Operation</span>
-                          <span class="equip_card_spec_value">Handheld / Car Mount</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Wireless</span>
-                          <span class="equip_card_spec_value">DJI Master Wheels</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Power</span>
-                          <span class="equip_card_spec_value">Hot-swap Batteries</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹12,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book DJI Ronin 2 Gimbal"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 10: Easyrig Vario 5 (Grip) -->
-                <div role="listitem" class="work_cms_item" data-service="Grip">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Grip &amp; Support</div>
-                      <img src="assets/images/easyrig_vario_5.png" loading="lazy" alt="Easyrig Vario 5" class="equip_card_image" style="transform: scaleX(-1);"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Easyrig Vario 5</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Payload Range</span>
-                          <span class="equip_card_spec_value">5 to 17 kg</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Arm</span>
-                          <span class="equip_card_spec_value">Flowcine Serene</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Line Tension</span>
-                          <span class="equip_card_spec_value">Adjustable Screw</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Ergonomic</span>
-                          <span class="equip_card_spec_value">Weight Distribution</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹5,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Easyrig Vario 5"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 11: Sound Devices 833 (Audio) -->
-                <div role="listitem" class="work_cms_item" data-service="Audio">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Audio</div>
-                      <img src="assets/images/sound_devices_833.png" loading="lazy" alt="Sound Devices 833" class="equip_card_image"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Sound Devices 833</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Preamps</span>
-                          <span class="equip_card_spec_value">6 Mic/Line Preamps</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Channels</span>
-                          <span class="equip_card_spec_value">8 Record Channels</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Recording</span>
-                          <span class="equip_card_spec_value">SD Cards + SSD</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Timecode</span>
-                          <span class="equip_card_spec_value">Ultra Accurate</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹7,500<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Sound Devices 833"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 12: Sennheiser MKH416 Shotgun Mic (Audio) -->
-                <div role="listitem" class="work_cms_item" data-service="Audio">
-                  <div class="equip_card_wrap">
-                    <div class="equip_card_visual">
-                      <div class="equip_card_category">Audio</div>
-                      <img src="assets/images/sennheiser_mkh416.png" loading="lazy" alt="Sennheiser MKH416 Shotgun Mic" class="equip_card_image" style="transform: scaleX(-1);"/>
-                    </div>
-                    <div class="equip_card_body">
-                      <h3 class="equip_card_title">Sennheiser MKH416</h3>
-                      <div class="equip_card_specs">
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Pattern</span>
-                          <span class="equip_card_spec_value">Supercardioid / Lobar</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Frequency</span>
-                          <span class="equip_card_spec_value">40Hz to 20kHz</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Self-Noise</span>
-                          <span class="equip_card_spec_value">Very Low (13 dBA)</span>
-                        </div>
-                        <div class="equip_card_spec_item">
-                          <span class="equip_card_spec_label">Connection</span>
-                          <span class="equip_card_spec_value">XLR 48V Phantom</span>
-                        </div>
-                      </div>
-                      <div class="equip_card_footer">
-                        <div class="equip_card_price">₹2,000<span> / day</span></div>
-                        <div data-wf--button-main--variant="secondary" class="button_main_wrap" style="margin-top: 0;">
-                          <div class="clickable_wrap u-cover-absolute">
-                            <a href="contact.html" class="clickable_link" aria-label="Book Sennheiser MKH416"></a>
-                          </div>
-                          <div class="button_main_element" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
-                            <div class="button_main_text">Book</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:60px 20px; color:#666; font-size:18px;">
-                No items match your selected filter.
-              </div>
-            </div>
-
+      <div class="equip_page_layout">
+        <div class="equip_catalog_side">
+          <!-- UNIFIED EQUIPMENTS CATALOG -->
+          <section class="equipments_catalog_wrap">
+        
+        <!-- Minimal Catalog Header Bar -->
+        <div class="equip_header_bar">
+          <h1 class="equip_header_title">All Gear<span class="equip_count_sup">0</span></h1>
+          
+          <button class="equip_filter_trigger"><span class="plus_icon">+</span> Filter</button>
+          
+          <div class="equip_view_selectors">
+            <span class="view_label">View:</span>
+            <button class="view_btn" data-view="s">S</button>
+            <button class="view_btn is-active" data-view="m">M</button>
+            <button class="view_btn" data-view="l">L</button>
           </div>
         </div>
+
+        <!-- Toggleable tag filters drawer -->
+        <div class="equip_filters_drawer">
+          <div class="equip_filters_list">
+            <button class="filter_tag_btn is-active" data-category="all">All</button>
+            <button class="filter_tag_btn" data-category="Cameras">Cameras</button>
+            <button class="filter_tag_btn" data-category="Lenses">Lenses</button>
+            <button class="filter_tag_btn" data-category="Lighting">Lighting</button>
+            <button class="filter_tag_btn" data-category="Audio">Audio</button>
+            <button class="filter_tag_btn" data-category="Support">Support</button>
+          </div>
+        </div>
+
+        <!-- Unified Product Grid -->
+        <div class="equip_grid_list view-m">
+          
+          <!-- Card 1: Sony Cameras -->
+          <div class="equip_item" data-category="Cameras">
+            <div class="equip_card_wrap" 
+                 data-title="Sony Cinema Pack" 
+                 data-category="Cameras"
+                 data-desc="Complete professional production setup including Sony FX3, FX6 and A7S III cinema cameras, packed in custom flight cases. Comes with cages, batteries, and media, ready for commercial projects and run-and-gun setups."
+                 data-specs='{"Models":"FX3 / FX6 / A7S III", "Sensor":"Full-Frame Exmor R CMOS", "Resolution":"4K recording up to 120p", "Video Format":"XAVC-S / XAVC-I 10-bit 4:2:2", "Color Science":"S-Cinetone / S-Log3", "Autofocus":"Real-time Eye AF / Phase Detection"}'
+                 data-img="assets/images/equipments/sony_cameras.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/sony_cameras.png" alt="Sony Cinema Pack" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Sony Cinema Pack</h3>
+                <span class="equip_card_category">Cameras</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">Complete professional production setup including Sony FX3, FX6 and A7S III cinema cameras, packed in custom flight cases. Comes with cages, batteries, and media, ready for commercial projects and run-and-gun setups.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">FX3 / FX6 / A7S III</span></div>
+                    <div class="spec_item"><span class="spec_label">Sensor</span><span class="spec_val">Full-Frame Exmor R CMOS</span></div>
+                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">4K recording up to 120p</span></div>
+                    <div class="spec_item"><span class="spec_label">Video Format</span><span class="spec_val">XAVC-S / XAVC-I 10-bit 4:2:2</span></div>
+                    <div class="spec_item"><span class="spec_label">Color Science</span><span class="spec_val">S-Cinetone / S-Log3</span></div>
+                    <div class="spec_item"><span class="spec_label">Autofocus</span><span class="spec_val">Real-time Eye AF / Phase Detection</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Canon Cine Pack -->
+          <div class="equip_item" data-category="Cameras">
+            <div class="equip_card_wrap" 
+                 data-title="Canon Cine Pack" 
+                 data-category="Cameras"
+                 data-desc="High-performance Cinema EOS production kit featuring the Canon C300 Mark III and Canon C70. Equips your crew with dual-gain output sensors, extensive crop factors, and professional log formats."
+                 data-specs='{"Models":"EOS C300 Mark III / EOS C70", "Sensor":"Super 35mm Dual Gain Output (DGO)", "Resolution":"4K recording up to 120fps", "Video Format":"Cinema RAW Light / XF-AVC 10-bit", "Dynamic Range":"Up to 16+ stops", "Autofocus":"Dual Pixel CMOS AF"}'
+                 data-img="assets/images/equipments/canon_cameras.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/canon_cameras.png" alt="Canon Cine Pack" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Canon Cine Pack</h3>
+                <span class="equip_card_category">Cameras</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">High-performance Cinema EOS production kit featuring the Canon C300 Mark III and Canon C70. Equips your crew with dual-gain output sensors, extensive crop factors, and professional log formats.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">EOS C300 Mark III / EOS C70</span></div>
+                    <div class="spec_item"><span class="spec_label">Sensor</span><span class="spec_val">Super 35mm Dual Gain Output (DGO)</span></div>
+                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">4K recording up to 120fps</span></div>
+                    <div class="spec_item"><span class="spec_label">Video Format</span><span class="spec_val">Cinema RAW Light / XF-AVC 10-bit</span></div>
+                    <div class="spec_item"><span class="spec_label">Dynamic Range</span><span class="spec_val">Up to 16+ stops</span></div>
+                    <div class="spec_item"><span class="spec_label">Autofocus</span><span class="spec_val">Dual Pixel CMOS AF</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: BMPCC 6K Pro Pack -->
+          <div class="equip_item" data-category="Cameras">
+            <div class="equip_card_wrap" 
+                 data-title="BMPCC 6K Pro Pack" 
+                 data-category="Cameras"
+                 data-desc="Versatile Blackmagic Pocket Cinema Camera 6K Pro package. Built-in motorized ND filters, tiltable high-bright screen, dual native ISO, and generation 5 color science."
+                 data-specs='{"Models":"Pocket Cinema Camera 6K Pro", "Sensor":"Super 35 HDR sensor (23.10mm x 12.99mm)", "Resolution":"6144 x 3456 up to 50fps", "Lens Mount":"Active EF Mount", "ND Filters":"Built-in 2, 4 and 6-stop motorized NDs", "Screen":"1500 nit HDR tiltable touchscreen"}'
+                 data-img="assets/images/equipments/blackmagic_cameras.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/blackmagic_cameras.png" alt="BMPCC 6K Pro Pack" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">BMPCC 6K Pro Pack</h3>
+                <span class="equip_card_category">Cameras</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">Versatile Blackmagic Pocket Cinema Camera 6K Pro package. Built-in motorized ND filters, tiltable high-bright screen, dual native ISO, and generation 5 color science.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">Pocket Cinema Camera 6K Pro</span></div>
+                    <div class="spec_item"><span class="spec_label">Sensor</span><span class="spec_val">Super 35 HDR sensor (23.10mm x 12.99mm)</span></div>
+                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">6144 x 3456 up to 50fps</span></div>
+                    <div class="spec_item"><span class="spec_label">Lens Mount</span><span class="spec_val">Active EF Mount</span></div>
+                    <div class="spec_item"><span class="spec_label">ND Filters</span><span class="spec_val">Built-in 2, 4 and 6-stop motorized NDs</span></div>
+                    <div class="spec_item"><span class="spec_label">Screen</span><span class="spec_val">1500 nit HDR tiltable touchscreen</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Sony G Master Trio -->
+          <div class="equip_item" data-category="Lenses">
+            <div class="equip_card_wrap" 
+                 data-title="Sony G Master Trio" 
+                 data-category="Lenses"
+                 data-desc="Essential focal range coverage for Sony E-mount systems. Includes the flagship G Master f/2.8 zoom trilogy: wide-angle, standard, and telephoto zoom."
+                 data-specs='{"Lenses":"16-35mm f/2.8 GM / 24-70mm f/2.8 GM II / 70-200mm f/2.8 GM OSS II", "Mount":"Sony E-mount", "Aperture":"Constant f/2.8 aperture", "Focus Motors":"XD Linear Motors for high-speed tracking", "Coating":"Nano AR Coating II reduces flare"}'
+                 data-img="assets/images/equipments/sony_lenses.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/sony_lenses.png" alt="Sony G Master Trio" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Sony G Master Trio</h3>
+                <span class="equip_card_category">Lenses</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">Essential focal range coverage for Sony E-mount systems. Includes the flagship G Master f/2.8 zoom trilogy: wide-angle, standard, and telephoto zoom.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">16-35mm f/2.8 GM / 24-70mm f/2.8 GM II / 70-200mm f/2.8 GM OSS II</span></div>
+                    <div class="spec_item"><span class="spec_label">Mount</span><span class="spec_val">Sony E-mount</span></div>
+                    <div class="spec_item"><span class="spec_label">Aperture</span><span class="spec_val">Constant f/2.8 aperture</span></div>
+                    <div class="spec_item"><span class="spec_label">Focus Motors</span><span class="spec_val">XD Linear Motors for high-speed tracking</span></div>
+                    <div class="spec_item"><span class="spec_label">Coating</span><span class="spec_val">Nano AR Coating II reduces flare</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Canon RF Prime Set -->
+          <div class="equip_item" data-category="Lenses">
+            <div class="equip_card_wrap" 
+                 data-title="Canon RF Prime Set" 
+                 data-category="Lenses"
+                 data-desc="High-contrast, extremely shallow depth prime lens series for Canon RF mounts. Delivers exceptional sharpness, rendering, and low-light control."
+                 data-specs='{"Lenses":"50mm f/1.2 L USM / 85mm f/1.2 L USM / 28-70mm f/2.0 L USM", "Mount":"Canon RF-mount", "Aperture Range":"f/1.2 to f/16 (primes)", "Optics":"Fluorite, UD and Aspherical elements", "USM Focus":"Ring-type Ultrasonic Motor autofocus"}'
+                 data-img="assets/images/equipments/canon_lenses.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/canon_lenses.png" alt="Canon RF Prime Set" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Canon RF Prime Set</h3>
+                <span class="equip_card_category">Lenses</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">High-contrast, extremely shallow depth prime lens series for Canon RF mounts. Delivers exceptional sharpness, rendering, and low-light control.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">50mm f/1.2 L USM / 85mm f/1.2 L USM / 28-70mm f/2.0 L USM</span></div>
+                    <div class="spec_item"><span class="spec_label">Mount</span><span class="spec_val">Canon RF-mount</span></div>
+                    <div class="spec_item"><span class="spec_label">Aperture Range</span><span class="spec_val">f/1.2 to f/16 (primes)</span></div>
+                    <div class="spec_item"><span class="spec_label">Optics</span><span class="spec_val">Fluorite, UD and Aspherical elements</span></div>
+                    <div class="spec_item"><span class="spec_label">USM Focus</span><span class="spec_val">Ring-type Ultrasonic Motor autofocus</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Sigma Art Prime Set -->
+          <div class="equip_item" data-category="Lenses">
+            <div class="equip_card_wrap" 
+                 data-title="Sigma Art Prime Set" 
+                 data-category="Lenses"
+                 data-desc="High-performance prime set for cinematic depth and sharpness. Built with HSM motors, organic bokeh, and robust metal construction."
+                 data-specs='{"Lenses":"24mm f/1.4 Art / 35mm f/1.4 Art / 50mm f/1.4 Art / 85mm f/1.4 Art", "Mounts":"Canon EF / Sony E (with adapter)", "Aperture Range":"f/1.4 to f/16", "Optics":"FLD and SLD glass elements", "Aperture Blades":"9 rounded blades for creamy bokeh"}'
+                 data-img="assets/images/equipments/sigma_lenses.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/sigma_lenses.png" alt="Sigma Art Prime Set" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Sigma Art Prime Set</h3>
+                <span class="equip_card_category">Lenses</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">High-performance prime set for cinematic depth and sharpness. Built with HSM motors, organic bokeh, and robust metal construction.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">24mm f/1.4 Art / 35mm f/1.4 Art / 50mm f/1.4 Art / 85mm f/1.4 Art</span></div>
+                    <div class="spec_item"><span class="spec_label">Mounts</span><span class="spec_val">Canon EF / Sony E (with adapter)</span></div>
+                    <div class="spec_item"><span class="spec_label">Aperture Range</span><span class="spec_val">f/1.4 to f/16</span></div>
+                    <div class="spec_item"><span class="spec_label">Optics</span><span class="spec_val">FLD and SLD glass elements</span></div>
+                    <div class="spec_item"><span class="spec_label">Aperture Blades</span><span class="spec_val">9 rounded blades for creamy bokeh</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Production Lighting Kit -->
+          <div class="equip_item" data-category="Lighting">
+            <div class="equip_card_wrap" 
+                 data-title="Production Lighting Kit" 
+                 data-category="Lighting"
+                 data-desc="Complete high-output LED lighting kit including high-power spotlights, panels, and continuous tubes. Delivers certified color accuracy."
+                 data-specs='{"Spotlights":"Aputure LS 600d Pro / LS 300d II", "Tubes":"2x Amaran T2c RGBWW Tubes", "CRI / TLCI":"96+ certified color accuracy", "Control":"Sidus Link app control", "Mounts":"Standard Bowens Mount"}'
+                 data-img="assets/images/equipments/lighting_gear.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/lighting_gear.png" alt="Production Lighting Kit" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Production Lighting Kit</h3>
+                <span class="equip_card_category">Lighting</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">Complete high-output LED lighting kit including high-power spotlights, panels, and continuous tubes. Delivers certified color accuracy.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Spotlights</span><span class="spec_val">Aputure LS 600d Pro / LS 300d II</span></div>
+                    <div class="spec_item"><span class="spec_label">Tubes</span><span class="spec_val">2x Amaran T2c RGBWW Tubes</span></div>
+                    <div class="spec_item"><span class="spec_label">CRI / TLCI</span><span class="spec_val">96+ certified color accuracy</span></div>
+                    <div class="spec_item"><span class="spec_label">Control</span><span class="spec_val">Sidus Link app control</span></div>
+                    <div class="spec_item"><span class="spec_label">Mounts</span><span class="spec_val">Standard Bowens Mount</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Location Audio Kit -->
+          <div class="equip_item" data-category="Audio">
+            <div class="equip_card_wrap" 
+                 data-title="Location Sound Kit" 
+                 data-category="Audio"
+                 data-desc="Broadcast-grade location sound recording pack. Features multi-track field mixer/recorders, shotgun mics, and wireless lavaliers."
+                 data-specs='{"Mixer/Recorder":"Sound Devices 833 (8 channels)", "Shotgun Mic":"Sennheiser MKH 416", "Wireless":"Wisycom dual-channel receiver & bodypack transmitters", "Media":"Dual SD card slots & internal SSD backup"}'
+                 data-img="assets/images/equipments/audio_gear.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/audio_gear.png" alt="Location Sound Kit" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Location Sound Kit</h3>
+                <span class="equip_card_category">Audio</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">Broadcast-grade location sound recording pack. Features multi-track field mixer/recorders, shotgun mics, and wireless lavaliers.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Mixer/Recorder</span><span class="spec_val">Sound Devices 833 (8 channels)</span></div>
+                    <div class="spec_item"><span class="spec_label">Shotgun Mic</span><span class="spec_val">Sennheiser MKH 416</span></div>
+                    <div class="spec_item"><span class="spec_label">Wireless</span><span class="spec_val">Wisycom dual-channel receiver & bodypack transmitters</span></div>
+                    <div class="spec_item"><span class="spec_label">Media</span><span class="spec_val">Dual SD card slots & internal SSD backup</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: DJI Ronin RS3 Gimbal -->
+          <div class="equip_item" data-category="Support">
+            <div class="equip_card_wrap" 
+                 data-title="DJI Ronin RS3 Gimbal" 
+                 data-category="Support"
+                 data-desc="Flagship lightweight 3-axis camera stabilizer. Perfect for medium-sized cinema packages and mirrorless setups."
+                 data-specs='{"Model":"DJI Ronin RS3 Pro Stabilizer", "Payload Capacity":"4.5 kg (10 lbs)", "Autolocks":"Automated axis locks for quick transition", "Focus System":"LiDAR Range Finder autofocus integration", "Transmission":"DJI O3 Pro Video Transmission support"}'
+                 data-img="assets/images/equipments/gimbal_gear.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/gimbal_gear.png" alt="DJI Ronin RS3 Gimbal" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">DJI Ronin RS3 Gimbal</h3>
+                <span class="equip_card_category">Support</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">Flagship lightweight 3-axis camera stabilizer. Perfect for medium-sized cinema packages and mirrorless setups.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Model</span><span class="spec_val">DJI Ronin RS3 Pro Stabilizer</span></div>
+                    <div class="spec_item"><span class="spec_label">Payload Capacity</span><span class="spec_val">4.5 kg (10 lbs)</span></div>
+                    <div class="spec_item"><span class="spec_label">Autolocks</span><span class="spec_val">Automated axis locks for quick transition</span></div>
+                    <div class="spec_item"><span class="spec_label">Focus System</span><span class="spec_val">LiDAR Range Finder autofocus integration</span></div>
+                    <div class="spec_item"><span class="spec_label">Transmission</span><span class="spec_val">DJI O3 Pro Video Transmission support</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10: Aerial Drone Pack -->
+          <div class="equip_item" data-category="Support">
+            <div class="equip_card_wrap" 
+                 data-title="Aerial Drone Pack" 
+                 data-category="Support"
+                 data-desc="High-end industrial drone kit for cinematic aerial shots. Includes DJI Inspire series with Zenmuse camera and controllers."
+                 data-specs='{"Model":"DJI Inspire 3 Drone", "Camera":"Zenmuse X9-8K Air Full-Frame Gimbal Camera", "Video Format":"ProRes RAW / CinemaDNG internal recording", "Max Flight Time":"Approx. 28 minutes per battery set", "Transmission":"O3 Pro dual-control video transmission"}'
+                 data-img="assets/images/equipments/drone_gear.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/drone_gear.png" alt="Aerial Drone Pack" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Aerial Drone Pack</h3>
+                <span class="equip_card_category">Support</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">High-end industrial drone kit for cinematic aerial shots. Includes DJI Inspire series with Zenmuse camera and controllers.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Model</span><span class="spec_val">DJI Inspire 3 Drone</span></div>
+                    <div class="spec_item"><span class="spec_label">Camera</span><span class="spec_val">Zenmuse X9-8K Air Full-Frame Gimbal Camera</span></div>
+                    <div class="spec_item"><span class="spec_label">Video Format</span><span class="spec_val">ProRes RAW / CinemaDNG internal recording</span></div>
+                    <div class="spec_item"><span class="spec_label">Max Flight Time</span><span class="spec_val">Approx. 28 minutes per battery set</span></div>
+                    <div class="spec_item"><span class="spec_label">Transmission</span><span class="spec_val">O3 Pro dual-control video transmission</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 11: Set & Grip Essentials -->
+          <div class="equip_item" data-category="Support">
+            <div class="equip_card_wrap" 
+                 data-title="Set &amp; Grip Essentials" 
+                 data-category="Support"
+                 data-desc="All-inclusive production grip package. C-stands, heavy-duty combo stands, Apple boxes, sandbags, and flags."
+                 data-specs='{"Stands":"6x C-Stands (with arms & knuckles) / 2x Combo Stands", "Grip Gear":"Apple boxes (Full, Half, Quarter sets), sandbags, flags", "Safety":"Safety chains, cardellini clamps, grid clamps", "Hardware":"Super clamps, drop ceiling hangers, safety wires"}'
+                 data-img="assets/images/equipments/accessories_gear.png">
+              
+              <div class="card-drag-handle"></div>
+              <button class="card-close-btn" aria-label="Close card">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              <div class="equip_card_visual">
+                <img src="assets/images/equipments/accessories_gear.png" alt="Set &amp; Grip Essentials" class="equip_card_image"/>
+              </div>
+              <div class="equip_card_details">
+                <h3 class="equip_card_name">Set &amp; Grip Essentials</h3>
+                <span class="equip_card_category">Support</span>
+              </div>
+              <div class="card_expanded_content">
+                <div class="expanded_desc_wrap">
+                  <p class="expanded_desc_text">All-inclusive production grip package. C-stands, heavy-duty combo stands, Apple boxes, sandbags, and flags.</p>
+                </div>
+                <div class="expanded_specs_wrap">
+                  <h4 class="expanded_specs_title">Technical Specifications</h4>
+                  <div class="expanded_specs_grid">
+                    <div class="spec_item"><span class="spec_label">Stands</span><span class="spec_val">6x C-Stands (with arms & knuckles) / 2x Combo Stands</span></div>
+                    <div class="spec_item"><span class="spec_label">Grip Gear</span><span class="spec_val">Apple boxes (Full, Half, Quarter sets), sandbags, flags</span></div>
+                    <div class="spec_item"><span class="spec_label">Safety</span><span class="spec_val">Safety chains, cardellini clamps, grid clamps</span></div>
+                    <div class="spec_item"><span class="spec_label">Hardware</span><span class="spec_val">Super clamps, drop ceiling hangers, safety wires</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Empty state helper -->
+        <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:100px 20px; color:var(--color-dark-grey); font-family:var(--font-outfit); font-size:1.2rem;">
+          No items match your selected filter.
+        </div>
       </section>
+      
+      <div class="panel_overlay"></div>
+    </div> <!-- .equip_catalog_side -->
 
-    </main>
+    <aside class="equip_panel_side" aria-label="Equipment Details">
+      <button class="panel_close_btn" aria-label="Close details panel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="panel_content_scroll">
+        <div class="panel_img_box">
+          <img src="" alt="" class="panel_product_img"/>
+        </div>
+        <div class="panel_meta_wrap">
+          <span class="panel_product_category"></span>
+          <h2 class="panel_product_title"></h2>
+        </div>
+        <p class="panel_product_desc"></p>
+        <div class="panel_specs_section">
+          <h4 class="panel_specs_title">Technical Specifications</h4>
+          <div class="panel_specs_grid">
+            <!-- specifications injected dynamically -->
+          </div>
+        </div>
+      </div>
+    </aside>
 
-        <!-- FOOTER -->
+  </div> <!-- .equip_page_layout -->
+
+</main>
+
+    <!-- FOOTER -->
     <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
       
@@ -894,9 +1276,12 @@
 
   <!-- CDN Scripts -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
   
-  <!-- Custom Script -->
+  <!-- Main app script -->
   <script defer src="assets/js/app.js?v=15"></script>
+  <!-- Redesigned Equipments Animation script -->
+  <script defer src="assets/js/equipments-anim.js"></script>
 </body>
 </html>

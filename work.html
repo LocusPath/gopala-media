@@ -7,12 +7,476 @@
   <meta name="description" content="Portfolio of Gopala Media, India's trusted production partner for brands, creators, and storytellers."/>
   
   <!-- Stylesheets -->
-    <!-- Connection preconnects for faster font and script loading -->
   <link rel="preconnect" href="https://cdn.prod.website-files.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="assets/css/app-style.css?v=17" rel="stylesheet" type="text/css"/>
   <link href="assets/images/logo.png" rel="shortcut icon" type="image/x-icon"/>
   <link href="assets/images/logo.png" rel="apple-touch-icon"/>
+
+  <!-- Google Fonts for Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Editorial Brand-Color Custom Styling */
+    :root {
+      --bg-cream: #ECEBE8;
+      --bg-card: #ffffff;
+      --color-charcoal: #100E0A;
+      --color-bronze: #53432F;
+      --color-sage: #C2C3B7;
+      --color-dark-grey: #635E55;
+      
+      --font-syne: 'Syne', sans-serif;
+      --font-outfit: 'Outfit', sans-serif;
+    }
+    
+    body {
+      background-color: var(--bg-cream) !important;
+      color: var(--color-charcoal) !important;
+      font-family: var(--font-outfit), sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    
+    .page_wrap {
+      background-color: var(--bg-cream) !important;
+    }
+    
+    /* Hero section */
+    .work_hero_wrap {
+      padding: 180px var(--site--margin) 80px !important;
+      background-color: var(--bg-cream) !important;
+      position: relative;
+    }
+    
+    .u-text-style-h1 {
+      font-family: var(--font-syne) !important;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+      letter-spacing: -0.04em;
+      color: var(--color-charcoal) !important;
+      margin-bottom: 2.5rem !important;
+      line-height: 0.95;
+    }
+    
+    /* Filter Bar menu styling */
+    .work_form_block {
+      margin: 0 auto 3.5rem;
+      width: 100%;
+    }
+    
+    .work_form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1.5px solid rgba(16, 14, 10, 0.08);
+      padding-bottom: 1.5rem;
+    }
+    
+    @media (max-width: 48rem) {
+      .work_form {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+    
+    .work_form_filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    
+    .g_filter_wrap {
+      background: transparent;
+      border: 1.5px solid rgba(16, 14, 10, 0.12);
+      border-radius: 100px;
+      padding: 10px 22px;
+      cursor: pointer;
+      font-family: var(--font-outfit);
+      font-weight: 600;
+      color: var(--color-charcoal);
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.2s;
+      user-select: none;
+    }
+    
+    .g_filter_wrap:hover {
+      border-color: var(--color-charcoal);
+      transform: translateY(-2px);
+    }
+    
+    .g_filter_wrap.is-active {
+      background-color: var(--color-charcoal);
+      border-color: var(--color-charcoal);
+      color: var(--bg-cream);
+    }
+    
+    .work_result_count {
+      font-family: var(--font-outfit);
+      font-size: 1.15rem;
+      font-weight: 550;
+      color: var(--color-bronze);
+      margin: 0;
+    }
+    
+    /* Constrain content container to fill the page width */
+    .work_hero_contain {
+      max-width: 100%;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* Responsive Grid Layout */
+    .work_cms_wrapper {
+      width: 100%;
+    }
+    
+    .work_cms_list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      width: 100%;
+    }
+    
+    /* Premium Asymmetric Card Spans */
+    .work_cms_item:nth-child(6n+1) { grid-column: span 1 !important; }
+    .work_cms_item:nth-child(6n+2) { grid-column: span 2 !important; }
+    .work_cms_item:nth-child(6n+3) { grid-column: span 2 !important; }
+    .work_cms_item:nth-child(6n+4) { grid-column: span 2 !important; }
+    .work_cms_item:nth-child(6n+5) { grid-column: span 2 !important; }
+    .work_cms_item:nth-child(6n+6) { grid-column: span 1 !important; }
+    
+    @media (max-width: 76.8rem) {
+      .work_cms_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .work_cms_item {
+        grid-column: span 1 !important;
+      }
+    }
+    
+    @media (max-width: 48rem) {
+      .work_cms_list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .work_cms_item {
+        grid-column: span 1 !important;
+      }
+    }
+    
+    .work_cms_item {
+      will-change: transform, opacity;
+    }
+    
+    /* 3D Flipping Card Styling (Uniform height to prevent blank grid cell space) */
+    .work_card_wrap {
+      perspective: 1400px;
+      height: 380px;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    @media (max-width: 48rem) {
+      .work_card_wrap {
+        height: 280px;
+      }
+    }
+    
+    .work_card_visual {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-radius: 20px;
+    }
+    
+    .work_card_inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(16, 14, 10, 0.08);
+      /* Flip is handled by GSAP click, not CSS hover */
+    }
+    
+    .work_card_face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(16, 14, 10, 0.06);
+    }
+    
+    /* Front Card Face styling */
+    .work_card_face_front {
+      background-color: var(--bg-card);
+    }
+    
+    .work_card_bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .work_card_wrap:hover .work_card_bg {
+      transform: scale(1.05);
+    }
+    
+    .work_card_overlay_title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem 1.5rem 1.5rem;
+      background: linear-gradient(to top, rgba(16, 14, 10, 0.9) 0%, rgba(16, 14, 10, 0.4) 60%, rgba(16, 14, 10, 0) 100%);
+      color: #ffffff;
+      font-family: var(--font-syne);
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-align: left;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Back Card Face styling */
+    .work_card_face_back {
+      background-color: var(--color-charcoal);
+      color: #ECEBE8;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    
+    .work_card_back_content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
+    
+    .work_card_back_category {
+      font-family: var(--font-outfit);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-sage);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .work_card_back_title {
+      font-family: var(--font-syne);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    
+    .work_card_back_desc {
+      font-family: var(--font-outfit);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #C2C3B7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .work_card_back_btn {
+      display: inline-block;
+      border: 1.5px solid #ffffff;
+      color: #ffffff;
+      background: transparent;
+      font-family: var(--font-outfit);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      cursor: pointer;
+    }
+    
+    .work_card_back_btn:hover {
+      background-color: #ffffff;
+      color: var(--color-charcoal);
+    }
+    
+    /* Project Detail Modal */
+    .project_modal_overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 14, 10, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .project_modal_overlay.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .project_modal_content {
+      background: #ffffff;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 900px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(16, 14, 10, 0.15);
+      border: 1px solid rgba(16, 14, 10, 0.08);
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .project_modal_overlay.is-active .project_modal_content {
+      transform: scale(1) translateY(0);
+    }
+    
+    .project_modal_close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(16, 14, 10, 0.05);
+      border: none;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-charcoal);
+      transition: background-color 0.3s, transform 0.2s;
+      z-index: 10;
+    }
+    
+    .project_modal_close:hover {
+      background: rgba(16, 14, 10, 0.1);
+      transform: scale(1.05);
+    }
+    
+    .project_modal_body {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 500px;
+    }
+    
+    @media (max-width: 48rem) {
+      .project_modal_body {
+        grid-template-columns: 1fr;
+      }
+      .project_modal_img_wrap {
+        aspect-ratio: 16/10;
+      }
+    }
+    
+    .project_modal_img_wrap {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg-cream);
+    }
+    
+    .project_modal_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .project_modal_info {
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    @media (max-width: 48rem) {
+      .project_modal_info {
+        padding: 2.5rem 2rem;
+      }
+    }
+    
+    .project_modal_cat {
+      font-family: var(--font-outfit);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-bronze);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    
+    .project_modal_title {
+      font-family: var(--font-syne);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-charcoal);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0 0 1.5rem;
+    }
+    
+    .project_modal_desc {
+      font-family: var(--font-outfit);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-dark-grey);
+      margin-bottom: 2.5rem;
+    }
+    
+    .project_modal_btn {
+      display: inline-block;
+      background: var(--color-charcoal);
+      color: var(--bg-cream);
+      font-family: var(--font-outfit);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      align-self: flex-start;
+      border: 1px solid var(--color-charcoal);
+    }
+    
+    .project_modal_btn:hover {
+      background: transparent;
+      color: var(--color-charcoal);
+      transform: translateY(-2px);
+    }
+    
+    /* Grid entry animations triggers */
+    .work_cms_item {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -55,7 +519,7 @@
       </div>
     </header>
 
-        <!-- MOBILE NAVIGATION -->
+    <!-- MOBILE NAVIGATION -->
     <div class="nav_mobile_wrap nav_component">
       <a href="index.html" class="nav_mobile_logo">
         <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
@@ -86,71 +550,68 @@
     <main id="main" class="page_main">
       
       <!-- WORK HERO SECTION -->
-      <section class="work_hero_wrap" style="text-align: center;">
-        <div class="u-section-spacer w-variant-e359d2da-de19-6775-b122-3e06f925f39e"></div>
+      <section class="work_hero_wrap">
         <div class="work_hero_contain u-container-full">
-          <div class="work_hero_layout u-position-relative u-flex-vertical-nowrap u-align-items-center">
+          <div class="work_hero_layout">
             
-
-
-            <h1 class="u-text-style-h1 u-margin-bottom-8">Timeless work</h1>
-
+            <h1 class="u-text-style-h1">Timeless Work.</h1>
             <h2 class="u-sr-only">Work Portfolio</h2>
+
             <!-- FILTERS BAR -->
-            <div class="work_form_block u-margin-bottom-8 u-width-full">
-              <div class="work_form u-flex-horizontal-wrap u-justify-content-between u-align-items-center">
-                <div class="work_form_filters u-flex-horizontal-wrap u-gap-2">
+            <div class="work_form_block">
+              <div class="work_form">
+                <div class="work_form_filters">
                   
-                  <label class="g_filter_wrap is-active" data-service="all">
-                    <input type="radio" name="service-filter" checked class="sr-only"/>
-                    <span class="u-text-style-xsmall">All</span>
-                  </label>
+                  <button class="g_filter_wrap is-active" data-service="all">
+                    <span>All</span>
+                  </button>
                   
-                  <label class="g_filter_wrap" data-service="Film &amp; Video">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Film &amp; Video</span>
-                  </label>
+                  <button class="g_filter_wrap" data-service="Film &amp; Video">
+                    <span>Film &amp; Video</span>
+                  </button>
                   
-                  <label class="g_filter_wrap" data-service="Podcasts">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Podcasts</span>
-                  </label>
+                  <button class="g_filter_wrap" data-service="Podcasts">
+                    <span>Podcasts</span>
+                  </button>
                   
-                  <label class="g_filter_wrap" data-service="Corporate">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Corporate</span>
-                  </label>
+                  <button class="g_filter_wrap" data-service="Corporate">
+                    <span>Corporate</span>
+                  </button>
                   
-                  <label class="g_filter_wrap" data-service="Rentals">
-                    <input type="radio" name="service-filter" class="sr-only"/>
-                    <span class="u-text-style-xsmall">Rentals</span>
-                  </label>
+                  <button class="g_filter_wrap" data-service="Rentals">
+                    <span>Rentals</span>
+                  </button>
 
                 </div>
-                <p class="work_result_count u-text-style-main">(<span fs-list-element="results-count" aria-live="polite">6</span>)</p>
+                <p class="work_result_count">(<span fs-list-element="results-count" aria-live="polite">6</span>)</p>
               </div>
             </div>
 
             <!-- PORTFOLIO LISTING -->
-            <div class="work_cms_wrapper u-width-full">
-              <div role="list" class="work_cms_list">
+            <div class="work_cms_wrapper">
+              <div class="work_cms_list">
                 
-                 <!-- Card 1: Amazon Commercial Campaign (Film & Video) -->
-                <div role="listitem" class="work_cms_item" data-service="Film &amp; Video">
+                <!-- Card 1: Amazon Commercial Campaign (Film & Video) -->
+                <div class="work_cms_item" data-service="Film &amp; Video">
                   <div class="work_card_wrap">
                     <div class="work_card_visual">
                       <div class="work_card_inner">
                         <!-- Front Face -->
                         <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/line_production.png" loading="lazy" alt="Amazon Commercial Campaign" class="work_card_bg u-cover-absolute"/>
+                          <img src="assets/images/line_production.png" loading="lazy" alt="Amazon Commercial Campaign" class="work_card_bg"/>
                           <div class="work_card_overlay_title">Amazon Commercial Campaign</div>
                         </div>
                         <!-- Back Face -->
                         <div class="work_card_face work_card_face_back">
                           <div class="work_card_back_content">
+                            <span class="work_card_back_category">Film &amp; Video</span>
                             <h4 class="work_card_back_title">Amazon Campaign</h4>
                             <p class="work_card_back_desc">Full-scale commercial video production, creative directing, and premium camera equipment rental solutions.</p>
-                            <span class="work_card_back_btn">View Details</span>
+                            <button class="work_card_back_btn" 
+                                    data-title="Amazon Campaign" 
+                                    data-category="Film &amp; Video" 
+                                    data-desc="Our team provided end-to-end commercial production services for Amazon's pan-India festive campaign, coordinating script reviews, local casting, set building, locations, location permissions, and raw camera setups. High-fidelity editing and grading were handled in-house."
+                                    data-img="assets/images/line_production.png">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -159,21 +620,26 @@
                 </div>
 
                 <!-- Card 2: Groww Podcasting Series (Podcasts) -->
-                <div role="listitem" class="work_cms_item" data-service="Podcasts">
+                <div class="work_cms_item" data-service="Podcasts">
                   <div class="work_card_wrap">
                     <div class="work_card_visual">
                       <div class="work_card_inner">
                         <!-- Front Face -->
                         <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/podcast_studio.png" loading="lazy" alt="Groww Podcasting Series" class="work_card_bg u-cover-absolute"/>
+                          <img src="assets/images/podcast_studio.png" loading="lazy" alt="Groww Podcasting Series" class="work_card_bg"/>
                           <div class="work_card_overlay_title">Groww Podcasting Series</div>
                         </div>
                         <!-- Back Face -->
                         <div class="work_card_face work_card_face_back">
                           <div class="work_card_back_content">
+                            <span class="work_card_back_category">Podcasts</span>
                             <h4 class="work_card_back_title">Groww Podcasts</h4>
                             <p class="work_card_back_desc">Acoustic sound design, multi-camera configuration, hosting setup, and post-production editing for digital streams.</p>
-                            <span class="work_card_back_btn">View Details</span>
+                            <button class="work_card_back_btn" 
+                                    data-title="Groww Podcasts" 
+                                    data-category="Podcasts" 
+                                    data-desc="Coordinated technical production for Groww's digital podcasting series. Delivered custom studio acoustics setups, certified Shure SM7B mics, multi-cam 4K feeds on Sony FX6 rigs, and live sound engineering mixing boards to ensure a broadcast-grade audio-visual footprint."
+                                    data-img="assets/images/podcast_studio.png">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -182,21 +648,26 @@
                 </div>
 
                 <!-- Card 3: Flipkart Festive Production (Film & Video) -->
-                <div role="listitem" class="work_cms_item" data-service="Film &amp; Video">
+                <div class="work_cms_item" data-service="Film &amp; Video">
                   <div class="work_card_wrap">
                     <div class="work_card_visual">
                       <div class="work_card_inner">
                         <!-- Front Face -->
                         <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Flipkart Festive Production" class="work_card_bg u-cover-absolute"/>
+                          <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Flipkart Festive Production" class="work_card_bg"/>
                           <div class="work_card_overlay_title">Flipkart Festive Production</div>
                         </div>
                         <!-- Back Face -->
                         <div class="work_card_face work_card_face_back">
                           <div class="work_card_back_content">
+                            <span class="work_card_back_category">Film &amp; Video</span>
                             <h4 class="work_card_back_title">Flipkart Festive</h4>
                             <p class="work_card_back_desc">Cinematic brand commercial capturing festive energy with high-end camera rigs and lighting designs.</p>
-                            <span class="work_card_back_btn">View Details</span>
+                            <button class="work_card_back_btn" 
+                                    data-title="Flipkart Festive" 
+                                    data-category="Film &amp; Video" 
+                                    data-desc="Crafted high-fidelity brand commercial capturing the holiday energy for Flipkart's festive launch. Utilized Cooke S7/i prime lenses, ARRI Alexa LF bodies, and custom gimbal stabilization layouts, followed by high-end studio color correction grading panels."
+                                    data-img="assets/images/cinema_lenses.png">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -205,21 +676,26 @@
                 </div>
 
                 <!-- Card 4: Corporate Brand Narrative (Corporate) -->
-                <div role="listitem" class="work_cms_item" data-service="Corporate">
+                <div class="work_cms_item" data-service="Corporate">
                   <div class="work_card_wrap">
                     <div class="work_card_visual">
                       <div class="work_card_inner">
                         <!-- Front Face -->
                         <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Corporate Brand Narrative" class="work_card_bg u-cover-absolute"/>
+                          <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Corporate Brand Narrative" class="work_card_bg"/>
                           <div class="work_card_overlay_title">Corporate Brand Narrative</div>
                         </div>
                         <!-- Back Face -->
                         <div class="work_card_face work_card_face_back">
                           <div class="work_card_back_content">
+                            <span class="work_card_back_category">Corporate</span>
                             <h4 class="work_card_back_title">Brand Narrative</h4>
                             <p class="work_card_back_desc">Impactful founder story-telling documentaries and executive profiles captured across corporate locations.</p>
-                            <span class="work_card_back_btn">View Details</span>
+                            <button class="work_card_back_btn" 
+                                    data-title="Brand Narrative" 
+                                    data-category="Corporate" 
+                                    data-desc="Filmed and directed premium documentary narratives detailing founder journeys and corporate milestones. Showcased corporate headquarters, production sites, and interview backdrops using clean daylight setups and professional acoustic boom capturing."
+                                    data-img="assets/images/IMG_0153_converted.jpg">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -228,21 +704,26 @@
                 </div>
 
                 <!-- Card 5: NVL Documentary Shoot (Film & Video) -->
-                <div role="listitem" class="work_cms_item" data-service="Film &amp; Video">
+                <div class="work_cms_item" data-service="Film &amp; Video">
                   <div class="work_card_wrap">
                     <div class="work_card_visual">
                       <div class="work_card_inner">
                         <!-- Front Face -->
                         <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/cinema_camera.png" loading="lazy" alt="NVL Documentary Shoot" class="work_card_bg u-cover-absolute"/>
+                          <img src="assets/images/cinema_camera.png" loading="lazy" alt="NVL Documentary Shoot" class="work_card_bg"/>
                           <div class="work_card_overlay_title">NVL Documentary Shoot</div>
                         </div>
                         <!-- Back Face -->
                         <div class="work_card_face work_card_face_back">
                           <div class="work_card_back_content">
+                            <span class="work_card_back_category">Film &amp; Video</span>
                             <h4 class="work_card_back_title">NVL Documentary</h4>
                             <p class="work_card_back_desc">On-location documentary cinematography, crew coordination, and cinematic sound recording.</p>
-                            <span class="work_card_back_btn">View Details</span>
+                            <button class="work_card_back_btn" 
+                                    data-title="NVL Documentary" 
+                                    data-category="Film &amp; Video" 
+                                    data-desc="Managed location sound, certified cinematography units, and camera setups for a feature-length documentary. Handled challenging outdoor terrains across local heritage locations with fully portable power generator setups and field sound recording."
+                                    data-img="assets/images/cinema_camera.png">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -251,21 +732,26 @@
                 </div>
 
                 <!-- Card 6: High-End Cinema Gear Rental (Rentals) -->
-                <div role="listitem" class="work_cms_item" data-service="Rentals">
+                <div class="work_cms_item" data-service="Rentals">
                   <div class="work_card_wrap">
                     <div class="work_card_visual">
                       <div class="work_card_inner">
                         <!-- Front Face -->
                         <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/studio_lighting.png" loading="lazy" alt="High-End Cinema Gear Rental" class="work_card_bg u-cover-absolute"/>
+                          <img src="assets/images/studio_lighting.png" loading="lazy" alt="High-End Cinema Gear Rental" class="work_card_bg"/>
                           <div class="work_card_overlay_title">High-End Cinema Gear Rental</div>
                         </div>
                         <!-- Back Face -->
                         <div class="work_card_face work_card_face_back">
                           <div class="work_card_back_content">
+                            <span class="work_card_back_category">Rentals</span>
                             <h4 class="work_card_back_title">Cinema Rentals</h4>
                             <p class="work_card_back_desc">Top-tier cine equipment packages including ARRI, RED, Sony Venice 2, and Cooke lenses.</p>
-                            <span class="work_card_back_btn">View Details</span>
+                            <button class="work_card_back_btn" 
+                                    data-title="Cinema Rentals" 
+                                    data-category="Rentals" 
+                                    data-desc="Supplied certified production packages consisting of premium camera rigs, ARRI Skypanels, Aputure spotlight kits, and Zeiss Supreme prime lenses for high-budget commercial shoots in northern India, backed by on-ground tech support crews."
+                                    data-img="assets/images/studio_lighting.png">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -274,7 +760,9 @@
                 </div>
 
               </div>
-              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:60px 20px; color:#666; font-size:18px;">
+              
+              <!-- Empty state helper -->
+              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:100px 20px; color:var(--color-dark-grey); font-family:var(--font-outfit); font-size:1.2rem;">
                 No items match your selected filter.
               </div>
             </div>
@@ -283,7 +771,27 @@
         </div>
       </section>
 
-    </main>        <!-- FOOTER -->
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="project_modal_overlay">
+      <div class="project_modal_content">
+        <button class="project_modal_close" aria-label="Close modal">&times;</button>
+        <div class="project_modal_body">
+          <div class="project_modal_img_wrap">
+            <img src="" alt="" class="project_modal_img">
+          </div>
+          <div class="project_modal_info">
+            <span class="project_modal_cat">Category</span>
+            <h2 class="project_modal_title">Project Title</h2>
+            <p class="project_modal_desc">Detailed project description goes here...</p>
+            <a href="contact.html" class="project_modal_btn">Collaborate With Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer id="social" class="footer_wrap u-theme-brand">
       <h2 class="footer_title u-sr-only">Footer</h2>
       
@@ -394,9 +902,12 @@
 
   <!-- CDN Scripts -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
   
-  <!-- Custom Script -->
+  <!-- Main app script -->
   <script defer src="assets/js/app.js?v=15"></script>
+  <!-- Work Animations and Filtering script -->
+  <script defer src="assets/js/work-anim.js"></script>
 </body>
 </html>
