@@ -575,7 +575,7 @@ function initLogoColorScroll() {
       const rect = section.getBoundingClientRect();
       // If the light section overlaps the floating header (from top y=0 to y=60)
       if (rect.top <= 60 && rect.bottom >= 0) {
-        color = "#001F38"; // Change to dark indigo
+        color = "#100E0A"; // Change to deep charcoal
       }
     });
 
