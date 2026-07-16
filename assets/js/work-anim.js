@@ -87,13 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/IMG_0815.JPG",
       sizeClass: "short"
     },
-    {
-      title: "Production Campaign 13",
-      category: "Film & Video",
-      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_0822.JPG",
-      sizeClass: "tall"
-    },
+
     {
       title: "Cinema Equipment Rental 14",
       category: "Rentals",
@@ -150,13 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/IMG_4613.jpg",
       sizeClass: "short"
     },
-    {
-      title: "Cinema Equipment Rental 22",
-      category: "Rentals",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_5503.jpg",
-      sizeClass: "tall"
-    },
+
     {
       title: "Studio Audio Session 23",
       category: "Podcasts",
@@ -367,20 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/PHOTO-2025-10-10-12-10-26.jpg",
       sizeClass: "medium"
     },
-    {
-      title: "Product Launch Campaign",
-      category: "Film & Video",
-      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpeg",
-      sizeClass: "short"
-    },
-    {
-      title: "Product Launch Campaign",
-      category: "Film & Video",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpg",
-      sizeClass: "short"
-    },
+
     {
       title: "Studio Audio Session 55",
       category: "Podcasts",
@@ -430,27 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/_DSF6079 copy.jpg",
       sizeClass: "tall"
     },
-    {
-      title: "Live Fashion Show Broadcast",
-      category: "Film & Video",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/_DSF6084 copy.jpg",
-      sizeClass: "short"
-    },
-    {
-      title: "Commercial Production",
-      category: "Film & Video",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/akshay.jpeg",
-      sizeClass: "tall"
-    },
-    {
-      title: "Commercial Production",
-      category: "Film & Video",
-      desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/akshay.jpg",
-      sizeClass: "tall"
-    }
+
+
   ];
 
   // State
