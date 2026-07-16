@@ -338,13 +338,14 @@
 /* Giant Luxury Typography */
 .hero_luxury_title {
   font-family: 'Milkshake', cursive;
-  font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.15;
   color: #ffffff;
   letter-spacing: 0.02em;
   margin: 0 0 2rem 0;
   text-align: center;
+  white-space: nowrap;
 }
 
 .hero_title_italic {
