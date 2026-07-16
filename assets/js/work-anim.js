@@ -38,13 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/IMG_0178.jpg",
       sizeClass: "medium"
     },
-    {
-      title: "Cinema Equipment Rental 6",
-      category: "Rentals",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_0211.jpg",
-      sizeClass: "short"
-    },
+
     {
       title: "Studio Audio Session 7",
       category: "Podcasts",
@@ -95,13 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/IMG_0824.JPG",
       sizeClass: "medium"
     },
-    {
-      title: "Studio Audio Session 15",
-      category: "Podcasts",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_0828.JPG",
-      sizeClass: "short"
-    },
+
     {
       title: "Corporate Branding Showcase 16",
       category: "Corporate",
@@ -180,13 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/work/IMG_6082.jpg",
       sizeClass: "short"
     },
-    {
-      title: "The Jodhpur RIFF",
-      category: "Film & Video",
-      desc: "Official festival photography and cinematic coverage of the Jodhpur International Folk Festival. Captured at Mehrangarh Fort under night skies, highlighting traditional folk music performances.",
-      img: "assets/images/work/IMG_6219.jpg",
-      sizeClass: "medium"
-    },
+
     {
       title: "Production Campaign 29",
       category: "Film & Video",
