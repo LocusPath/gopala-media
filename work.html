@@ -523,9 +523,9 @@
     /* Vertical Gallery Grid Layout */
     .vertical_gallery_wrap {
       width: 100%;
-      max-width: var(--max-width--main);
+      max-width: 100% !important;
       margin: 0 auto;
-      padding: 1rem 0 6rem 0;
+      padding: 1rem 4% 6rem 4%;
       box-sizing: border-box;
     }
     
@@ -798,19 +798,18 @@
               </div>
             </div>
 
-            <!-- PORTFOLIO LISTING -->
-            <!-- PORTFOLIO LISTING -->
-            <div class="work_cms_wrapper">
-              <div class="vertical_gallery_wrap">
-                <div class="gallery_grid" id="gallery-grid">
-                  <!-- Columns will be injected dynamically by assets/js/work-anim.js -->
-                </div>
-              </div>
-              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:100px 20px; color:#7a6245; font-family:var(--font-outfit); font-size:1.2rem; background-color:#fafaf9; border-radius:24px;">
-                No items match your selected filter.
-              </div>
-            </div>
+          </div>
+        </div>
 
+        <!-- PORTFOLIO LISTING (Full-width / Edge-to-Edge) -->
+        <div class="work_cms_wrapper">
+          <div class="vertical_gallery_wrap">
+            <div class="gallery_grid" id="gallery-grid">
+              <!-- Columns will be injected dynamically by assets/js/work-anim.js -->
+            </div>
+          </div>
+          <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:100px 20px; color:#7a6245; font-family:var(--font-outfit); font-size:1.2rem; background-color:#fafaf9; border-radius:24px;">
+            No items match your selected filter.
           </div>
         </div>
       </section>
