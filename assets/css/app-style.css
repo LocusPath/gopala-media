@@ -285,7 +285,7 @@
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   padding-left: 8% !important;
   padding-right: 8% !important;
   box-sizing: border-box !important;
@@ -299,7 +299,7 @@
 }
 
 .hero_main_contain {
-  margin: 0 !important;
+  margin: 0 auto !important;
   max-width: 900px !important;
   width: 100% !important;
 }
@@ -313,7 +313,11 @@
 
 /* Gold Accent Sub-Header */
 .hero_sub_badge {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero_badge_line {
