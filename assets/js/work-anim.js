@@ -4,255 +4,157 @@ document.addEventListener("DOMContentLoaded", () => {
   // Curated Projects Dataset (36 items) with balanced sizes (12 tall, 12 medium, 12 short)
   const projects = [
     {
-      title: "Classical Orchestra Performance",
+      title: "Runway Collection Showcase",
       category: "Film & Video",
-      desc: "Multi-mic acoustic sound recording and dynamic concert cinematography for classical symphony.",
-      img: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "short"
-    },
-    {
-      title: "Grand Library Dome",
-      category: "Corporate",
-      desc: "Architectural visual mapping and heritage documentation capturing grand library halls.",
-      img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "short"
-    },
-    {
-      title: "Reflective Campus Life",
-      category: "Corporate",
-      desc: "Editorial student profile campaign capturing reflective moments and campus textures.",
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=800&q=80",
+      desc: "Editorial and high-fashion runway cinematography capturing premium garment showcases.",
+      img: "assets/images/work/_DSF5765 copy.jpg",
       sizeClass: "tall"
     },
     {
-      title: "Baseball Diamond Pitch",
-      category: "Film & Video",
-      desc: "High-speed action tracking and commercial sports videography at prime stadiums.",
-      img: "https://images.unsplash.com/photo-1471295263379-6ca29fc8a977?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "short"
-    },
-    {
-      title: "Historical Library Corridor",
+      title: "Model Editorial Profile",
       category: "Corporate",
-      desc: "Cinematic corporate video showcasing academic history and stone column corridors.",
-      img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "tall"
+      desc: "Commercial fashion shoot documenting designer profiles and styling trends.",
+      img: "assets/images/work/_DSF5771 copy 2.jpg",
+      sizeClass: "medium"
     },
     {
-      title: "Academic Graduation Portrait",
-      category: "Corporate",
-      desc: "Curated student graduation portraits capturing milestones and positive highlights.",
-      img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "tall"
-    },
-    {
-      title: "Outdoor Park Gathering",
-      category: "Podcasts",
-      desc: "On-site podcast recording and ambient sound capture at cultural park gatherings.",
-      img: "https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "short"
-    },
-    {
-      title: "Stadium Baseball Batter",
-      category: "Film & Video",
-      desc: "Action sports tracking shots capturing players in mid-swing with high-speed setups.",
-      img: "https://images.unsplash.com/photo-1544045093-c71d986c4387?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "tall"
-    },
-    {
-      title: "Skyline Field Landscape",
+      title: "Studio Lighting Prep",
       category: "Rentals",
-      desc: "Drone mapping and extreme perspective equipment rentals for outdoor tracking shoots.",
-      img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80",
+      desc: "Certified lighting rigs, softboxes, and spotlights configured for editorial shoots.",
+      img: "assets/images/work/_DSF5894 copy.jpg",
       sizeClass: "short"
     },
     {
-      title: "Urban City Walk",
-      category: "Podcasts",
-      desc: "Street interview audio setups and dynamic run-and-gun city vlogging production.",
-      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      title: "Behind The Scenes",
+      category: "Film & Video",
+      desc: "Production crew executing high-speed tracking and on-set camera support.",
+      img: "assets/images/work/_DSF5914 copy.jpg",
       sizeClass: "tall"
     },
     {
-      title: "Graduate Senior Celebration",
+      title: "Creative Wardrobe Shoot",
       category: "Corporate",
-      desc: "Social media visual campaigns documenting graduation day and positive campus energy.",
-      img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
+      desc: "Visual branding campaign featuring detailed garment textures and catalog photography.",
+      img: "assets/images/work/_DSF5922 copy.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Runway Event Capture",
+      category: "Film & Video",
+      desc: "Live multicam broadcast and video production for premier fashion weeks.",
+      img: "assets/images/work/_DSF6084 copy.jpg",
       sizeClass: "short"
     },
     {
-      title: "Pathways Walkway Hike",
-      category: "Podcasts",
-      desc: "Field sound recording and travel vlog production tracking hikers in remote settings.",
-      img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "tall"
-    },
-    {
-      title: "Amazon Commercial Campaign",
+      title: "Commercial Film Set",
       category: "Film & Video",
-      desc: "Full-scale commercial video production, casting, and lighting rigs for Amazon Festive launch.",
-      img: "assets/images/line_production.png",
-      sizeClass: "tall"
-    },
-    {
-      title: "Groww Podcasting Series",
-      category: "Podcasts",
-      desc: "Acoustic pod-room design and multi-camera Sony FX6 setup for financial streams.",
-      img: "assets/images/podcast_studio.png",
-      sizeClass: "short"
-    },
-    {
-      title: "Flipkart Festive Launch",
-      category: "Film & Video",
-      desc: "Cinematic commercial capturing festive energy with ARRI Alexa and Cooke prime lenses.",
-      img: "assets/images/cinema_lenses.png",
+      desc: "Location setup, custom lighting grids, and camera crew orchestration in action.",
+      img: "assets/images/work/akshay.jpeg",
       sizeClass: "tall"
     },
     {
       title: "Corporate Brand Narrative",
       category: "Corporate",
-      desc: "Daylight executive interviews and documentary capturing milestones for major brands.",
-      img: "assets/images/IMG_0153_converted.jpg",
+      desc: "Interview capture and executive profiles filmed for major brand launches.",
+      img: "assets/images/work/IMG-20201129-WA0000.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Sony FX6 Camera Package",
+      category: "Rentals",
+      desc: "Certified cinema camera bodies, prime lenses, and audio accessories.",
+      img: "assets/images/work/IMG_0824.JPG",
+      sizeClass: "short"
+    },
+    {
+      title: "RED V-Raptor Cine Rig",
+      category: "Rentals",
+      desc: "High-end 8K digital cinema cameras prepared with monitors and follow focus.",
+      img: "assets/images/work/IMG_0828.JPG",
       sizeClass: "tall"
     },
     {
-      title: "NVL Documentary Shoot",
-      category: "Film & Video",
-      desc: "Cinematography and field audio recording across local northern India heritage locations.",
-      img: "assets/images/cinema_camera.png",
-      sizeClass: "short"
-    },
-    {
-      title: "Cinema Gear Rentals",
+      title: "Sound Mixer Setup",
       category: "Rentals",
-      desc: "Certified cinema packages including ARRI Venice, RED Raptor, and spotlight kits.",
-      img: "assets/images/studio_lighting.png",
+      desc: "Multi-channel field recorders and location sound kits for commercial crews.",
+      img: "assets/images/work/IMG_6219.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Gimbal & Stabilizer Gear",
+      category: "Rentals",
+      desc: "3-axis motorized gimbals and vehicular mounts for high-speed tracking.",
+      img: "assets/images/work/IMG_6991.JPG",
       sizeClass: "short"
     },
     {
-      title: "Lakmé Fashion Week Runway",
-      category: "Film & Video",
-      desc: "High-fashion runway coverage and designer collections showcase behind-the-scenes.",
-      img: "GM images/home/latest work/lakmeFashionweek.jpeg",
+      title: "Ad Campaign Portrait",
+      category: "Corporate",
+      desc: "High-contrast visual advertising campaign captured for global fashion label.",
+      img: "assets/images/work/IMG_8799.jpg",
       sizeClass: "tall"
     },
     {
-      title: "NIFT Fashion Showcase",
+      title: "Video Podcast Production",
+      category: "Podcasts",
+      desc: "Multicam podcast setups, acoustics prep, and sound engineering in progress.",
+      img: "assets/images/work/IMG_8806.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Creative Storytelling",
       category: "Film & Video",
-      desc: "Capturing creative runway designs, garments, and events for NIFT Delhi.",
-      img: "GM images/home/latest work/nift.jpg",
+      desc: "Documentary and creative direction focusing on artistic narratives.",
+      img: "assets/images/work/IMG_9225.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "On-Set Crew Action",
+      category: "Film & Video",
+      desc: "Behind-the-scenes visual documentation of camera operators on location.",
+      img: "assets/images/work/IMG_9226.jpg",
       sizeClass: "tall"
     },
     {
-      title: "Code Brown Campaign",
+      title: "Acoustic Pod-Room Recording",
+      category: "Podcasts",
+      desc: "Studio audio recording and post-production voiceover workflows.",
+      img: "assets/images/work/IMG_9317.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Corporate Milestone Video",
+      category: "Corporate",
+      desc: "Documenting executive keynotes and company milestone celebrations.",
+      img: "assets/images/work/IMG_9727.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Fashion Editorial Shoot",
       category: "Film & Video",
-      desc: "Commercial branding and visual advertising shoot delivered with high production value.",
-      img: "GM images/home/latest work/codebrown.jpg",
+      desc: "Visual branding and commercial advertising for creative fashion designer.",
+      img: "assets/images/work/IMG_9920.jpg",
       sizeClass: "tall"
     },
     {
-      title: "Project DaVinci Documentary",
+      title: "Field Audio Capturing",
+      category: "Podcasts",
+      desc: "Ambient soundscapes and street interview recordings for podcast series.",
+      img: "assets/images/work/IMG_9973.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Visual Art Curation",
       category: "Corporate",
-      desc: "Storytelling documentary capturing designer profiles and high-end craftsmanship.",
-      img: "GM images/home/latest work/project_davinci.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "BMW Vehicle Campaign",
-      category: "Film & Video",
-      desc: "High-speed tracking vehicle commercial utilizing specialized camera gimbal rigs.",
-      img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "medium"
-    },
-    {
-      title: "Nike Training Special",
-      category: "Film & Video",
-      desc: "High-contrast action tracking and dynamic gym lighting setups for Nike campaign.",
-      img: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "medium"
-    },
-    {
-      title: "Telescope Astrophotography",
-      category: "Film & Video",
-      desc: "Astrophotography and starry-sky time-lapse production at high altitudes.",
-      img: "GM images/home/latest work/telescope.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Project One Commercial",
-      category: "Film & Video",
-      desc: "Premium brand commercial featuring action tracking and dynamic post-production.",
-      img: "GM images/home/latest work/project_1.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Sony Venice 2 Package",
-      category: "Rentals",
-      desc: "Premium Venice 2 camera bodies and anamorphic glass rentals with assistants.",
-      img: "assets/images/sony_venice_2.png",
-      sizeClass: "medium"
-    },
-    {
-      title: "ARRI Skypanel Light Kit",
-      category: "Rentals",
-      desc: "Certified rental lights package featuring ARRI S60C softboxes and spotlight units.",
-      img: "assets/images/arri_skypanel_s60c.png",
-      sizeClass: "medium"
-    },
-    {
-      title: "Red Raptor Cinema Rig",
-      category: "Rentals",
-      desc: "8K Red Raptor cinema systems, monitors, focus controls, and transmitters.",
-      img: "assets/images/red_v_raptor.png",
-      sizeClass: "medium"
-    },
-    {
-      title: "Sound Devices Field Kit",
-      category: "Rentals",
-      desc: "Professional sound recorders and boom mic setups for outdoor location recordings.",
-      img: "assets/images/sound_devices_833.png",
-      sizeClass: "medium"
-    },
-    {
-      title: "DJI Ronin 2 Gimbal",
-      category: "Rentals",
-      desc: "Heavy-duty camera gimbals, ready-rig kits, and vehicular mount setups.",
-      img: "assets/images/dji_ronin_2.png",
-      sizeClass: "medium"
-    },
-    {
-      title: "Zeiss Supreme Prime Lenses",
-      category: "Rentals",
-      desc: "Vintage Zeiss prime lenses rental packages featuring fast apertures.",
-      img: "assets/images/zeiss_supreme_primes.png",
-      sizeClass: "medium"
-    },
-    {
-      title: "Adidas Running Commercial",
-      category: "Film & Video",
-      desc: "Dynamic ATV tracking and action cinematography for running shoes launch.",
-      img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80",
+      desc: "Museum-grade framing and selective visual styling curation showcase.",
+      img: "assets/images/work/PHOTO-2025-10-10-12-10-26.jpg",
       sizeClass: "short"
     },
     {
-      title: "Mercedes Benz Heritage",
-      category: "Corporate",
-      desc: "Corporate milestones visual narrative filmed across European workshops.",
-      img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "short"
-    },
-    {
-      title: "Airbnb Escape Promo",
-      category: "Corporate",
-      desc: "Daylight interior property filming and drone capture for Airbnb resorts.",
-      img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
-      sizeClass: "short"
-    },
-    {
-      title: "Google Workspace Promo",
-      category: "Corporate",
-      desc: "Creative brand marketing and digital lifestyle promo for Google Workspace.",
-      img: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=800&q=80",
+      title: "Product Launch Campaign",
+      category: "Film & Video",
+      desc: "Commercial product photography and high-end video branding.",
+      img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpeg",
       sizeClass: "medium"
     }
   ];
