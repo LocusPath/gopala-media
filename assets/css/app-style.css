@@ -96,7 +96,10 @@
   width: 100vw;
   height: 100dvh;
   z-index: 90;
-  background-color: #003459; /* Indigo base */
+  background: linear-gradient(rgba(0, 52, 89, 0.88), rgba(0, 52, 89, 0.88)), url('../images/Hello.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
