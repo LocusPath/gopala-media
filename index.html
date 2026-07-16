@@ -22,7 +22,7 @@
 
 
     <!-- NAVIGATION HEADER -->
-    <header class="nav_desktop_wrap nav_component">
+    <header class="nav_desktop_wrap nav_component is-dark-bg">
       <div class="nav_desktop_contain">
         <div class="nav_desktop_layout">
           <!-- Logo -->
@@ -31,57 +31,55 @@
             <span class="nav_logo_text">Gopala Media</span>
           </a>
 
-          <!-- Nav Links -->
-          <nav aria-label="Main" class="nav_links_component">
-            <ul role="list" class="nav_links_wrap">
-              <li class="nav_links_item"><a href="index.html" class="nav_links_link">Home</a></li>
-              <li class="nav_links_item"><a href="about.html" class="nav_links_link">About Us</a></li>
-              <li class="nav_links_item"><a href="equipments.html" class="nav_links_link">Equipments</a></li>
-              <li class="nav_links_item"><a href="services.html" class="nav_links_link">Services</a></li>
-              <li class="nav_links_item"><a href="process.html" class="nav_links_link">Process</a></li>
-              <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
-              
-              <li class="nav_buttons_item">
-                <div data-wf--button-main--variant="primary" class="button_main_wrap">
-                  <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link" aria-label="Contact Us"></a>
-                  </div>
-                  <div class="button_main_element">
-                    <div class="button_main_text">Contact Us</div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </nav>
+          <!-- Nav Trigger & Inquire -->
+          <div class="nav_right_group">
+            <a href="contact.html" class="inquire_btn">INQUIRE</a>
+            <button class="menu_trigger" id="menu-trigger" aria-label="Toggle Menu">
+              <span class="menu_text">Menu</span>
+              <div class="burger_icon">
+                <span class="burger_line_top" id="burger-top"></span>
+                <span class="burger_line_bottom" id="burger-bottom"></span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </header>
 
-        <!-- MOBILE NAVIGATION -->
-    <div class="nav_mobile_wrap nav_component">
-      <a href="index.html" class="nav_mobile_logo">
-        <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
-        <span class="nav_logo_text">Gopala Media</span>
-      </a>
-      <button class="nav_mobile_hamburger" aria-label="Open navigation menu">
-        <span class="hamburger_line"></span>
-        <span class="hamburger_line"></span>
-        <span class="hamburger_line"></span>
-      </button>
-      
-      <!-- Drawer Menu -->
-      <nav class="nav_mobile_drawer" aria-label="Mobile Navigation">
-        <ul role="list" class="nav_mobile_drawer_links">
-          <li><a href="index.html" class="nav_mobile_drawer_link">Home</a></li>
-          <li><a href="about.html" class="nav_mobile_drawer_link">About Us</a></li>
-          <li><a href="equipments.html" class="nav_mobile_drawer_link">Equipments</a></li>
-          <li><a href="services.html" class="nav_mobile_drawer_link">Services</a></li>
-          <li><a href="process.html" class="nav_mobile_drawer_link">Process</a></li>
-          <li><a href="work.html" class="nav_mobile_drawer_link">Work</a></li>
-          <li><a href="social.html" class="nav_mobile_drawer_link">Social Media</a></li>
-          <li><a href="contact.html" class="nav_mobile_drawer_link nav_mobile_drawer_btn">Contact Us</a></li>
-        </ul>
+    <!-- Full-screen Overlay Menu -->
+    <div id="menu-overlay">
+      <nav class="menu_nav_container">
+        <div class="menu_left_side">
+          <a class="menu_nav_link" href="index.html" style="transition-delay: 0.1s;">Home</a>
+          <a class="menu_nav_link" href="about.html" style="transition-delay: 0.2s;">About Us</a>
+          <a class="menu_nav_link" href="process.html" style="transition-delay: 0.3s;">Our Process</a>
+          <a class="menu_nav_link" href="services.html" style="transition-delay: 0.4s;">Services</a>
+          <a class="menu_nav_link" href="equipments.html" style="transition-delay: 0.5s;">Equipments</a>
+          <a class="menu_nav_link" href="work.html" style="transition-delay: 0.6s;">Work</a>
+          <a class="menu_nav_link" href="contact.html" style="transition-delay: 0.7s;">Contact</a>
+        </div>
+        <div class="menu_right_side">
+          <div>
+            <span class="menu_section_label">INQUIRIES</span>
+            <p class="menu_info_text">connect@gopalamedia.com</p>
+            <p class="menu_info_text">+91 99999 97219</p>
+          </div>
+          <div>
+            <span class="menu_section_label">LOCATION</span>
+            <p class="menu_info_text_muted">House No. 69, near Om Panchayati Shiv Mandir<br>Gautam Nagar, New Delhi, Delhi 110049</p>
+          </div>
+          <div class="menu_social_links">
+            <a class="menu_social_link" href="https://www.instagram.com/gopalamedia/" target="_blank">Instagram</a>
+            <a class="menu_social_link" href="https://www.linkedin.com/company/gopala-media/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
       </nav>
+    </div>
+
+    <!-- Floating Lightbox Counter -->
+    <div class="fixed-lightbox-counter">
+      <span class="vertical-text-counter">(0) LIGHTBOX</span>
+      <div class="lightbox-line"></div>
     </div>
 
     <!-- MAIN PAGE CONTENT -->
@@ -89,24 +87,45 @@
       
       <!-- HERO MAIN SECTION -->
       <section id="home" class="hero_main_wrap">
-        <video autoplay loop muted playsinline class="hero_video_bg">
-          <source src="assets/videos/background%20video%20main.mp4" type="video/mp4">
-        </video>
         <div class="hero_video_overlay"></div>
         <div class="hero_main_contain u-container-full">
-          <div class="hero_main_layout u-alignment-center">
+          <div class="hero_main_layout">
             
-            <div class="hero_main_heading_wrap u-position-relative" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 82rem;">
-              <h1 class="hero_main_heading u-text-transform-uppercase" style="font-family: var(--_typography---font--secondary-family); font-size: clamp(3rem, 7.5vw, 6.2rem); font-weight: 400; color: #ffffff; letter-spacing: -0.02em; margin: 0; line-height: 1.05; text-shadow: 0 4px 15px rgba(0,0,0,0.45); font-style: normal;">
-                We Bring Stories to Life
-              </h1>
-              <p class="hero_sub_heading" style="font-family: var(--_typography---font--primary-family); font-size: clamp(0.95rem, 1.8vw, 1.25rem); color: rgba(255, 255, 255, 0.95); margin-top: 1.25rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0 2px 8px rgba(0,0,0,0.5); text-align: center;">
-                With Craft, Precision, and 2 Decades of Trust
-              </p>
+            <!-- Gold Accent Sub-Header -->
+            <div class="hero_sub_badge">
+              <div class="hero_badge_line"></div>
+              <span class="hero_badge_text">GOPALAMEDIA / NEW DELHI</span>
+            </div>
+            
+            <!-- Giant Luxury Typography -->
+            <h1 class="hero_luxury_title">
+              Gopala<br>
+              <span class="hero_title_italic">media</span>
+            </h1>
+            
+            <!-- Hero Description -->
+            <p class="hero_luxury_desc">
+              Where visual art meets campaign production — editorial photography and creative direction for the discerning eye.
+            </p>
+            
+            <!-- Hero Action Buttons -->
+            <div class="hero_btn_group">
+              <a href="work.html" class="hero_btn_solid">
+                EXPLORE PORTFOLIO <span class="arrow_icon">→</span>
+              </a>
+              <a href="services.html" class="hero_btn_outline">
+                VIEW SERVICES
+              </a>
             </div>
 
           </div>
         </div>
+                    <!-- Right Side Scroll Indicator -->
+            <div class="hero-scroll-indicator">
+              <span class="vertical-text-scroll">Scroll to explore</span>
+              <div class="scroll-line"></div>
+            </div>
+
         <!-- Ticker Marquee Bar -->
         <div class="hero_ticker_bar">
           <div class="hero_ticker_track">

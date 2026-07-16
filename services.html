@@ -21,12 +21,12 @@
   <style>
     /* Editorial Brand-Color Custom Styling */
     :root {
-      --bg-cream: #ECEBE8;
-      --bg-card: #ffffff;
-      --color-charcoal: #100E0A;
-      --color-bronze: #53432F;
-      --color-sage: #C2C3B7;
-      --color-dark-grey: #635E55;
+      --bg-cream: #eee5cf;
+      --bg-card: #e5dbbf;
+      --color-charcoal: #003459;
+      --color-bronze: #ffc300;
+      --color-sage: #ffc300;
+      --color-dark-grey: #335d7a;
       
       --font-syne: 'Syne', sans-serif;
       --font-outfit: 'Outfit', sans-serif;
@@ -236,7 +236,7 @@
       z-index: 3;
       max-width: 580px;
       width: 100%;
-      color: #ECEBE8 !important;
+      color: #eee5cf !important;
       display: flex;
       flex-direction: column;
     }
@@ -273,7 +273,7 @@
     .services_desc {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #C2C3B7 !important;
+      color: #ffc300 !important;
       margin-bottom: 2rem;
     }
     
@@ -402,56 +402,48 @@
             <span class="nav_logo_text">Gopala Media</span>
           </a>
 
-          <!-- Nav Links -->
-          <nav aria-label="Main" class="nav_links_component">
-            <ul role="list" class="nav_links_wrap">
-              <li class="nav_links_item"><a href="index.html" class="nav_links_link">Home</a></li>
-              <li class="nav_links_item"><a href="about.html" class="nav_links_link">About Us</a></li>
-              <li class="nav_links_item"><a href="equipments.html" class="nav_links_link">Equipments</a></li>
-              <li class="nav_links_item"><a href="services.html" class="nav_links_link">Services</a></li>
-              <li class="nav_links_item"><a href="process.html" class="nav_links_link">Process</a></li>
-              <li class="nav_links_item"><a href="work.html" class="nav_links_link">Work</a></li>
-              
-              <li class="nav_buttons_item">
-                <div data-wf--button-main--variant="primary" class="button_main_wrap">
-                  <div class="clickable_wrap u-cover-absolute">
-                    <a href="contact.html" class="clickable_link" aria-label="Contact Us"></a>
-                  </div>
-                  <div class="button_main_element">
-                    <div class="button_main_text">Contact Us</div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </nav>
+          <!-- Nav Trigger & Inquire -->
+          <div class="nav_right_group">
+            <a href="contact.html" class="inquire_btn">INQUIRE</a>
+            <button class="menu_trigger" id="menu-trigger" aria-label="Toggle Menu">
+              <span class="menu_text">Menu</span>
+              <div class="burger_icon">
+                <span class="burger_line_top" id="burger-top"></span>
+                <span class="burger_line_bottom" id="burger-bottom"></span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- MOBILE NAVIGATION -->
-    <div class="nav_mobile_wrap nav_component">
-      <a href="index.html" class="nav_mobile_logo">
-        <img src="assets/images/logo.png" alt="Gopala Media" class="nav_logo_img">
-        <span class="nav_logo_text">Gopala Media</span>
-      </a>
-      <button class="nav_mobile_hamburger" aria-label="Open navigation menu">
-        <span class="hamburger_line"></span>
-        <span class="hamburger_line"></span>
-        <span class="hamburger_line"></span>
-      </button>
-      
-      <!-- Drawer Menu -->
-      <nav class="nav_mobile_drawer" aria-label="Mobile Navigation">
-        <ul role="list" class="nav_mobile_drawer_links">
-          <li><a href="index.html" class="nav_mobile_drawer_link">Home</a></li>
-          <li><a href="about.html" class="nav_mobile_drawer_link">About Us</a></li>
-          <li><a href="equipments.html" class="nav_mobile_drawer_link">Equipments</a></li>
-          <li><a href="services.html" class="nav_mobile_drawer_link">Services</a></li>
-          <li><a href="process.html" class="nav_mobile_drawer_link">Process</a></li>
-          <li><a href="work.html" class="nav_mobile_drawer_link">Work</a></li>
-          <li><a href="social.html" class="nav_mobile_drawer_link">Social Media</a></li>
-          <li><a href="contact.html" class="nav_mobile_drawer_link nav_mobile_drawer_btn">Contact Us</a></li>
-        </ul>
+    <!-- Full-screen Overlay Menu -->
+    <div id="menu-overlay">
+      <nav class="menu_nav_container">
+        <div class="menu_left_side">
+          <a class="menu_nav_link" href="index.html" style="transition-delay: 0.1s;">Home</a>
+          <a class="menu_nav_link" href="about.html" style="transition-delay: 0.2s;">About Us</a>
+          <a class="menu_nav_link" href="process.html" style="transition-delay: 0.3s;">Our Process</a>
+          <a class="menu_nav_link" href="services.html" style="transition-delay: 0.4s;">Services</a>
+          <a class="menu_nav_link" href="equipments.html" style="transition-delay: 0.5s;">Equipments</a>
+          <a class="menu_nav_link" href="work.html" style="transition-delay: 0.6s;">Work</a>
+          <a class="menu_nav_link" href="contact.html" style="transition-delay: 0.7s;">Contact</a>
+        </div>
+        <div class="menu_right_side">
+          <div>
+            <span class="menu_section_label">INQUIRIES</span>
+            <p class="menu_info_text">connect@gopalamedia.com</p>
+            <p class="menu_info_text">+91 99999 97219</p>
+          </div>
+          <div>
+            <span class="menu_section_label">LOCATION</span>
+            <p class="menu_info_text_muted">House No. 69, near Om Panchayati Shiv Mandir<br>Gautam Nagar, New Delhi, Delhi 110049</p>
+          </div>
+          <div class="menu_social_links">
+            <a class="menu_social_link" href="https://www.instagram.com/gopalamedia/" target="_blank">Instagram</a>
+            <a class="menu_social_link" href="https://www.linkedin.com/company/gopala-media/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
       </nav>
     </div>
 
@@ -473,9 +465,8 @@
             <!-- Right Column Index Nav -->
             <div class="services_hero_index">
               <a href="#service-01" class="services_hero_index_item"><span class="index_num">01 /</span> Film Production</a>
-              <a href="#service-02" class="services_hero_index_item"><span class="index_num">02 /</span> Podcast Studio</a>
-              <a href="#service-03" class="services_hero_index_item"><span class="index_num">03 /</span> Gear Rentals</a>
-              <a href="#service-04" class="services_hero_index_item"><span class="index_num">04 /</span> Line Production</a>
+              <a href="#service-02" class="services_hero_index_item"><span class="index_num">02 /</span> Gear Rentals</a>
+              <a href="#service-03" class="services_hero_index_item"><span class="index_num">03 /</span> Line Production</a>
             </div>
 
           </div>
@@ -508,37 +499,15 @@
             </div>
           </div>
 
-          <!-- Service 2: Podcast & Audio Production -->
+          <!-- Service 2: Premium Equipment Rentals -->
           <div id="service-02" class="services_item align-right">
-            <div class="services_img_wrap">
-              <img src="assets/images/services/IMG_9280.jpg" loading="lazy" alt="Podcast and audio production studio" class="services_img"/>
-              <div class="services_img_overlay"></div>
-            </div>
-            <div class="services_item_contain">
-              <div class="services_content">
-                <div class="services_index">02</div>
-                <h2 class="services_title">Podcast &amp; Audio Production</h2>
-                <p class="services_desc">State-of-the-art studio recording, high-fidelity editing, sound engineering, and multi-camera video podcast production. We provide clean acoustic environments, industry-standard microphones, and professional mixers.</p>
-                <ul class="services_caps_list">
-                  <li><span class="cap_bullet">01 /</span> Acoustic Recording Rooms</li>
-                  <li><span class="cap_bullet">02 /</span> Multi-Cam Video Podcast</li>
-                  <li><span class="cap_bullet">03 /</span> Audio Engineering &amp; Editing</li>
-                  <li><span class="cap_bullet">04 /</span> Voiceover &amp; Ad Production</li>
-                </ul>
-                <a href="contact.html?service=Podcast%20Studio" class="services_btn">Book Studio</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service 3: Premium Equipment Rentals -->
-          <div id="service-03" class="services_item align-left">
             <div class="services_img_wrap">
               <img src="assets/images/services/IMG_9281.jpg" loading="lazy" alt="Cinema equipment rental services" class="services_img"/>
               <div class="services_img_overlay"></div>
             </div>
             <div class="services_item_contain">
               <div class="services_content">
-                <div class="services_index">03</div>
+                <div class="services_index">02</div>
                 <h2 class="services_title">Premium Equipment Rentals</h2>
                 <p class="services_desc">Professional camera rigs, large-format cinema lenses, lighting set-ups, audio gears, and specialized grip equipment. We rent certified equipment from leading industry brands to production companies and creators.</p>
                 <ul class="services_caps_list">
@@ -552,15 +521,15 @@
             </div>
           </div>
 
-          <!-- Service 4: Line Production & Logistics -->
-          <div id="service-04" class="services_item align-right">
+          <!-- Service 3: Line Production & Logistics -->
+          <div id="service-03" class="services_item align-left">
             <div class="services_img_wrap">
               <img src="assets/images/services/service_line_production.png" loading="lazy" alt="Line production and logistics support" class="services_img"/>
               <div class="services_img_overlay"></div>
             </div>
             <div class="services_item_contain">
               <div class="services_content">
-                <div class="services_index">04</div>
+                <div class="services_index">03</div>
                 <h2 class="services_title">Line Production &amp; Logistics</h2>
                 <p class="services_desc">Comprehensive line production services in India for international and domestic crews. We manage shoot permissions, local casting, crew hiring, travel logistics, equipment custom clearance, and on-ground scheduling.</p>
                 <ul class="services_caps_list">
