@@ -201,6 +201,37 @@ document.addEventListener("DOMContentLoaded", () => {
     panelCategory.textContent = category;
     panelDesc.textContent = descText;
     panelSpecsGrid.innerHTML = specsHTML;
+
+    // Copy visual style (background extensions & object fit) from card
+    const cardVisual = card.querySelector(".equip_card_visual");
+    const panelImgBox = document.querySelector(".panel_img_box");
+    if (panelImgBox) {
+      if (cardVisual && cardVisual.style.backgroundColor) {
+        panelImgBox.style.backgroundColor = cardVisual.style.backgroundColor;
+      } else {
+        panelImgBox.style.backgroundColor = "var(--bg-card)";
+      }
+    }
+
+    const cardImg = card.querySelector(".equip_card_image");
+    if (panelImg && cardImg) {
+      const mixBlend = cardImg.style.mixBlendMode || "normal";
+      const objFit = cardImg.style.objectFit || "cover";
+      panelImg.style.mixBlendMode = mixBlend;
+      panelImg.style.objectFit = objFit;
+      
+      if (objFit === "cover") {
+        panelImg.style.width = "100%";
+        panelImg.style.height = "100%";
+        panelImg.style.maxWidth = "none";
+        panelImg.style.maxHeight = "none";
+      } else {
+        panelImg.style.width = "82%";
+        panelImg.style.height = "auto";
+        panelImg.style.maxWidth = "none";
+        panelImg.style.maxHeight = "220px";
+      }
+    }
   }
 
   function openPanel(card) {
