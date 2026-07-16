@@ -91,7 +91,10 @@
 /* Full-screen Overlay Menu */
 #menu-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
   z-index: 90;
   background-color: #003459; /* Indigo base */
   display: flex;
@@ -103,7 +106,7 @@
 }
 
 #menu-overlay.active {
-  clip-path: circle(150% at 100% 0%);
+  clip-path: circle(200vmax at 100% 0%);
   pointer-events: auto;
 }
 
