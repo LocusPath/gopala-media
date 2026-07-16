@@ -4,158 +4,256 @@ document.addEventListener("DOMContentLoaded", () => {
   // Curated Projects Dataset (36 items) with balanced sizes (12 tall, 12 medium, 12 short)
   const projects = [
     {
+      title: "Commercial Production",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/akshay.jpeg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Corporate Brand Story",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG-20201129-WA0000.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Cinematic Portrait Shoot",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_0535.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "On-Set Live Directing",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_0797.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Camera Rig Operation",
+      category: "Rentals",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_0808.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Sony Cine Gear Setup",
+      category: "Rentals",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_0824.JPG",
+      sizeClass: "short"
+    },
+    {
+      title: "ARRI Master Prime Prep",
+      category: "Rentals",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_0828.JPG",
+      sizeClass: "tall"
+    },
+    {
+      title: "Vocal Podcast Recording",
+      category: "Podcasts",
+      desc: "Professional podcasts production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_1004.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Studio Production Session",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_4613.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Product Commercial Shoot",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_5503.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Creative Set Lighting",
+      category: "Rentals",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_5654.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Fashion Editorial Profile",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_5863.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Documentary Video Shoot",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_5906.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Sound Mixer Field Recorder",
+      category: "Rentals",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_6219.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Gimbal Stabilizer Rig",
+      category: "Rentals",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_6991.JPG",
+      sizeClass: "short"
+    },
+    {
+      title: "Interview Audio Setup",
+      category: "Podcasts",
+      desc: "Professional podcasts production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_8540.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Runway Fashion Spotlight",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_8799.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Studio Podcasting Series",
+      category: "Podcasts",
+      desc: "Professional podcasts production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_8806.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Camera Operator Behind Scenes",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9225.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Creative Team Collaboration",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9226.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Commercial Video Production",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9292.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Acoustic Pod-Room Prep",
+      category: "Podcasts",
+      desc: "Professional podcasts production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9317.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Brand Launch Editorial",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9659.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Corporate Milestone Record",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9727.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Fashion Campaign Shoot",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9809.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Creative Direction Portrait",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9920.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "On-Location Sound Curation",
+      category: "Podcasts",
+      desc: "Professional podcasts production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9932.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Multi-Mic Podcast Recording",
+      category: "Podcasts",
+      desc: "Professional podcasts production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/IMG_9973.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Fine Art Curation Gallery",
+      category: "Corporate",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/PHOTO-2025-10-10-12-10-26.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Product Launch Campaign",
+      category: "Film & Video",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
+      img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpeg",
+      sizeClass: "short"
+    },
+    {
       title: "Runway Collection Showcase",
       category: "Film & Video",
-      desc: "Editorial and high-fashion runway cinematography capturing premium garment showcases.",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
       img: "assets/images/work/_DSF5765 copy.jpg",
       sizeClass: "tall"
     },
     {
       title: "Model Editorial Profile",
       category: "Corporate",
-      desc: "Commercial fashion shoot documenting designer profiles and styling trends.",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
       img: "assets/images/work/_DSF5771 copy 2.jpg",
       sizeClass: "medium"
     },
     {
       title: "Studio Lighting Prep",
       category: "Rentals",
-      desc: "Certified lighting rigs, softboxes, and spotlights configured for editorial shoots.",
+      desc: "Professional rentals production showcasing premium execution and creative excellence.",
       img: "assets/images/work/_DSF5894 copy.jpg",
       sizeClass: "short"
     },
     {
-      title: "Behind The Scenes",
+      title: "Behind The Scenes Crew",
       category: "Film & Video",
-      desc: "Production crew executing high-speed tracking and on-set camera support.",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
       img: "assets/images/work/_DSF5914 copy.jpg",
       sizeClass: "tall"
     },
     {
-      title: "Creative Wardrobe Shoot",
+      title: "Creative Wardrobe Styling",
       category: "Corporate",
-      desc: "Visual branding campaign featuring detailed garment textures and catalog photography.",
+      desc: "Professional corporate production showcasing premium execution and creative excellence.",
       img: "assets/images/work/_DSF5922 copy.jpg",
       sizeClass: "medium"
     },
     {
-      title: "Runway Event Capture",
+      title: "Live Fashion Show Broadcast",
       category: "Film & Video",
-      desc: "Live multicam broadcast and video production for premier fashion weeks.",
+      desc: "Professional film & video production showcasing premium execution and creative excellence.",
       img: "assets/images/work/_DSF6084 copy.jpg",
       sizeClass: "short"
-    },
-    {
-      title: "Commercial Film Set",
-      category: "Film & Video",
-      desc: "Location setup, custom lighting grids, and camera crew orchestration in action.",
-      img: "assets/images/work/akshay.jpeg",
-      sizeClass: "tall"
-    },
-    {
-      title: "Corporate Brand Narrative",
-      category: "Corporate",
-      desc: "Interview capture and executive profiles filmed for major brand launches.",
-      img: "assets/images/work/IMG-20201129-WA0000.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Sony FX6 Camera Package",
-      category: "Rentals",
-      desc: "Certified cinema camera bodies, prime lenses, and audio accessories.",
-      img: "assets/images/work/IMG_0824.JPG",
-      sizeClass: "short"
-    },
-    {
-      title: "RED V-Raptor Cine Rig",
-      category: "Rentals",
-      desc: "High-end 8K digital cinema cameras prepared with monitors and follow focus.",
-      img: "assets/images/work/IMG_0828.JPG",
-      sizeClass: "tall"
-    },
-    {
-      title: "Sound Mixer Setup",
-      category: "Rentals",
-      desc: "Multi-channel field recorders and location sound kits for commercial crews.",
-      img: "assets/images/work/IMG_6219.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Gimbal & Stabilizer Gear",
-      category: "Rentals",
-      desc: "3-axis motorized gimbals and vehicular mounts for high-speed tracking.",
-      img: "assets/images/work/IMG_6991.JPG",
-      sizeClass: "short"
-    },
-    {
-      title: "Ad Campaign Portrait",
-      category: "Corporate",
-      desc: "High-contrast visual advertising campaign captured for global fashion label.",
-      img: "assets/images/work/IMG_8799.jpg",
-      sizeClass: "tall"
-    },
-    {
-      title: "Video Podcast Production",
-      category: "Podcasts",
-      desc: "Multicam podcast setups, acoustics prep, and sound engineering in progress.",
-      img: "assets/images/work/IMG_8806.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Creative Storytelling",
-      category: "Film & Video",
-      desc: "Documentary and creative direction focusing on artistic narratives.",
-      img: "assets/images/work/IMG_9225.jpg",
-      sizeClass: "short"
-    },
-    {
-      title: "On-Set Crew Action",
-      category: "Film & Video",
-      desc: "Behind-the-scenes visual documentation of camera operators on location.",
-      img: "assets/images/work/IMG_9226.jpg",
-      sizeClass: "tall"
-    },
-    {
-      title: "Acoustic Pod-Room Recording",
-      category: "Podcasts",
-      desc: "Studio audio recording and post-production voiceover workflows.",
-      img: "assets/images/work/IMG_9317.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Corporate Milestone Video",
-      category: "Corporate",
-      desc: "Documenting executive keynotes and company milestone celebrations.",
-      img: "assets/images/work/IMG_9727.jpg",
-      sizeClass: "short"
-    },
-    {
-      title: "Fashion Editorial Shoot",
-      category: "Film & Video",
-      desc: "Visual branding and commercial advertising for creative fashion designer.",
-      img: "assets/images/work/IMG_9920.jpg",
-      sizeClass: "tall"
-    },
-    {
-      title: "Field Audio Capturing",
-      category: "Podcasts",
-      desc: "Ambient soundscapes and street interview recordings for podcast series.",
-      img: "assets/images/work/IMG_9973.jpg",
-      sizeClass: "medium"
-    },
-    {
-      title: "Visual Art Curation",
-      category: "Corporate",
-      desc: "Museum-grade framing and selective visual styling curation showcase.",
-      img: "assets/images/work/PHOTO-2025-10-10-12-10-26.jpg",
-      sizeClass: "short"
-    },
-    {
-      title: "Product Launch Campaign",
-      category: "Film & Video",
-      desc: "Commercial product photography and high-end video branding.",
-      img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpeg",
-      sizeClass: "medium"
     }
   ];
 
