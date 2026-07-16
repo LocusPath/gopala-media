@@ -307,16 +307,13 @@
 .hero_main_layout {
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
-  text-align: left !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 
 /* Gold Accent Sub-Header */
 .hero_sub_badge {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  display: none;
 }
 
 .hero_badge_line {
@@ -343,7 +340,7 @@
   color: #ffffff;
   letter-spacing: -0.02em;
   margin: 0 0 2rem 0;
-  text-align: left;
+  text-align: center;
 }
 
 .hero_title_italic {
@@ -360,7 +357,9 @@
   color: rgba(238, 229, 207, 0.8);
   max-width: 550px;
   margin: 0 0 2.5rem 0;
-  text-align: left;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Hero Action Buttons */
@@ -369,6 +368,7 @@
   flex-wrap: wrap;
   gap: 1.25rem;
   width: 100%;
+  justify-content: center;
 }
 
 @media (max-width: 32rem) {
