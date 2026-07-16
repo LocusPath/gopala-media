@@ -476,6 +476,222 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
+    /* Vertical Masonry Parallax Gallery Styles */
+    body {
+      background-color: #fafaf9 !important;
+      color: #1c1916 !important;
+    }
+    
+    .page_wrap {
+      background-color: #fafaf9 !important;
+    }
+    
+    .work_hero_wrap {
+      background-color: #fafaf9 !important;
+      padding-bottom: 20px !important;
+    }
+    
+    .u-text-style-h1 {
+      color: #1c1916 !important;
+    }
+    
+    .work_form {
+      border-bottom: 1.5px solid rgba(28, 25, 22, 0.1) !important;
+    }
+    
+    .g_filter_wrap {
+      border: 1.5px solid rgba(28, 25, 22, 0.15) !important;
+      color: #1c1916 !important;
+      background: transparent !important;
+    }
+    
+    .g_filter_wrap:hover {
+      border-color: #1c1916 !important;
+    }
+    
+    .g_filter_wrap.is-active {
+      background-color: #1c1916 !important;
+      border-color: #1c1916 !important;
+      color: #fafaf9 !important;
+    }
+    
+    .work_result_count {
+      color: #7a6245 !important;
+    }
+
+    /* Vertical Gallery Grid Layout */
+    .vertical_gallery_wrap {
+      width: 100%;
+      max-width: var(--max-width--main);
+      margin: 0 auto;
+      padding: 1rem 0 6rem 0;
+      box-sizing: border-box;
+    }
+    
+    .gallery_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.25rem;
+      width: 100%;
+      position: relative;
+    }
+    
+    .gallery_column {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+      will-change: transform;
+    }
+    
+    /* Wavy height offsets for columns on desktop */
+    @media (min-width: 1025px) {
+      .gallery_column:nth-child(4n+1) { transform: translateY(80px); }
+      .gallery_column:nth-child(4n+2) { transform: translateY(30px); }
+      .gallery_column:nth-child(4n+3) { transform: translateY(-40px); }
+      .gallery_column:nth-child(4n+4) { transform: translateY(-10px); }
+    }
+    
+    /* Individual card styling */
+    .gallery_card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: #f3f2ee;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid rgba(28, 25, 22, 0.04);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+      width: 100%;
+    }
+    
+    .gallery_card.is-tall {
+      height: 480px;
+    }
+    .gallery_card.is-medium {
+      height: 380px;
+    }
+    .gallery_card.is-short {
+      height: 280px;
+    }
+    
+    .gallery_card:hover {
+      transform: scale(1.025) translateY(-5px);
+      box-shadow: 0 16px 35px rgba(28, 25, 22, 0.1);
+    }
+    
+    .gallery_img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .gallery_card:hover .gallery_img {
+      transform: scale(1.04);
+    }
+    
+    .gallery_overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28, 25, 22, 0.85) 0%, rgba(28, 25, 22, 0.3) 50%, rgba(28, 25, 22, 0) 100%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+    
+    .gallery_card:hover .gallery_overlay {
+      opacity: 1;
+    }
+    
+    .gallery_title {
+      color: #ffffff;
+      font-family: var(--font-syne);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    
+    .gallery_category {
+      color: #ffc300;
+      font-family: var(--font-outfit);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+    
+    /* Project Detail Modal styling */
+    .project_modal_overlay {
+      background: rgba(250, 250, 249, 0.75) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+    
+    .project_modal_content {
+      background: #ffffff !important;
+      color: #1c1916 !important;
+      border-radius: 24px !important;
+      border: 1px solid rgba(28, 25, 22, 0.08) !important;
+      box-shadow: 0 30px 90px rgba(28, 25, 22, 0.12) !important;
+    }
+    
+    .project_modal_title {
+      color: #1c1916 !important;
+    }
+    
+    .project_modal_desc {
+      color: #57534e !important;
+    }
+    
+    .project_modal_cat {
+      color: #7a6245 !important;
+    }
+    
+    .project_modal_close {
+      color: #1c1916 !important;
+      background: rgba(28, 25, 22, 0.05) !important;
+    }
+    
+    .project_modal_close:hover {
+      background: rgba(28, 25, 22, 0.1) !important;
+    }
+    
+    .project_modal_btn {
+      background: #1c1916 !important;
+      color: #fafaf9 !important;
+      border: none !important;
+    }
+    
+    .project_modal_btn:hover {
+      background: #332f2b !important;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .gallery_column {
+        gap: 1.5rem;
+        transform: none !important; /* Disable wavy translations for grid flow */
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .gallery_grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -580,181 +796,14 @@
             </div>
 
             <!-- PORTFOLIO LISTING -->
+            <!-- PORTFOLIO LISTING -->
             <div class="work_cms_wrapper">
-              <div class="work_cms_list">
-                
-                <!-- Card 1: Amazon Commercial Campaign (Film & Video) -->
-                <div class="work_cms_item" data-service="Film &amp; Video">
-                  <div class="work_card_wrap">
-                    <div class="work_card_visual">
-                      <div class="work_card_inner">
-                        <!-- Front Face -->
-                        <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/line_production.png" loading="lazy" alt="Amazon Commercial Campaign" class="work_card_bg"/>
-                          <div class="work_card_overlay_title">Amazon Commercial Campaign</div>
-                        </div>
-                        <!-- Back Face -->
-                        <div class="work_card_face work_card_face_back">
-                          <div class="work_card_back_content">
-                            <span class="work_card_back_category">Film &amp; Video</span>
-                            <h4 class="work_card_back_title">Amazon Campaign</h4>
-                            <p class="work_card_back_desc">Full-scale commercial video production, creative directing, and premium camera equipment rental solutions.</p>
-                            <button class="work_card_back_btn" 
-                                    data-title="Amazon Campaign" 
-                                    data-category="Film &amp; Video" 
-                                    data-desc="Our team provided end-to-end commercial production services for Amazon's pan-India festive campaign, coordinating script reviews, local casting, set building, locations, location permissions, and raw camera setups. High-fidelity editing and grading were handled in-house."
-                                    data-img="assets/images/line_production.png">View Details</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="vertical_gallery_wrap">
+                <div class="gallery_grid" id="gallery-grid">
+                  <!-- Columns will be injected dynamically by assets/js/work-anim.js -->
                 </div>
-
-                <!-- Card 2: Groww Podcasting Series (Podcasts) -->
-                <div class="work_cms_item" data-service="Podcasts">
-                  <div class="work_card_wrap">
-                    <div class="work_card_visual">
-                      <div class="work_card_inner">
-                        <!-- Front Face -->
-                        <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/podcast_studio.png" loading="lazy" alt="Groww Podcasting Series" class="work_card_bg"/>
-                          <div class="work_card_overlay_title">Groww Podcasting Series</div>
-                        </div>
-                        <!-- Back Face -->
-                        <div class="work_card_face work_card_face_back">
-                          <div class="work_card_back_content">
-                            <span class="work_card_back_category">Podcasts</span>
-                            <h4 class="work_card_back_title">Groww Podcasts</h4>
-                            <p class="work_card_back_desc">Acoustic sound design, multi-camera configuration, hosting setup, and post-production editing for digital streams.</p>
-                            <button class="work_card_back_btn" 
-                                    data-title="Groww Podcasts" 
-                                    data-category="Podcasts" 
-                                    data-desc="Coordinated technical production for Groww's digital podcasting series. Delivered custom studio acoustics setups, certified Shure SM7B mics, multi-cam 4K feeds on Sony FX6 rigs, and live sound engineering mixing boards to ensure a broadcast-grade audio-visual footprint."
-                                    data-img="assets/images/podcast_studio.png">View Details</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 3: Flipkart Festive Production (Film & Video) -->
-                <div class="work_cms_item" data-service="Film &amp; Video">
-                  <div class="work_card_wrap">
-                    <div class="work_card_visual">
-                      <div class="work_card_inner">
-                        <!-- Front Face -->
-                        <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/cinema_lenses.png" loading="lazy" alt="Flipkart Festive Production" class="work_card_bg"/>
-                          <div class="work_card_overlay_title">Flipkart Festive Production</div>
-                        </div>
-                        <!-- Back Face -->
-                        <div class="work_card_face work_card_face_back">
-                          <div class="work_card_back_content">
-                            <span class="work_card_back_category">Film &amp; Video</span>
-                            <h4 class="work_card_back_title">Flipkart Festive</h4>
-                            <p class="work_card_back_desc">Cinematic brand commercial capturing festive energy with high-end camera rigs and lighting designs.</p>
-                            <button class="work_card_back_btn" 
-                                    data-title="Flipkart Festive" 
-                                    data-category="Film &amp; Video" 
-                                    data-desc="Crafted high-fidelity brand commercial capturing the holiday energy for Flipkart's festive launch. Utilized Cooke S7/i prime lenses, ARRI Alexa LF bodies, and custom gimbal stabilization layouts, followed by high-end studio color correction grading panels."
-                                    data-img="assets/images/cinema_lenses.png">View Details</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 4: Corporate Brand Narrative (Corporate) -->
-                <div class="work_cms_item" data-service="Corporate">
-                  <div class="work_card_wrap">
-                    <div class="work_card_visual">
-                      <div class="work_card_inner">
-                        <!-- Front Face -->
-                        <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/IMG_0153_converted.jpg" loading="lazy" alt="Corporate Brand Narrative" class="work_card_bg"/>
-                          <div class="work_card_overlay_title">Corporate Brand Narrative</div>
-                        </div>
-                        <!-- Back Face -->
-                        <div class="work_card_face work_card_face_back">
-                          <div class="work_card_back_content">
-                            <span class="work_card_back_category">Corporate</span>
-                            <h4 class="work_card_back_title">Brand Narrative</h4>
-                            <p class="work_card_back_desc">Impactful founder story-telling documentaries and executive profiles captured across corporate locations.</p>
-                            <button class="work_card_back_btn" 
-                                    data-title="Brand Narrative" 
-                                    data-category="Corporate" 
-                                    data-desc="Filmed and directed premium documentary narratives detailing founder journeys and corporate milestones. Showcased corporate headquarters, production sites, and interview backdrops using clean daylight setups and professional acoustic boom capturing."
-                                    data-img="assets/images/IMG_0153_converted.jpg">View Details</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 5: NVL Documentary Shoot (Film & Video) -->
-                <div class="work_cms_item" data-service="Film &amp; Video">
-                  <div class="work_card_wrap">
-                    <div class="work_card_visual">
-                      <div class="work_card_inner">
-                        <!-- Front Face -->
-                        <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/cinema_camera.png" loading="lazy" alt="NVL Documentary Shoot" class="work_card_bg"/>
-                          <div class="work_card_overlay_title">NVL Documentary Shoot</div>
-                        </div>
-                        <!-- Back Face -->
-                        <div class="work_card_face work_card_face_back">
-                          <div class="work_card_back_content">
-                            <span class="work_card_back_category">Film &amp; Video</span>
-                            <h4 class="work_card_back_title">NVL Documentary</h4>
-                            <p class="work_card_back_desc">On-location documentary cinematography, crew coordination, and cinematic sound recording.</p>
-                            <button class="work_card_back_btn" 
-                                    data-title="NVL Documentary" 
-                                    data-category="Film &amp; Video" 
-                                    data-desc="Managed location sound, certified cinematography units, and camera setups for a feature-length documentary. Handled challenging outdoor terrains across local heritage locations with fully portable power generator setups and field sound recording."
-                                    data-img="assets/images/cinema_camera.png">View Details</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 6: High-End Cinema Gear Rental (Rentals) -->
-                <div class="work_cms_item" data-service="Rentals">
-                  <div class="work_card_wrap">
-                    <div class="work_card_visual">
-                      <div class="work_card_inner">
-                        <!-- Front Face -->
-                        <div class="work_card_face work_card_face_front">
-                          <img src="assets/images/studio_lighting.png" loading="lazy" alt="High-End Cinema Gear Rental" class="work_card_bg"/>
-                          <div class="work_card_overlay_title">High-End Cinema Gear Rental</div>
-                        </div>
-                        <!-- Back Face -->
-                        <div class="work_card_face work_card_face_back">
-                          <div class="work_card_back_content">
-                            <span class="work_card_back_category">Rentals</span>
-                            <h4 class="work_card_back_title">Cinema Rentals</h4>
-                            <p class="work_card_back_desc">Top-tier cine equipment packages including ARRI, RED, Sony Venice 2, and Cooke lenses.</p>
-                            <button class="work_card_back_btn" 
-                                    data-title="Cinema Rentals" 
-                                    data-category="Rentals" 
-                                    data-desc="Supplied certified production packages consisting of premium camera rigs, ARRI Skypanels, Aputure spotlight kits, and Zeiss Supreme prime lenses for high-budget commercial shoots in northern India, backed by on-ground tech support crews."
-                                    data-img="assets/images/studio_lighting.png">View Details</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
-              
-              <!-- Empty state helper -->
-              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:100px 20px; color:var(--color-dark-grey); font-family:var(--font-outfit); font-size:1.2rem;">
+              <div class="empty-state" aria-live="polite" style="display:none; text-align:center; padding:100px 20px; color:#7a6245; font-family:var(--font-outfit); font-size:1.2rem; background-color:#fafaf9; border-radius:24px;">
                 No items match your selected filter.
               </div>
             </div>
