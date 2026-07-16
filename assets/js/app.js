@@ -677,11 +677,16 @@ function initMenuSystem() {
   if (!menuTrigger || !menuOverlay) return;
 
   const menuText = menuTrigger.querySelector('.menu_text');
+  const header = document.querySelector('.nav_desktop_wrap');
   let isMenuOpen = false;
 
   menuTrigger.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
     menuTrigger.classList.toggle('is-active', isMenuOpen);
+    if (header) {
+      header.classList.toggle('menu-is-open', isMenuOpen);
+    }
+    
     if (isMenuOpen) {
       menuOverlay.classList.add('active');
       if (burgerTop) burgerTop.style.transform = 'rotate(-45deg) translate(-2px, 5px)';
