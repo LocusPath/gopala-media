@@ -137,9 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
       sizeClass: "tall"
     },
 {
-      title: "Studio Audio Session 23",
-      category: "Podcasts",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      title: "The Jodhpur RIFF",
+      category: "Film & Video",
+      desc: "Official festival photography and cinematic coverage of the Jodhpur International Folk Festival. Captured at Mehrangarh Fort under night skies, highlighting traditional folk music performances.",
       img: "assets/images/work/IMG_6219.jpg",
       sizeClass: "medium"
     },
