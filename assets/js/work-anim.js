@@ -3,368 +3,494 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Curated Projects Dataset (36 items) with balanced sizes (12 tall, 12 medium, 12 short)
   const projects = [
-{
+    {
       title: "Production Campaign 1",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG-20201129-WA0000.jpg",
+      img: "assets/images/work/Compound.png",
       sizeClass: "tall"
     },
-{
+    {
       title: "Cinema Equipment Rental 2",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_0153.jpg",
+      img: "assets/images/work/IMG-20201129-WA0000.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Studio Audio Session 3",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_0178.jpg",
+      img: "assets/images/work/IMG_0051.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Corporate Branding Showcase 4",
       category: "Corporate",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_0208.jpg",
+      img: "assets/images/work/IMG_0153.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Production Campaign 5",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_0211.jpg",
+      img: "assets/images/work/IMG_0178.jpg",
       sizeClass: "medium"
     },
-{
+    {
+      title: "Cinema Equipment Rental 6",
+      category: "Rentals",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/IMG_0208.jpg",
+      sizeClass: "short"
+    },
+    {
       title: "Studio Audio Session 7",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_0531.jpg",
+      img: "assets/images/work/IMG_0211.jpg",
       sizeClass: "tall"
     },
-{
+    {
+      title: "Corporate Branding Showcase 8",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_0212.jpg",
+      sizeClass: "medium"
+    },
+    {
       title: "Production Campaign 9",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_0797.jpg",
+      img: "assets/images/work/IMG_0531.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Cinema Equipment Rental 10",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_0808.jpg",
+      img: "assets/images/work/IMG_0535.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Studio Audio Session 11",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_0815.JPG",
+      img: "assets/images/work/IMG_0797.jpg",
       sizeClass: "medium"
     },
-{
+    {
+      title: "Corporate Branding Showcase 12",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_0808.jpg",
+      sizeClass: "short"
+    },
+    {
       title: "Production Campaign 13",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_0824.JPG",
+      img: "assets/images/work/IMG_0815.JPG",
       sizeClass: "tall"
     },
-{
+    {
       title: "Cinema Equipment Rental 14",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_0828.JPG",
+      img: "assets/images/work/IMG_0822.JPG",
       sizeClass: "medium"
     },
-{
+    {
       title: "Studio Audio Session 15",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_1001 2.jpg",
+      img: "assets/images/work/IMG_0824.JPG",
       sizeClass: "short"
     },
-{
+    {
       title: "Corporate Branding Showcase 16",
       category: "Corporate",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_1004.jpg",
+      img: "assets/images/work/IMG_0828.JPG",
       sizeClass: "tall"
     },
-{
+    {
       title: "Production Campaign 17",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_4613.jpg",
+      img: "assets/images/work/IMG_1001 2.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Cinema Equipment Rental 18",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_5503.jpg",
+      img: "assets/images/work/IMG_1004.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Studio Audio Session 19",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_5505.jpg",
+      img: "assets/images/work/IMG_1291.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Corporate Branding Showcase 20",
       category: "Corporate",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_5654.jpg",
+      img: "assets/images/work/IMG_1530.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Production Campaign 21",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_5863.jpg",
+      img: "assets/images/work/IMG_1951.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Cinema Equipment Rental 22",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_5906.jpg",
+      img: "assets/images/work/IMG_2358.jpg",
       sizeClass: "tall"
     },
-{
+    {
+      title: "Studio Audio Session 23",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/IMG_3001.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Corporate Branding Showcase 24",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_4613.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Production Campaign 25",
+      category: "Film & Video",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      img: "assets/images/work/IMG_5503.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Cinema Equipment Rental 26",
+      category: "Rentals",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/IMG_5505.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Studio Audio Session 27",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/IMG_5654.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Corporate Branding Showcase 28",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_5863.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Production Campaign 29",
+      category: "Film & Video",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      img: "assets/images/work/IMG_5906.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Cinema Equipment Rental 30",
+      category: "Rentals",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/IMG_5930.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Studio Audio Session 31",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/IMG_6082.jpg",
+      sizeClass: "tall"
+    },
+    {
       title: "The Jodhpur RIFF",
       category: "Film & Video",
       desc: "Official festival photography and cinematic coverage of the Jodhpur International Folk Festival. Captured at Mehrangarh Fort under night skies, highlighting traditional folk music performances.",
       img: "assets/images/work/IMG_6219.jpg",
       sizeClass: "medium"
     },
-{
-      title: "Corporate Branding Showcase 24",
-      category: "Corporate",
-      desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_6225.jpg",
-      sizeClass: "short"
-    },
-{
-      title: "Production Campaign 25",
-      category: "Film & Video",
-      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_6991.JPG",
-      sizeClass: "tall"
-    },
-{
-      title: "Cinema Equipment Rental 26",
-      category: "Rentals",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_8506.jpg",
-      sizeClass: "medium"
-    },
-{
-      title: "Studio Audio Session 27",
-      category: "Podcasts",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_8512.jpg",
-      sizeClass: "short"
-    },
-{
-      title: "Corporate Branding Showcase 28",
-      category: "Corporate",
-      desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_8519.jpg",
-      sizeClass: "tall"
-    },
-{
-      title: "Production Campaign 29",
-      category: "Film & Video",
-      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_8540.jpg",
-      sizeClass: "medium"
-    },
-{
-      title: "Cinema Equipment Rental 30",
-      category: "Rentals",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_8799.jpg",
-      sizeClass: "short"
-    },
-{
-      title: "Studio Audio Session 31",
-      category: "Podcasts",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_8806.jpg",
-      sizeClass: "tall"
-    },
-{
-      title: "Corporate Branding Showcase 32",
-      category: "Corporate",
-      desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_9038.jpg",
-      sizeClass: "medium"
-    },
-{
+    {
       title: "Production Campaign 33",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_9225.jpg",
+      img: "assets/images/work/IMG_6225.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Cinema Equipment Rental 34",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_9226.jpg",
+      img: "assets/images/work/IMG_6991.JPG",
       sizeClass: "tall"
     },
-{
+    {
       title: "Studio Audio Session 35",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_9292.jpg",
+      img: "assets/images/work/IMG_8204.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Corporate Branding Showcase 36",
       category: "Corporate",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_9294.jpg",
+      img: "assets/images/work/IMG_8506.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Production Campaign 37",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_9317.jpg",
+      img: "assets/images/work/IMG_8512.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Cinema Equipment Rental 38",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_9657.jpg",
+      img: "assets/images/work/IMG_8519.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Studio Audio Session 39",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_9659.jpg",
+      img: "assets/images/work/IMG_8540.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Corporate Branding Showcase 40",
       category: "Corporate",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_9716 (1).jpg",
+      img: "assets/images/work/IMG_8799.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Production Campaign 41",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_9727.jpg",
+      img: "assets/images/work/IMG_8806.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Cinema Equipment Rental 42",
       category: "Rentals",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
-      img: "assets/images/work/IMG_9809.jpg",
+      img: "assets/images/work/IMG_9038.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Studio Audio Session 43",
       category: "Podcasts",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
-      img: "assets/images/work/IMG_9920.jpg",
+      img: "assets/images/work/IMG_9225.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Corporate Branding Showcase 44",
       category: "Corporate",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/IMG_9932.jpg",
+      img: "assets/images/work/IMG_9226.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Production Campaign 45",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
-      img: "assets/images/work/IMG_9973.jpg",
+      img: "assets/images/work/IMG_9292.jpg",
       sizeClass: "short"
     },
-{
+    {
+      title: "Cinema Equipment Rental 46",
+      category: "Rentals",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/IMG_9294.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Studio Audio Session 47",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/IMG_9317.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Corporate Branding Showcase 48",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_9425.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Production Campaign 49",
+      category: "Film & Video",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      img: "assets/images/work/IMG_9657.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Cinema Equipment Rental 50",
+      category: "Rentals",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/IMG_9659.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Studio Audio Session 51",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/IMG_9716 (1).jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Corporate Branding Showcase 52",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_9727.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Production Campaign 53",
+      category: "Film & Video",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      img: "assets/images/work/IMG_9809.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Cinema Equipment Rental 54",
+      category: "Rentals",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/IMG_9920.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Studio Audio Session 55",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/IMG_9932.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Corporate Branding Showcase 56",
+      category: "Corporate",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      img: "assets/images/work/IMG_9973.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Production Campaign 57",
+      category: "Film & Video",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      img: "assets/images/work/Maison Margiela.png",
+      sizeClass: "short"
+    },
+    {
       title: "Fine Art Curation Gallery",
       category: "Corporate",
       desc: "Certified high-end cinema equipment package configured for professional camera crews.",
       img: "assets/images/work/PHOTO-2025-10-10-12-10-26.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Product Launch Campaign",
       category: "Film & Video",
       desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
       img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpeg",
       sizeClass: "short"
     },
-{
-      title: "Corporate Branding Showcase 48",
-      category: "Corporate",
+    {
+      title: "Product Launch Campaign",
+      category: "Film & Video",
       desc: "Daylight brand narrative interviews and executive corporate profiles.",
-      img: "assets/images/work/_DSF1225 copy 2.jpg",
+      img: "assets/images/work/WhatsApp Image 2026-01-08 at 11.09.56 AM.jpg",
       sizeClass: "short"
     },
-{
-      title: "Runway Collection Showcase",
+    {
+      title: "Production Campaign 61",
       category: "Film & Video",
       desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      img: "assets/images/work/_DSF1225 copy 2.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Runway Collection Showcase",
+      category: "Film & Video",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
       img: "assets/images/work/_DSF5765 copy.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Model Editorial Profile",
       category: "Corporate",
-      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
       img: "assets/images/work/_DSF5771 copy 2.jpg",
       sizeClass: "medium"
     },
-{
+    {
       title: "Studio Lighting Prep",
       category: "Rentals",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
       img: "assets/images/work/_DSF5894 copy.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Behind The Scenes Crew",
       category: "Film & Video",
-      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
       img: "assets/images/work/_DSF5914 copy.jpg",
       sizeClass: "tall"
     },
-{
+    {
       title: "Creative Wardrobe Styling",
       category: "Corporate",
-      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
       img: "assets/images/work/_DSF5922 copy.jpg",
       sizeClass: "medium"
     },
-{
+    {
+      title: "Studio Audio Session 67",
+      category: "Podcasts",
+      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      img: "assets/images/work/_DSF6079 copy.jpg",
+      sizeClass: "tall"
+    },
+    {
       title: "Live Fashion Show Broadcast",
       category: "Film & Video",
-      desc: "High-fidelity acoustics recording, editing, and sound engineering session.",
+      desc: "Daylight brand narrative interviews and executive corporate profiles.",
       img: "assets/images/work/_DSF6084 copy.jpg",
       sizeClass: "short"
     },
-{
+    {
       title: "Commercial Production",
       category: "Film & Video",
-      desc: "Daylight brand narrative interviews and executive corporate profiles.",
+      desc: "Professional film and video production campaign showcasing cinematic creative execution.",
       img: "assets/images/work/akshay.jpeg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Commercial Production",
+      category: "Film & Video",
+      desc: "Certified high-end cinema equipment package configured for professional camera crews.",
+      img: "assets/images/work/akshay.jpg",
       sizeClass: "tall"
     }
   ];
