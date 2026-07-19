@@ -543,40 +543,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Setup GSAP Column Parallax: animates from offset to 0 (perfect alignment at bottom)
   function initColumnParallax(colCount) {
-    if (prefersReducedMotion || colCount < 4) {
-      // Disable parallax on mobile/tablet
-      return;
-    }
+    if (prefersReducedMotion) return;
 
-    const cols = document.querySelectorAll(".gallery_column");
-    if (cols.length < 4) return;
+    if (colCount >= 2) {
+      const cols = document.querySelectorAll(".gallery_column");
+      if (cols.length === 0) return;
 
-    // Define parallax speeds/offsets for each of the 4 columns
-    const speeds = [80, 30, -40, -10];
+      // Define parallax speeds/offsets based on column count
+      const speeds = colCount >= 4 ? [80, 30, -40, -10] : [40, -20];
 
-    cols.forEach((col, idx) => {
-      const startOffset = speeds[idx % 4];
-      
-      const trigger = gsap.fromTo(col, 
-        { y: startOffset }, // starts offset to create wavy look
-        {
-          y: 0, // ends perfectly aligned at the bottom of the page!
-          ease: "none",
-          scrollTrigger: {
-            trigger: grid,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-            invalidateOnRefresh: true
+      cols.forEach((col, idx) => {
+        const startOffset = speeds[idx % speeds.length];
+        
+        const trigger = gsap.fromTo(col, 
+          { y: startOffset }, // starts offset to create wavy look
+          {
+            y: 0, // ends perfectly aligned at the bottom of the page!
+            ease: "none",
+            scrollTrigger: {
+              trigger: grid,
+              start: "top bottom",
+              end: "bottom bottom",
+              scrub: true,
+              invalidateOnRefresh: true
+            }
           }
-        }
-      );
+        );
 
-      // Keep track of trigger
-      if (trigger.scrollTrigger) {
-        scrollTriggers.push(trigger.scrollTrigger);
-      }
-    });
+        // Keep track of trigger
+        if (trigger.scrollTrigger) {
+          scrollTriggers.push(trigger.scrollTrigger);
+        }
+      });
+    } else {
+      // Mobile single-column: fade-up each card individually as they scroll into view
+      const cards = grid.querySelectorAll(".gallery_card");
+      cards.forEach(card => {
+        const trigger = gsap.fromTo(card,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 92%",
+              toggleActions: "play none none reverse",
+              invalidateOnRefresh: true
+            }
+          }
+        );
+        if (trigger.scrollTrigger) {
+          scrollTriggers.push(trigger.scrollTrigger);
+        }
+      });
+    }
   }
 
   // Modal open helper
