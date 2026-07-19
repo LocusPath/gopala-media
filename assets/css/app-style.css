@@ -643,6 +643,31 @@
     height: 4.5rem !important;
   }
   
+  /* Reduce header padding on mobile */
+  .nav_desktop_wrap {
+    padding: 0 0.75rem !important;
+  }
+  
+  /* Reduce inquire button padding on mobile to save space */
+  .inquire_btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  
+  /* Reduce gap in right navigation group on mobile */
+  .nav_right_group {
+    gap: 0.5rem !important;
+  }
+  
+  /* Scale down the menu text and trigger gap on mobile */
+  .menu_trigger {
+    gap: 0.5rem !important;
+  }
+  .menu_text {
+    font-size: 0.75rem !important;
+  }
+  
   /* Allow the overlay menu to scroll on small devices/landscape orientation */
   #menu-overlay {
     align-items: flex-start !important;
