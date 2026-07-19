@@ -580,3 +580,56 @@
   width: 1.15rem;
   height: 1.15rem;
 }
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 48rem) {
+  /* Prevent logo text from crowding the mobile header */
+  .nav_logo_text {
+    display: none !important;
+  }
+  
+  /* Scale down the logo image slightly on mobile */
+  .nav_logo_img {
+    height: 4.5rem !important;
+  }
+  
+  /* Allow the overlay menu to scroll on small devices/landscape orientation */
+  #menu-overlay {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 6rem 1.5rem 3rem !important;
+  }
+  
+  /* Prevent logo marquee gradient fades from overlapping and covering logos on mobile */
+  .logo-marquee-container::before, 
+  .logo-marquee-container::after {
+    width: 60px !important;
+  }
+}
+
+@media (max-width: 32rem) {
+  /* Scale down and adjust translation of about page polaroid cards to prevent overflow */
+  .polaroid_card {
+    width: 170px !important;
+  }
+  .polaroid_card.card_1 {
+    transform: translate(-50px, -30px) rotate(-8deg) !important;
+  }
+  .polaroid_card.card_2 {
+    transform: translate(50px, 10px) rotate(6deg) !important;
+  }
+  .polaroid_card.card_3 {
+    transform: translate(-5px, 45px) rotate(-3deg) !important;
+  }
+  .polaroid_card.card_1:hover {
+    transform: translate(-50px, -40px) rotate(0deg) scale(1.08) !important;
+  }
+  .polaroid_card.card_2:hover {
+    transform: translate(50px, -5px) rotate(0deg) scale(1.08) !important;
+  }
+  .polaroid_card.card_3:hover {
+    transform: translate(-5px, 30px) rotate(0deg) scale(1.08) !important;
+  }
+}
