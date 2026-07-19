@@ -97,21 +97,22 @@ leadDots.forEach(dot => gsap.set(dot, { opacity: 0 }));
 gsap.set(".story_content", {
 clearProps: "all"
 });
-const milestones = ["milestone-1", "milestone-2", "milestone-3", "milestone-4", "milestone-5"];
-milestones.forEach((id) => {
-gsap.fromTo(`#${id}`,
-{ opacity: 0, y: 30 },
-{
-opacity: 1,
-y: 0,
-duration: 0.8,
-scrollTrigger: {
-trigger: `#${id}`,
-start: "top 85%",
-toggleActions: "play none none reverse"
-}
-}
-);
+const elements = document.querySelectorAll(".story_milestone_item, .story_milestone_image");
+elements.forEach((el) => {
+  gsap.fromTo(el,
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+        invalidateOnRefresh: true
+      }
+    }
+  );
 });
 });
 ScrollTrigger.refresh();
