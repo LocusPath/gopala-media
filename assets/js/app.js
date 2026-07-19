@@ -50,7 +50,7 @@ orientation: "vertical",
 gestureOrientation: "vertical",
 smoothWheel: true,
 wheelMultiplier: 1,
-smoothTouch: false,
+smoothTouch: true,
 touchMultiplier: 2,
 infinite: false,
 });
