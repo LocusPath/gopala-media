@@ -689,8 +689,8 @@ function initMenuSystem() {
     
     if (isMenuOpen) {
       menuOverlay.classList.add('active');
-      if (burgerTop) burgerTop.style.transform = 'rotate(-45deg) translate(-2px, 5px)';
-      if (burgerBottom) burgerBottom.style.transform = 'rotate(45deg) translate(-2px, -5px)';
+      if (burgerTop) burgerTop.style.transform = 'translateY(5px) rotate(-45deg)';
+      if (burgerBottom) burgerBottom.style.transform = 'translateY(-5px) rotate(45deg)';
       if (menuText) menuText.textContent = 'Close';
       document.body.style.overflow = 'hidden';
       if (window.lenis) window.lenis.stop();
