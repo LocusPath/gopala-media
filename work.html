@@ -51,14 +51,38 @@
       position: relative;
     }
     
+    .work_hero_layout {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
     .u-text-style-h1 {
-      font-family: var(--font-syne) !important;
-      font-weight: 800;
-      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
-      letter-spacing: -0.04em;
+      font-family: var(--font-outfit) !important;
+      font-weight: 700;
+      font-size: clamp(3rem, 6.5vw, 5.5rem) !important;
+      letter-spacing: -0.03em;
       color: var(--color-charcoal) !important;
-      margin-bottom: 2.5rem !important;
-      line-height: 0.95;
+      margin-bottom: 0.5rem !important;
+      line-height: 1.1;
+      text-align: center;
+    }
+    
+    .heading_divider_line {
+      width: 100%;
+      height: 4px;
+      background-color: #1c1916 !important;
+      margin-top: 1.5rem;
+      margin-bottom: 4.5rem;
+      border-radius: 2px;
+    }
+    
+    @media (max-width: 48rem) {
+      .heading_divider_line {
+        height: 3px;
+        margin-bottom: 3rem;
+      }
     }
     
     /* Filter Bar menu styling */
@@ -739,7 +763,7 @@
           <!-- Logo -->
           <a aria-label="Home Page" href="index.html" class="nav_desktop_logo">
             <img src="assets/images/logo_v3.png" alt="Gopala Media" class="nav_logo_img">
-            <span class="nav_logo_text">Gopala Media</span>
+            
           </a>
 
           <!-- Nav Trigger & Inquire -->
@@ -769,36 +793,7 @@
             
             <h1 class="u-text-style-h1">Timeless Work.</h1>
             <h2 class="u-sr-only">Work Portfolio</h2>
-
-            <!-- FILTERS BAR -->
-            <div class="work_form_block">
-              <div class="work_form">
-                <div class="work_form_filters">
-                  
-                  <button class="g_filter_wrap is-active" data-service="all">
-                    <span>All</span>
-                  </button>
-                  
-                  <button class="g_filter_wrap" data-service="Film &amp; Video">
-                    <span>Film &amp; Video</span>
-                  </button>
-                  
-                  <button class="g_filter_wrap" data-service="Podcasts">
-                    <span>Podcasts</span>
-                  </button>
-                  
-                  <button class="g_filter_wrap" data-service="Corporate">
-                    <span>Corporate</span>
-                  </button>
-                  
-                  <button class="g_filter_wrap" data-service="Rentals">
-                    <span>Rentals</span>
-                  </button>
-
-                </div>
-                <p class="work_result_count">(<span fs-list-element="results-count" aria-live="polite">6</span>)</p>
-              </div>
-            </div>
+            <div class="heading_divider_line"></div>
 
           </div>
         </div>
@@ -919,15 +914,6 @@
             </div>
           </section>
 
-          <!-- Column 5: Legal -->
-          <section class="footer_group_wrap footer_col_legal">
-            <h4 class="footer_col_title">Legal</h4>
-            <div role="list" class="footer_group_list">
-              <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><span class="footer_link_text">Privacy Policy</span></a></div>
-              <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><span class="footer_link_text">Terms of Service</span></a></div>
-              <div role="listitem" class="footer_group_item"><a href="#" class="footer_link_wrap"><span class="footer_link_text">Rental Guide</span></a></div>
-            </div>
-          </section>
 
         </div>
       </div>
