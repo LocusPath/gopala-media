@@ -19,8 +19,8 @@
     position: absolute !important;
     left: inherit;
     transform: translate(-50%, -50%) scale(0.95) !important;
-    opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease !important;
+    opacity: 1 !important;
+    transition: transform 0.6s ease !important;
   }
   .story_milestone_image {
     width: 18rem !important;
@@ -29,15 +29,13 @@
     position: absolute !important;
     left: inherit;
     transform: translate(-50%, -50%) scale(0.95) !important;
-    opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease !important;
+    opacity: 1 !important;
+    transition: transform 0.6s ease !important;
   }
   .story_milestone_item.active {
-    opacity: 1 !important;
     transform: translate(-50%, -50%) scale(1) !important;
   }
   .story_milestone_image.active {
-    opacity: 1 !important;
     transform: translate(-50%, -50%) scale(1) !important;
   }
   #milestone-1-img { left: 1462px !important; top: 280px !important; }
