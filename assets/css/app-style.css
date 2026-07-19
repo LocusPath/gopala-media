@@ -683,3 +683,24 @@
     transform: translate(-5px, 30px) rotate(0deg) scale(1.08) !important;
   }
 }
+
+/* --- CONTACT PAGE MOBILE LAYOUT OVERRIDES --- */
+@media (max-width: 48rem) {
+  /* Stack phone numbers vertically on mobile to prevent horizontal overflow */
+  .contact_phone_links {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Scale down the phone links size to look balanced */
+  .contact_phone_link {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Scale down the giant email address text on mobile viewports */
+  .contact_heading {
+    font-size: clamp(1.1rem, 5vw, 1.6rem) !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+  }
+}
