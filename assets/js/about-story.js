@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top top",
       end: "+=8000",
       pin: true,
-      scrub: 1.2,
+      scrub: 0.8,
+      anticipatePin: 1,
+      pinType: "transform",
       invalidateOnRefresh: true
     }
   });

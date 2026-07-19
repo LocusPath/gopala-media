@@ -55,6 +55,12 @@ touchMultiplier: 2,
 infinite: false,
 });
 window.lenis = lenis;
+
+// Bind Lenis scroll to ScrollTrigger updates to prevent async jitter/lag
+if (typeof ScrollTrigger !== "undefined") {
+lenis.on('scroll', ScrollTrigger.update);
+}
+
 function raf(time) {
 lenis.raf(time);
 requestAnimationFrame(raf);
