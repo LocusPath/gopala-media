@@ -788,7 +788,7 @@
     object-fit: cover !important;
     object-position: center !important;
     display: block !important;
-    filter: brightness(0.85) contrast(1.05) !important;
+    filter: none !important;
   }
   
   .services_img_overlay {
@@ -799,7 +799,7 @@
     bottom: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background: linear-gradient(180deg, rgba(0, 34, 57, 0.78) 0%, rgba(0, 20, 35, 0.95) 100%) !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.85) 100%) !important;
     z-index: 2 !important;
   }
   
