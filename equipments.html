@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Equipments | Gopala Media | Production Partner | India</title>
   <meta name="description" content="Explore Gopala Media's premium equipment rental catalog: professional cinema cameras, prime lenses, lighting, and audio gear in India."/>
-  
+  <!-- Open Graph & Social Meta -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Cinema Equipment Rentals | Gopala Media New Delhi"/>
+  <meta property="og:description" content="Browse Gopala Media's cinema equipment catalog: ARRI Alexa Mini LF, RED V-Raptor, Sony Venice 2, Cooke lenses, Aputure lighting, and location sound."/>
+  <meta property="og:image" content="assets/images/cinema_camera.png"/>
+  <meta property="og:url" content="https://gopalamedia.com/equipments.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <link rel="canonical" href="https://gopalamedia.com/equipments.html"/>
+
   <!-- Stylesheets -->
-  <link rel="preconnect" href="https://cdn.prod.website-files.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="assets/css/app-style.css?v=17" rel="stylesheet" type="text/css"/>
   <link href="assets/images/logo_v3.png" rel="shortcut icon" type="image/x-icon"/>
@@ -581,12 +589,48 @@
       background-color: #003459 !important;
       border-top: 1px solid rgba(16, 14, 10, 0.1) !important;
     }
-    
-    .footer_link_text, .footer_col_title, .footer_connect_link, .contact_address_text, .footer_bottom_text {
-      color: var(--bg-cream) !important;
-      opacity: 0.8;
     }
-    
+    .panel_spec_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+      background: #1a1a1a;
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+    .spec_item_title {
+      font-size: 0.75rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .spec_item_val {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #fff;
+      margin-top: 0.2rem;
+    }
+    .panel_footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: #0f0f0f;
+    }
+    .panel_inquire_btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .panel_inquire_btn:hover {
+      background: #e0e0e0;
+    }
     .footer_link_wrap:hover .footer_link_text, .footer_connect_link:hover {
       color: var(--color-sage) !important;
     }
@@ -609,7 +653,6 @@
         <div class="menu_right_side">
           <div>
             <span class="menu_section_label">INQUIRIES</span>
-            <p class="menu_info_text">gmgopalamedia@gmail.com</p>
             <p class="menu_info_text">+91 99996 87106</p>
             <p class="menu_info_text">+91 93127 29356</p>
             <p class="menu_info_text">+91 80768 23299</p>
@@ -709,7 +752,7 @@
               </button>
 
               <div class="equip_card_visual" style="background-color: #928b80;">
-                <img src="assets/images/equipments/sony_cameras.png" alt="Sony Cinema Cameras" class="equip_card_image" style="object-fit: contain !important;"/>
+                <img src="assets/images/equipments/sony_cameras.png" alt="Sony Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Sony Cinema Cameras</h3>
@@ -749,7 +792,7 @@
               </button>
 
               <div class="equip_card_visual" style="background-color: #cfc6b5;">
-                <img src="assets/images/equipments/canon_cameras.png" alt="Canon Cinema Cameras" class="equip_card_image" style="object-fit: contain !important;"/>
+                <img src="assets/images/equipments/canon_cameras.png" alt="Canon Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Canon Cinema Cameras</h3>
@@ -789,7 +832,7 @@
               </button>
 
               <div class="equip_card_visual" style="background-color: #121316;">
-                <img src="assets/images/equipments/blackmagic_cameras.png" alt="Blackmagic Cinema Cameras" class="equip_card_image" style="object-fit: contain !important;"/>
+                <img src="assets/images/equipments/blackmagic_cameras.png" alt="Blackmagic Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Blackmagic Cinema Cameras</h3>
@@ -829,7 +872,7 @@
               </button>
 
               <div class="equip_card_visual" style="background-color: #ffffff;">
-                <img src="assets/images/equipments/sony_lenses.png" alt="Sony G Master Lenses" class="equip_card_image" style="object-fit: contain !important;"/>
+                <img src="assets/images/equipments/sony_lenses.png" alt="Sony G Master Lenses" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Sony G Master Lenses</h3>
@@ -868,7 +911,7 @@
               </button>
 
               <div class="equip_card_visual" style="background-color: #55524c;">
-                <img src="assets/images/equipments/canon_lenses.png" alt="Canon RF Lenses" class="equip_card_image" style="object-fit: contain !important;"/>
+                <img src="assets/images/equipments/canon_lenses.png" alt="Canon RF Lenses" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Canon RF Lenses</h3>
@@ -907,7 +950,7 @@
               </button>
 
               <div class="equip_card_visual" style="background-color: #4b4b51;">
-                <img src="assets/images/equipments/sigma_lenses.png" alt="Sigma Art Lenses" class="equip_card_image" style="object-fit: contain !important;"/>
+                <img src="assets/images/equipments/sigma_lenses.png" alt="Sigma Art Lenses" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Sigma Art Lenses</h3>
@@ -946,7 +989,7 @@
               </button>
 
               <div class="equip_card_visual">
-                <img src="assets/images/equipments/lighting_gear.png" alt="Production Lighting" class="equip_card_image"/>
+                <img src="assets/images/equipments/lighting_gear.png" alt="Production Lighting" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Production Lighting</h3>
@@ -984,7 +1027,7 @@
               </button>
 
               <div class="equip_card_visual">
-                <img src="assets/images/equipments/audio_gear.png" alt="Location Audio" class="equip_card_image"/>
+                <img src="assets/images/equipments/audio_gear.png" alt="Location Audio" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Location Audio</h3>
@@ -1022,7 +1065,7 @@
               </button>
 
               <div class="equip_card_visual">
-                <img src="assets/images/equipments/gimbal_gear.png" alt="Gimbals &amp; Stabilizers" class="equip_card_image"/>
+                <img src="assets/images/equipments/gimbal_gear.png" alt="Gimbals &amp; Stabilizers" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Gimbals &amp; Stabilizers</h3>
@@ -1060,7 +1103,7 @@
               </button>
 
               <div class="equip_card_visual">
-                <img src="assets/images/equipments/drone_gear.png" alt="Drones" class="equip_card_image"/>
+                <img src="assets/images/equipments/drone_gear.png" alt="Drones" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Drones</h3>
@@ -1099,7 +1142,7 @@
               </button>
 
               <div class="equip_card_visual">
-                <img src="assets/images/equipments/accessories_gear.png" alt="Set Accessories" class="equip_card_image"/>
+                <img src="assets/images/equipments/accessories_gear.png" alt="Set Accessories" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Set Accessories</h3>

@@ -4,9 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!activePath) return;
   const pathLength = activePath.getTotalLength();
   
+  // Precompute 500 path points to avoid getPointAtLength layout thrashing on mobile scroll
+  const SAMPLES = 500;
+  const pathPoints = new Array(SAMPLES + 1);
+  for (let i = 0; i <= SAMPLES; i++) {
+    pathPoints[i] = activePath.getPointAtLength((i / SAMPLES) * pathLength);
+  }
+  function getPoint(progress) {
+    const idx = Math.min(SAMPLES, Math.max(0, Math.floor(progress * SAMPLES)));
+    return pathPoints[idx];
+  }
+  
   const activePaths = document.querySelectorAll(".story_line_active_layer");
   const leadDots = document.querySelectorAll(".story_lead_dot");
-  const startPoint = activePath.getPointAtLength(0);
+  const startPoint = pathPoints[0];
   
   activePaths.forEach(path => {
     gsap.set(path, {
@@ -23,7 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   gsap.set(".story_content", {
     x: window.innerWidth / 2 - startPoint.x,
-    y: 80 - startPoint.y
+    y: 80 - startPoint.y,
+    willChange: "transform"
   });
   
   gsap.to(".timeline_scroll_indicator", {
@@ -36,18 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-  const xTo = gsap.quickTo(".story_content", "x", { duration: 0.8, ease: "power3.out" });
-  const yTo = gsap.quickTo(".story_content", "y", { duration: 0.8, ease: "power3.out" });
+  const isMobile = window.innerWidth <= 768;
+  const xTo = gsap.quickTo(".story_content", "x", { duration: isMobile ? 0.3 : 0.8, ease: "power2.out" });
+  const yTo = gsap.quickTo(".story_content", "y", { duration: isMobile ? 0.3 : 0.8, ease: "power2.out" });
   
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".about_story_wrap",
       start: "top top",
-      end: "+=8000",
+      end: isMobile ? "+=4500" : "+=8000",
       pin: true,
-      scrub: 0.8,
+      scrub: isMobile ? 0.3 : 0.8,
       anticipatePin: 1,
-      pinType: "transform",
       invalidateOnRefresh: true
     }
   });
@@ -58,8 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1,
     onUpdate: function() {
       const progress = this.progress();
-      const currentDistance = progress * pathLength;
-      const point = activePath.getPointAtLength(currentDistance);
+      const point = getPoint(progress);
       let centerY = window.innerHeight * 0.5;
       
       if (progress < 0.15) {

@@ -1,3 +1,10 @@
+window.addEventListener('pageshow', (event) => {
+  if (typeof gsap !== 'undefined') {
+    gsap.set("body", { opacity: 1 });
+  } else {
+    document.body.style.opacity = "1";
+  }
+});
 if (history.scrollRestoration) {
 history.scrollRestoration = 'manual';
 }
@@ -5,6 +12,9 @@ if (!window.location.hash) {
 window.scrollTo(0, 0);
 }
 document.addEventListener("DOMContentLoaded", () => {
+  if (typeof gsap !== 'undefined') {
+    gsap.set("body", { opacity: 1 });
+  }
 if (!window.location.hash) {
 window.scrollTo(0, 0);
 if (window.lenis) {
@@ -40,7 +50,8 @@ window.location.href = href;
 }
 });
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!prefersReducedMotion) {
+const isLowEndDevice = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || (navigator.deviceMemory && navigator.deviceMemory <= 4);
+if (!prefersReducedMotion && !isLowEndDevice) {
 try {
 if (typeof Lenis !== "undefined") {
 const lenis = new Lenis({
@@ -50,8 +61,8 @@ orientation: "vertical",
 gestureOrientation: "vertical",
 smoothWheel: true,
 wheelMultiplier: 1,
-smoothTouch: true,
-touchMultiplier: 2,
+smoothTouch: false, // Disable smoothTouch to allow native fast touch on mobile
+touchMultiplier: 1,
 infinite: false,
 });
 window.lenis = lenis;
@@ -156,7 +167,10 @@ const threshold = 90;
 items.forEach(item => {
 gsap.set(item, { opacity: 0, scale: 0.8, xPercent: -50, yPercent: -50, pointerEvents: 'none' });
 });
+let ticking = false;
 window.addEventListener('mousemove', (e) => {
+if (!ticking) {
+window.requestAnimationFrame(() => {
 const distance = Math.hypot(e.clientX - lastPos.x, e.clientY - lastPos.y);
 if (distance > threshold) {
 const item = items[currentIndex];
@@ -191,7 +205,11 @@ gsap.set(item, { opacity: 0 });
 currentIndex = (currentIndex + 1) % items.length;
 lastPos = { x: e.clientX, y: e.clientY };
 }
+ticking = false;
 });
+ticking = true;
+}
+}, { passive: true });
 }
 function initWorkFilters() {
 const filterForm = document.querySelector('.work_form');
