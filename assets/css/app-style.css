@@ -747,9 +747,26 @@
   }
 }
 
-/* --- SERVICES PAGE MOBILE ASPECT RATIO FIX --- */
+/* --- SERVICES PAGE MOBILE IMAGE COVERAGE FIX --- */
 @media (max-width: 48rem) {
+  .services_item {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
   .services_img_wrap {
-    aspect-ratio: 4 / 3 !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+  }
+  .services_img_wrap img,
+  .services_img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .services_content {
+    width: 100% !important;
   }
 }
