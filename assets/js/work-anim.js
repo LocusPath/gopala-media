@@ -4,6 +4,104 @@ document.addEventListener("DOMContentLoaded", () => {
   // Curated Projects Dataset (36 items) with balanced sizes (12 tall, 12 medium, 12 short)
   const projects = [
     {
+      title: "Suspenseful Dali Mask Monologue",
+      category: "Film & Video",
+      desc: "A dramatic narrative scene featuring a character in a Dali mask sitting in a dark studio. High-contrast chiaroscuro lighting isolates the subject, creating a suspenseful and cinematic atmosphere.",
+      img: "assets/images/work/IMG_1530.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Cinematic Crew Operation",
+      category: "Film & Video",
+      desc: "A moody, low-light studio shot of a production crew operating a handheld gimbal rig and fine-tuning lighting modifiers. The team coordinates closely to capture seamless motion sequences.",
+      img: "assets/images/work/IMG_2358.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Netflix Campaign Activation",
+      category: "Corporate",
+      desc: "Immersive experiential marketing capture using advanced panoramic action cameras for Netflix India's promotional rollout.",
+      img: "assets/images/work/IMG_5930.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Jib-Mounted Cine Package",
+      category: "Rentals",
+      desc: "A heavy-duty camera crane setup with a customized cinema rig, configured for dynamic low-angle tracking on location.",
+      img: "assets/images/work/IMG_8204.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Cinematic Location Shoot",
+      category: "Film & Video",
+      desc: "Behind-the-scenes production of a cinematic commercial project featuring high-end camera rigs and lighting setups.",
+      img: "assets/images/work/A0619334-5777-4CD4-9E68-3499139B4F75.JPG",
+      sizeClass: "tall"
+    },
+    {
+      title: "Commercial Film Rigging",
+      category: "Film & Video",
+      desc: "On-set production capture showcasing camera operators and director monitoring live action sequences.",
+      img: "assets/images/work/IMG_1426.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Editorial Campaign Production",
+      category: "Corporate",
+      desc: "High-end studio lookbook session featuring professional lighting, set decoration, and creative direction.",
+      img: "assets/images/work/IMG_6846.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Brand Storytelling Session",
+      category: "Film & Video",
+      desc: "Dynamic live action filming for a major commercial campaign with full production lighting and crew.",
+      img: "assets/images/work/IMG_6849.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Cinematic Location Framing",
+      category: "Film & Video",
+      desc: "Capturing atmospheric scenes on location with specialized camera stabilization and prime lenses.",
+      img: "assets/images/work/IMG_9123.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "Studio Fashion Showcase",
+      category: "Film & Video",
+      desc: "A stylized fashion showcase featuring dramatic backdrops, custom studio lighting, and high-contrast color grading.",
+      img: "assets/images/work/IMG_9429.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Behind-the-Lens Commercial",
+      category: "Film & Video",
+      desc: "Professional crew in action operating cinema camera setups for an upscale brand video shoot.",
+      img: "assets/images/work/IMG_9578.jpg",
+      sizeClass: "tall"
+    },
+    {
+      title: "Creative Direction Session",
+      category: "Corporate",
+      desc: "Collaborative scene work on set featuring precision camera movements and real-time director monitoring.",
+      img: "assets/images/work/IMG_9605.jpg",
+      sizeClass: "medium"
+    },
+    {
+      title: "High-Impact Commercial Shoot",
+      category: "Film & Video",
+      desc: "On-location commercial filming capturing crisp visuals, organic textures, and dynamic camera angles.",
+      img: "assets/images/work/IMG_9750.jpg",
+      sizeClass: "short"
+    },
+    {
+      title: "Signature Production Portfolio",
+      category: "Rentals",
+      desc: "A behind-the-scenes highlight of Gopala Media's production services and specialized cinema gear in action.",
+      img: "assets/images/work/IMG_9894.JPG",
+      sizeClass: "tall"
+    },
+    {
       title: "Compound Skincare Campaign",
       category: "Corporate",
       desc: "A high-contrast product advertisement showcasing Compound's premium skincare line against a striking monochromatic red background. Precise studio lighting emphasizes the clean contours of the bottles and minimalist packaging.",
@@ -95,25 +193,11 @@ document.addEventListener("DOMContentLoaded", () => {
       sizeClass: "tall"
     },
     {
-      title: "Suspenseful Dali Mask Monologue",
-      category: "Film & Video",
-      desc: "A dramatic narrative scene featuring a character in a Dali mask sitting in a dark studio. High-contrast chiaroscuro lighting isolates the subject, creating a suspenseful and cinematic atmosphere.",
-      img: "assets/images/work/IMG_1530.jpg",
-      sizeClass: "medium"
-    },
-    {
       title: "Residential Drama Set",
       category: "Film & Video",
       desc: "On-location filming inside an upscale, classic living room set. The production team coordinates multiple cinema camera rigs and professional monitors to capture complex indoor blocking and dialogue.",
       img: "assets/images/work/IMG_1951.jpg",
       sizeClass: "short"
-    },
-    {
-      title: "Cinematic Crew Operation",
-      category: "Film & Video",
-      desc: "A moody, low-light studio shot of a production crew operating a handheld gimbal rig and fine-tuning lighting modifiers. The team coordinates closely to capture seamless motion sequences.",
-      img: "assets/images/work/IMG_2358.jpg",
-      sizeClass: "tall"
     },
     {
       title: "Studio Talk Show Broadcast",
@@ -151,13 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
       sizeClass: "tall"
     },
     {
-      title: "Netflix Campaign Activation",
-      category: "Corporate",
-      desc: "Immersive experiential marketing capture using advanced panoramic action cameras for Netflix India's promotional rollout.",
-      img: "assets/images/work/IMG_5930.jpg",
-      sizeClass: "medium"
-    },
-    {
       title: "Premium Cyclorama Lighting Rig",
       category: "Rentals",
       desc: "A fully configured professional studio space featuring high-output Aputure lighting and a seamless color-graded backdrop.",
@@ -170,13 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: "An interactive brand workshop presenting the capabilities of Sony's cinema ecosystem inside a sound-dampened studio facility.",
       img: "assets/images/work/IMG_6991.JPG",
       sizeClass: "medium"
-    },
-    {
-      title: "Jib-Mounted Cine Package",
-      category: "Rentals",
-      desc: "A heavy-duty camera crane setup with a customized cinema rig, configured for dynamic low-angle tracking on location.",
-      img: "assets/images/work/IMG_8204.jpg",
-      sizeClass: "short"
     },
     {
       title: "Fortress Stage Multi-Cam Recording",
@@ -473,11 +543,11 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTriggers = [];
 
     if (items.length === 0) {
-      emptyState.style.display = "block";
+      if (emptyState) emptyState.style.display = "block";
       grid.style.display = "none";
       return;
     } else {
-      emptyState.style.display = "grid";
+      if (emptyState) emptyState.style.display = "none";
       grid.style.display = "grid";
     }
 
