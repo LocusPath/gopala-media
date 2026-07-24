@@ -596,11 +596,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Make column bottom edges align perfectly in a single line
     alignColumnBottoms(columns, colCount);
-
-    // Initialize GSAP Parallax scrolling on columns
-    setTimeout(() => {
-      initColumnParallax(colCount);
-    }, 100);
   }
 
   // Setup GSAP Column Parallax: animates from offset to 0 (perfect alignment at bottom)

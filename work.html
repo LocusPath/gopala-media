@@ -576,12 +576,9 @@
       will-change: transform;
     }
     
-    /* Wavy height offsets for columns on desktop */
-    @media (min-width: 1025px) {
-      .gallery_column:nth-child(4n+1) { transform: translateY(80px); }
-      .gallery_column:nth-child(4n+2) { transform: translateY(30px); }
-      .gallery_column:nth-child(4n+3) { transform: translateY(-40px); }
-      .gallery_column:nth-child(4n+4) { transform: translateY(-10px); }
+    /* Uniform top alignment for all columns */
+    .gallery_column {
+      transform: none !important;
     }
     
     /* Individual card styling */
