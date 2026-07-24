@@ -397,13 +397,13 @@
 
 /* Giant Luxury Typography */
 .hero_luxury_title {
-  font-family: 'Milkshake', cursive;
-  font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+  font-family: 'Wanderlust', cursive, sans-serif;
+  font-size: clamp(3.8rem, 7.5vw, 6.5rem) !important;
   font-weight: 400;
-  line-height: 1.2;
-  color: #db8510;
-  letter-spacing: 0.02em;
-  margin: 0 auto 2rem auto;
+  line-height: 1.1;
+  color: #ffffff !important;
+  letter-spacing: 0.01em;
+  margin: 0 auto 1.5rem auto;
   text-align: center;
   white-space: nowrap;
   width: 100%;
@@ -411,9 +411,9 @@
 
 .hero_title_italic {
   font-style: normal;
-  font-family: 'Milkshake', cursive;
-  color: #db8510;
-  letter-spacing: 0.02em;
+  font-family: 'Wanderlust', cursive, sans-serif;
+  color: #ffffff !important;
+  letter-spacing: 0.01em;
 }
 
 /* Hero Description */
