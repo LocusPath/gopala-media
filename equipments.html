@@ -80,6 +80,36 @@
       }
     }
     
+    /* Equipment Hero Header Intro */
+    .equip_hero_intro {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1.5px solid rgba(0, 52, 89, 0.12);
+    }
+    
+    .equip_hero_tagline {
+      font-family: var(--font-outfit), sans-serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      color: var(--color-charcoal);
+      letter-spacing: -0.01em;
+      margin: 0 0 0.6rem 0;
+      line-height: 1.3;
+    }
+    
+    .equip_hero_tagline .highlight_gold {
+      color: #ff9800;
+    }
+    
+    .equip_hero_subtext {
+      font-family: var(--font-outfit), sans-serif;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 400;
+      color: var(--color-dark-grey);
+      line-height: 1.6;
+      margin: 0;
+    }
+
     .equip_header_title {
       font-family: "Roslindale Condensed", serif;
       font-size: clamp(2.25rem, 5vw, 3.5rem);
@@ -281,18 +311,19 @@
       text-align: left;
     }
     
-    /* Contained product centered photo box */
+    /* Contained product centered photo box with dark border frame */
     .equip_card_visual {
-      background-color: var(--bg-card);
+      background-color: #1a1a1a !important;
       aspect-ratio: 1 / 1.25;
-      border-radius: 0px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       position: relative;
       width: 100%;
-      border: 1px solid rgba(16, 14, 10, 0.04);
+      border: 14px solid #1a1a1a !important;
+      outline: 1px solid rgba(255, 255, 255, 0.1);
       box-sizing: border-box;
       will-change: clip-path;
     }
@@ -301,6 +332,7 @@
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
+      border-radius: 2px !important;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
       mix-blend-mode: normal !important;
     }
@@ -318,19 +350,27 @@
     }
     
     .equip_card_name {
-      font-family: "Roslindale Condensed", serif !important;
-      font-size: 1.15rem !important;
-      font-weight: 300 !important;
-      color: var(--color-charcoal) !important;
-      margin: 0 !important;
+      font-family: var(--font-outfit), sans-serif !important;
+      font-size: 1.35rem !important;
+      font-weight: 700 !important;
+      color: #ff9800 !important;
+      margin: 0 0 0.35rem 0 !important;
       letter-spacing: -0.01em;
-      line-height: 1.25;
+      line-height: 1.2;
+    }
+    
+    .equip_card_models {
+      font-family: var(--font-outfit), sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #555555;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
     }
     
     .equip_card_category {
-      font-family: var(--font-outfit);
-      font-size: 0.8rem;
-      color: var(--color-dark-grey);
+      display: none;
     }
     
     /* Expanded morph details (specs grid) */
@@ -388,6 +428,10 @@
       border-bottom: none;
     }
     
+    .panel_specs_title, .expanded_specs_title {
+      display: none !important;
+    }
+    
     .spec_label {
       font-family: var(--font-outfit);
       font-weight: 600;
@@ -432,13 +476,14 @@
       flex-direction: column;
     }
     
-    /* Layout State: Panel Open */
+    /* Layout State: Panel Open (catalog remains 100% full width and fully visible) */
     .equip_page_layout.is-panel-open .equip_catalog_side {
-      transform: translateX(-300px);
+      transform: none !important;
     }
     
     .equip_page_layout.is-panel-open .equip_panel_side {
       transform: translateX(0);
+      box-shadow: -10px 0 35px rgba(0, 0, 0, 0.18);
     }
     
     /* Hide legacy drag handle and close buttons inside cards */
@@ -708,6 +753,15 @@
           <!-- UNIFIED EQUIPMENTS CATALOG -->
           <section class="equipments_catalog_wrap">
         
+        <!-- Equipment Page Hero Header Intro -->
+        <div class="equip_hero_intro">
+          <h2 class="equip_hero_tagline"><span class="highlight_gold">Equipment Rental</span> — Reliable. Affordable. Fully Maintained.</h2>
+          <p class="equip_hero_subtext">
+            Gopala Media houses one of the region’s most extensive collections of filmmaking equipment.<br/>
+            All gear is serviced, tested, and cleaned before dispatch.
+          </p>
+        </div>
+
         <!-- Minimal Catalog Header Bar -->
         <div class="equip_header_bar">
           <h1 class="equip_header_title">All Gear<span class="equip_count_sup">0</span></h1>
@@ -740,10 +794,10 @@
           <!-- Card 1: Sony Cameras -->
           <div class="equip_item" data-category="Cameras">
             <div class="equip_card_wrap" 
-                 data-title="Sony Cinema Cameras" 
+                 data-title="Sony" 
                  data-category="Cameras"
-                 data-desc="Individual professional Sony cinema cameras available for rental. Choose from industry-standard bodies including Sony FX9, FX6, FX3, and A7S III. Each camera comes fully configured to meet your project's specific resolution, format, and form-factor requirements."
-                 data-specs='{"Models":"FX9 / FX6 / FX3 / A7S III", "Sensor":"Full-Frame Exmor R CMOS", "Resolution":"4K recording up to 120p", "Video Format":"XAVC-S / XAVC-I 10-bit 4:2:2", "Color Science":"S-Cinetone / S-Log3", "Autofocus":"Real-time Eye AF / Phase Detection"}'
+                 data-desc="Sony FX3 • Sony FX6 • Sony A7S III"
+                 data-specs='{"Models":"FX3 / FX6 / A7S III"}'
                  data-img="assets/images/equipments/sony_cameras.png">
               
               <div class="card-drag-handle"></div>
@@ -755,22 +809,21 @@
                 <img src="assets/images/equipments/sony_cameras.png" alt="Sony Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Sony Cinema Cameras</h3>
-                <span class="equip_card_category">Cameras</span>
+                <h3 class="equip_card_name">Sony</h3>
+                <div class="equip_card_models">
+                  <div>Sony FX3</div>
+                  <div>Sony FX6</div>
+                  <div>Sony A7S III</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Individual professional Sony cinema cameras available for rental. Choose from industry-standard bodies including Sony FX9, FX6, FX3, and A7S III. Each camera comes fully configured to meet your project's specific resolution, format, and form-factor requirements.</p>
+                  <p class="expanded_desc_text">Sony FX3 • Sony FX6 • Sony A7S III</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">FX9 / FX6 / FX3 / A7S III</span></div>
-                    <div class="spec_item"><span class="spec_label">Sensor</span><span class="spec_val">Full-Frame Exmor R CMOS</span></div>
-                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">4K recording up to 120p</span></div>
-                    <div class="spec_item"><span class="spec_label">Video Format</span><span class="spec_val">XAVC-S / XAVC-I 10-bit 4:2:2</span></div>
-                    <div class="spec_item"><span class="spec_label">Color Science</span><span class="spec_val">S-Cinetone / S-Log3</span></div>
-                    <div class="spec_item"><span class="spec_label">Autofocus</span><span class="spec_val">Real-time Eye AF / Phase Detection</span></div>
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">FX3 / FX6 / A7S III</span></div>
                   </div>
                 </div>
               </div>
@@ -780,10 +833,10 @@
           <!-- Card 2: Canon Cinema Cameras -->
           <div class="equip_item" data-category="Cameras">
             <div class="equip_card_wrap" 
-                 data-title="Canon Cinema Cameras" 
+                 data-title="Canon" 
                  data-category="Cameras"
-                 data-desc="Individual professional Canon cinema cameras available for rental. Choose from high-performance bodies including Canon C300 Mark III and Canon C70. Perfect for narrative films, documentaries, and commercial shoots."
-                 data-specs='{"Models":"EOS C300 Mark III / EOS C70", "Sensor":"Super 35mm Dual Gain Output (DGO)", "Resolution":"4K recording up to 120fps", "Video Format":"Cinema RAW Light / XF-AVC 10-bit", "Dynamic Range":"Up to 16+ stops", "Autofocus":"Dual Pixel CMOS AF"}'
+                 data-desc="Canon R5 • Canon R6 • Canon C70"
+                 data-specs='{"Models":"Canon R5 / R6 / C70"}'
                  data-img="assets/images/equipments/canon_cameras.png">
               
               <div class="card-drag-handle"></div>
@@ -791,26 +844,25 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
 
-              <div class="equip_card_visual" style="background-color: #cfc6b5;">
-                <img src="assets/images/equipments/canon_cameras.png" alt="Canon Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
+              <div class="equip_card_visual" style="background-color: #cfc6b5; overflow: hidden;">
+                <img src="assets/images/equipments/canon_cameras.png" alt="Canon Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: cover !important; transform: scale(1.02);"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Canon Cinema Cameras</h3>
-                <span class="equip_card_category">Cameras</span>
+                <h3 class="equip_card_name">Canon</h3>
+                <div class="equip_card_models">
+                  <div>Canon R5</div>
+                  <div>Canon R6</div>
+                  <div>Canon C70</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Individual professional Canon cinema cameras available for rental. Choose from high-performance bodies including Canon C300 Mark III and Canon C70. Perfect for narrative films, documentaries, and commercial shoots.</p>
+                  <p class="expanded_desc_text">Canon R5 • Canon R6 • Canon C70</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">EOS C300 Mark III / EOS C70</span></div>
-                    <div class="spec_item"><span class="spec_label">Sensor</span><span class="spec_val">Super 35mm Dual Gain Output (DGO)</span></div>
-                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">4K recording up to 120fps</span></div>
-                    <div class="spec_item"><span class="spec_label">Video Format</span><span class="spec_val">Cinema RAW Light / XF-AVC 10-bit</span></div>
-                    <div class="spec_item"><span class="spec_label">Dynamic Range</span><span class="spec_val">Up to 16+ stops</span></div>
-                    <div class="spec_item"><span class="spec_label">Autofocus</span><span class="spec_val">Dual Pixel CMOS AF</span></div>
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">Canon R5 / R6 / C70</span></div>
                   </div>
                 </div>
               </div>
@@ -820,10 +872,10 @@
           <!-- Card 3: Blackmagic Cinema Cameras -->
           <div class="equip_item" data-category="Cameras">
             <div class="equip_card_wrap" 
-                 data-title="Blackmagic Cinema Cameras" 
+                 data-title="Blackmagic" 
                  data-category="Cameras"
-                 data-desc="Individual professional Blackmagic Pocket Cinema Cameras available for rental. Select from high-resolution bodies including the BMPCC 6K Pro and the BMPCC 6K G2. Featuring EF mounts, dual native ISO up to 25,600, Generation 5 color science, and 6K RAW internal recording."
-                 data-specs='{"Models":"Pocket Cinema Camera 6K Pro / 6K G2", "Sensor":"Super 35 HDR sensor (23.10mm x 12.99mm)", "Resolution":"6144 x 3456 up to 50fps (6K RAW)", "ND Filters":"Built-in 2, 4 and 6-stop motorized NDs (Pro model)", "Color Science":"Generation 5 Film Color Science", "Screen":"1500 nit HDR tiltable touchscreen"}'
+                 data-desc="Blackmagic Pocket 6K Pro"
+                 data-specs='{"Models":"Blackmagic Pocket 6K Pro"}'
                  data-img="assets/images/equipments/blackmagic_cameras.png">
               
               <div class="card-drag-handle"></div>
@@ -831,26 +883,23 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
 
-              <div class="equip_card_visual" style="background-color: #121316;">
-                <img src="assets/images/equipments/blackmagic_cameras.png" alt="Blackmagic Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
+              <div class="equip_card_visual" style="background-color: #121316; overflow: hidden;">
+                <img src="assets/images/equipments/blackmagic_cameras.png" alt="Blackmagic Cinema Cameras" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: cover !important; object-position: center !important; width: 100% !important; height: 100% !important; transform: scale(0.92); padding: 0 !important;"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Blackmagic Cinema Cameras</h3>
-                <span class="equip_card_category">Cameras</span>
+                <h3 class="equip_card_name">Blackmagic</h3>
+                <div class="equip_card_models">
+                  <div>Blackmagic Pocket 6K Pro</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Individual professional Blackmagic Pocket Cinema Cameras available for rental. Select from high-resolution bodies including the BMPCC 6K Pro and the BMPCC 6K G2. Featuring EF mounts, dual native ISO up to 25,600, Generation 5 color science, and 6K RAW internal recording.</p>
+                  <p class="expanded_desc_text">Blackmagic Pocket 6K Pro</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">Pocket 6K Pro / 6K G2</span></div>
-                    <div class="spec_item"><span class="spec_label">Sensor</span><span class="spec_val">Super 35 HDR (23.10mm x 12.99mm)</span></div>
-                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">6K RAW (6144 x 3456) up to 50fps</span></div>
-                    <div class="spec_item"><span class="spec_label">ND Filters</span><span class="spec_val">2, 4 and 6-stop motorized NDs (Pro)</span></div>
-                    <div class="spec_item"><span class="spec_label">Color Science</span><span class="spec_val">Generation 5 Film Color Science</span></div>
-                    <div class="spec_item"><span class="spec_label">Screen</span><span class="spec_val">1500 nit HDR tiltable touchscreen</span></div>
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">Blackmagic Pocket 6K Pro</span></div>
                   </div>
                 </div>
               </div>
@@ -860,10 +909,10 @@
           <!-- Card 4: Sony G Master Lenses -->
           <div class="equip_item" data-category="Lenses">
             <div class="equip_card_wrap" 
-                 data-title="Sony G Master Lenses" 
+                 data-title="Sony G Master" 
                  data-category="Lenses"
-                 data-desc="Premium professional Sony E-mount focal range coverage. Includes flagship G Master lenses: 24-70mm f/2.8 GM II, 70-200mm f/2.8 GM OSS II, and the 85mm f/1.4 GM prime."
-                 data-specs='{"Lenses":"24-70mm f/2.8 GM II / 70-200mm f/2.8 GM OSS II / 85mm f/1.4 GM", "Mount":"Sony E-mount", "Aperture":"Constant f/2.8 (zooms) / f/1.4 (prime)", "Focus Motors":"XD Linear / SSM Motors", "Coating":"Nano AR Coating II reduces flare"}'
+                 data-desc="24–70 | 70–200 | 85mm"
+                 data-specs='{"Lenses":"24-70mm / 70-200mm / 85mm"}'
                  data-img="assets/images/equipments/sony_lenses.png">
               
               <div class="card-drag-handle"></div>
@@ -875,21 +924,19 @@
                 <img src="assets/images/equipments/sony_lenses.png" alt="Sony G Master Lenses" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Sony G Master Lenses</h3>
-                <span class="equip_card_category">Lenses</span>
+                <h3 class="equip_card_name">Sony G Master</h3>
+                <div class="equip_card_models">
+                  <div>24–70 | 70–200 | 85mm</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Premium professional Sony E-mount focal range coverage. Includes flagship G Master lenses: 24-70mm f/2.8 GM II, 70-200mm f/2.8 GM OSS II, and the 85mm f/1.4 GM prime.</p>
+                  <p class="expanded_desc_text">24–70 | 70–200 | 85mm</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">24-70mm f/2.8 GM II / 70-200mm f/2.8 GM OSS II / 85mm f/1.4 GM</span></div>
-                    <div class="spec_item"><span class="spec_label">Mount</span><span class="spec_val">Sony E-mount</span></div>
-                    <div class="spec_item"><span class="spec_label">Aperture</span><span class="spec_val">f/2.8 (zooms) / f/1.4 (prime)</span></div>
-                    <div class="spec_item"><span class="spec_label">Focus Motors</span><span class="spec_val">XD Linear / SSM Motors</span></div>
-                    <div class="spec_item"><span class="spec_label">Coating</span><span class="spec_val">Nano AR Coating II reduces flare</span></div>
+                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">24-70mm / 70-200mm / 85mm</span></div>
                   </div>
                 </div>
               </div>
@@ -899,10 +946,10 @@
           <!-- Card 5: Canon RF Lenses -->
           <div class="equip_item" data-category="Lenses">
             <div class="equip_card_wrap" 
-                 data-title="Canon RF Lenses" 
+                 data-title="Canon RF" 
                  data-category="Lenses"
-                 data-desc="High-performance Canon RF-mount lenses for mirrorless and cine systems. Features the 15-35mm f/2.8 L wide zoom, 24-105mm f/4 L standard zoom, and the ultra-sharp 50mm f/1.2 L prime."
-                 data-specs='{"Lenses":"15-35mm f/2.8 L IS / 24-105mm f/4 L IS / 50mm f/1.2 L USM", "Mount":"Canon RF-mount", "Aperture Range":"f/1.2 (prime) / f/2.8 to f/4 (zooms)", "Optics":"Fluorite, UD and Aspherical elements", "USM Focus":"Ring-type Ultrasonic Motor autofocus"}'
+                 data-desc="24–105 | 50mm | 15–35mm"
+                 data-specs='{"Lenses":"24-105mm / 50mm / 15-35mm"}'
                  data-img="assets/images/equipments/canon_lenses.png">
               
               <div class="card-drag-handle"></div>
@@ -914,21 +961,19 @@
                 <img src="assets/images/equipments/canon_lenses.png" alt="Canon RF Lenses" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Canon RF Lenses</h3>
-                <span class="equip_card_category">Lenses</span>
+                <h3 class="equip_card_name">Canon RF</h3>
+                <div class="equip_card_models">
+                  <div>24–105 | 50mm | 15–35mm</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">High-performance Canon RF-mount lenses for mirrorless and cine systems. Features the 15-35mm f/2.8 L wide zoom, 24-105mm f/4 L standard zoom, and the ultra-sharp 50mm f/1.2 L prime.</p>
+                  <p class="expanded_desc_text">24–105 | 50mm | 15–35mm</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">15-35mm f/2.8 L / 24-105mm f/4 L / 50mm f/1.2 L</span></div>
-                    <div class="spec_item"><span class="spec_label">Mount</span><span class="spec_val">Canon RF-mount</span></div>
-                    <div class="spec_item"><span class="spec_label">Aperture Range</span><span class="spec_val">f/1.2 (prime) / f/2.8 to f/4 (zooms)</span></div>
-                    <div class="spec_item"><span class="spec_label">Optics</span><span class="spec_val">Fluorite, UD and Aspherical elements</span></div>
-                    <div class="spec_item"><span class="spec_label">USM Focus</span><span class="spec_val">Ring-type Ultrasonic Motor autofocus</span></div>
+                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">24-105 | 50mm | 15-35mm</span></div>
                   </div>
                 </div>
               </div>
@@ -938,10 +983,10 @@
           <!-- Card 6: Sigma Art Lenses -->
           <div class="equip_item" data-category="Lenses">
             <div class="equip_card_wrap" 
-                 data-title="Sigma Art Lenses" 
+                 data-title="Sigma Art" 
                  data-category="Lenses"
-                 data-desc="High-resolution prime lenses famous for exceptional sharpness and creamy bokeh. Includes the 35mm f/1.4 Art, 50mm f/1.4 Art, and 85mm f/1.4 Art portrait primes."
-                 data-specs='{"Lenses":"35mm f/1.4 Art / 50mm f/1.4 Art / 85mm f/1.4 Art", "Mounts":"Canon EF / Sony E (with adapter)", "Aperture Range":"f/1.4 to f/16", "Optics":"FLD and SLD glass elements", "Aperture Blades":"9 rounded blades for creamy bokeh"}'
+                 data-desc="35mm | 50mm | 85mm"
+                 data-specs='{"Lenses":"35mm / 50mm / 85mm"}'
                  data-img="assets/images/equipments/sigma_lenses.png">
               
               <div class="card-drag-handle"></div>
@@ -953,21 +998,19 @@
                 <img src="assets/images/equipments/sigma_lenses.png" alt="Sigma Art Lenses" class="equip_card_image" loading="lazy" decoding="async" style="object-fit: contain !important;"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Sigma Art Lenses</h3>
-                <span class="equip_card_category">Lenses</span>
+                <h3 class="equip_card_name">Sigma Art</h3>
+                <div class="equip_card_models">
+                  <div>35mm | 50mm | 85mm</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">High-resolution prime lenses famous for exceptional sharpness and creamy bokeh. Includes the 35mm f/1.4 Art, 50mm f/1.4 Art, and 85mm f/1.4 Art portrait primes.</p>
+                  <p class="expanded_desc_text">35mm | 50mm | 85mm</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">35mm f/1.4 Art / 50mm f/1.4 Art / 85mm f/1.4 Art</span></div>
-                    <div class="spec_item"><span class="spec_label">Mounts</span><span class="spec_val">Canon EF / Sony E (with adapter)</span></div>
-                    <div class="spec_item"><span class="spec_label">Aperture Range</span><span class="spec_val">f/1.4 to f/16</span></div>
-                    <div class="spec_item"><span class="spec_label">Optics</span><span class="spec_val">FLD and SLD glass elements</span></div>
-                    <div class="spec_item"><span class="spec_label">Aperture Blades</span><span class="spec_val">9 rounded blades for creamy bokeh</span></div>
+                    <div class="spec_item"><span class="spec_label">Lenses</span><span class="spec_val">35mm | 50mm | 85mm</span></div>
                   </div>
                 </div>
               </div>
@@ -977,10 +1020,10 @@
           <!-- Card 7: Production Lighting Kit -->
           <div class="equip_item" data-category="Lighting">
             <div class="equip_card_wrap" 
-                 data-title="Production Lighting" 
+                 data-title="Lighting" 
                  data-category="Lighting"
-                 data-desc="Premium production lighting fixtures for commercial shoots. Select from high-output LED spotlights, compact panels, and complete modifier setups."
-                 data-specs='{"Spotlights":"Aputure 600D / Aputure 300D", "Compact LEDs":"Godox SL150 / Godox SL60", "Modifiers":"Light Domes, Softboxes, and Grid Cloth", "Diffusion Kits":"Cine Diffusion & Silk setups"}'
+                 data-desc="Aputure 300D • Aputure 600D • Godox SL60/SL150 • Light Domes, Softboxes, Diffusion Kits"
+                 data-specs='{"Equipment":"Aputure 300D / 600D / Godox"}'
                  data-img="assets/images/equipments/lighting_gear.png">
               
               <div class="card-drag-handle"></div>
@@ -992,20 +1035,22 @@
                 <img src="assets/images/equipments/lighting_gear.png" alt="Production Lighting" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Production Lighting</h3>
-                <span class="equip_card_category">Lighting</span>
+                <h3 class="equip_card_name">Lighting</h3>
+                <div class="equip_card_models">
+                  <div>Aputure 300D</div>
+                  <div>Aputure 600D</div>
+                  <div>Godox SL60/SL150</div>
+                  <div>Light Domes, Softboxes, Diffusion Kits</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Premium production lighting fixtures for commercial shoots. Select from high-output LED spotlights, compact panels, and complete modifier setups.</p>
+                  <p class="expanded_desc_text">Aputure 300D • Aputure 600D • Godox SL60/SL150 • Light Domes, Softboxes, Diffusion Kits</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Spotlights</span><span class="spec_val">Aputure 600D / Aputure 300D</span></div>
-                    <div class="spec_item"><span class="spec_label">Compact LEDs</span><span class="spec_val">Godox SL150 / Godox SL60</span></div>
-                    <div class="spec_item"><span class="spec_label">Modifiers</span><span class="spec_val">Light Domes &amp; Softboxes</span></div>
-                    <div class="spec_item"><span class="spec_label">Diffusion Kits</span><span class="spec_val">Cine Diffusion &amp; Silk setups</span></div>
+                    <div class="spec_item"><span class="spec_label">Equipment</span><span class="spec_val">Aputure 300D / 600D / Godox</span></div>
                   </div>
                 </div>
               </div>
@@ -1015,10 +1060,10 @@
           <!-- Card 8: Location Audio Kit -->
           <div class="equip_item" data-category="Audio">
             <div class="equip_card_wrap" 
-                 data-title="Location Audio" 
+                 data-title="Audio" 
                  data-category="Audio"
-                 data-desc="Broadcast-grade location sound and audio recording systems. Multi-channel field recorders, shotgun mics, and wireless lavaliers."
-                 data-specs='{"Recorders":"Zoom H6 Recorder (6-channel)", "Shotgun Mics":"Rode NTG5 / Rode NTG4", "Wireless":"Sennheiser Wireless Lavalier Kit", "Accessories":"Boom poles, blimps, deadcats, and shockmounts"}'
+                 data-desc="Sennheiser Wireless Kit • Rode NTG4/NTG5 • Zoom H6 Recorder"
+                 data-specs='{"Equipment":"Sennheiser Wireless / Rode / Zoom H6"}'
                  data-img="assets/images/equipments/audio_gear.png">
               
               <div class="card-drag-handle"></div>
@@ -1030,20 +1075,21 @@
                 <img src="assets/images/equipments/audio_gear.png" alt="Location Audio" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Location Audio</h3>
-                <span class="equip_card_category">Audio</span>
+                <h3 class="equip_card_name">Audio</h3>
+                <div class="equip_card_models">
+                  <div>Sennheiser Wireless Kit</div>
+                  <div>Rode NTG4/NTG5</div>
+                  <div>Zoom H6 Recorder</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Broadcast-grade location sound and audio recording systems. Multi-channel field recorders, shotgun mics, and wireless lavaliers.</p>
+                  <p class="expanded_desc_text">Sennheiser Wireless Kit • Rode NTG4/NTG5 • Zoom H6 Recorder</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Recorders</span><span class="spec_val">Zoom H6 Recorder (6-channel)</span></div>
-                    <div class="spec_item"><span class="spec_label">Shotgun Mics</span><span class="spec_val">Rode NTG5 / Rode NTG4</span></div>
-                    <div class="spec_item"><span class="spec_label">Wireless</span><span class="spec_val">Sennheiser Wireless Lavalier Kit</span></div>
-                    <div class="spec_item"><span class="spec_label">Accessories</span><span class="spec_val">Boom poles, blimps, and shockmounts</span></div>
+                    <div class="spec_item"><span class="spec_label">Equipment</span><span class="spec_val">Sennheiser Wireless / Rode / Zoom H6</span></div>
                   </div>
                 </div>
               </div>
@@ -1055,8 +1101,8 @@
             <div class="equip_card_wrap" 
                  data-title="Gimbals &amp; Stabilizers" 
                  data-category="Support"
-                 data-desc="Professional camera stabilization and gimbal systems. Choose from active electronic stabilizers and mechanical stabilizers for smooth camera movements."
-                 data-specs='{"Electronic":"DJI Ronin RS3 / DJI Ronin S", "Mechanical":"Glidecams", "Stabilization":"3-axis active stabilizing & passive counterweights", "Accessories":"Dual handles, ring grips, follow focus integration"}'
+                 data-desc="DJI Ronin RS3 • Ronin S • Glidecams"
+                 data-specs='{"Equipment":"DJI Ronin RS3 / Ronin S / Glidecams"}'
                  data-img="assets/images/equipments/gimbal_gear.png">
               
               <div class="card-drag-handle"></div>
@@ -1069,19 +1115,20 @@
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Gimbals &amp; Stabilizers</h3>
-                <span class="equip_card_category">Support</span>
+                <div class="equip_card_models">
+                  <div>DJI Ronin RS3</div>
+                  <div>Ronin S</div>
+                  <div>Glidecams</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Professional camera stabilization and gimbal systems. Choose from active electronic stabilizers and mechanical stabilizers for smooth camera movements.</p>
+                  <p class="expanded_desc_text">DJI Ronin RS3 • Ronin S • Glidecams</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Electronic</span><span class="spec_val">DJI Ronin RS3 / DJI Ronin S</span></div>
-                    <div class="spec_item"><span class="spec_label">Mechanical</span><span class="spec_val">Glidecams</span></div>
-                    <div class="spec_item"><span class="spec_label">Stabilization</span><span class="spec_val">3-axis active stabilizing &amp; passive counterweights</span></div>
-                    <div class="spec_item"><span class="spec_label">Accessories</span><span class="spec_val">Dual handles, ring grips, follow focus</span></div>
+                    <div class="spec_item"><span class="spec_label">Equipment</span><span class="spec_val">DJI Ronin RS3 / Ronin S / Glidecams</span></div>
                   </div>
                 </div>
               </div>
@@ -1093,8 +1140,8 @@
             <div class="equip_card_wrap" 
                  data-title="Drones" 
                  data-category="Support"
-                 data-desc="Cinematic aerial drone filming systems. Lightweight, high-resolution quadcopters equipped for 4K video recording with intelligent flight tracking."
-                 data-specs='{"Models":"DJI Mavic Air / DJI Mini 3 Pro", "Weight":"Under 249g (Mini 3 Pro - permit free)", "Resolution":"4K HDR recording up to 60fps", "Transmission":"O3 video transmission", "Flight Time":"Up to 34 minutes per battery"}'
+                 data-desc="DJI Mavic Air • DJI Mini 3 Pro"
+                 data-specs='{"Models":"DJI Mavic Air / Mini 3 Pro"}'
                  data-img="assets/images/equipments/drone_gear.png">
               
               <div class="card-drag-handle"></div>
@@ -1107,20 +1154,19 @@
               </div>
               <div class="equip_card_details">
                 <h3 class="equip_card_name">Drones</h3>
-                <span class="equip_card_category">Support</span>
+                <div class="equip_card_models">
+                  <div>DJI Mavic Air</div>
+                  <div>DJI Mini 3 Pro</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Cinematic aerial drone filming systems. Lightweight, high-resolution quadcopters equipped for 4K video recording with intelligent flight tracking.</p>
+                  <p class="expanded_desc_text">DJI Mavic Air • DJI Mini 3 Pro</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
                   <div class="expanded_specs_grid">
-                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">DJI Mavic Air / DJI Mini 3 Pro</span></div>
-                    <div class="spec_item"><span class="spec_label">Weight</span><span class="spec_val">Under 249g (Mini 3 Pro - permit free)</span></div>
-                    <div class="spec_item"><span class="spec_label">Resolution</span><span class="spec_val">4K HDR recording up to 60fps</span></div>
-                    <div class="spec_item"><span class="spec_label">Transmission</span><span class="spec_val">O3 video transmission</span></div>
-                    <div class="spec_item"><span class="spec_label">Flight Time</span><span class="spec_val">Up to 34 minutes per battery</span></div>
+                    <div class="spec_item"><span class="spec_label">Models</span><span class="spec_val">DJI Mavic Air / Mini 3 Pro</span></div>
                   </div>
                 </div>
               </div>
@@ -1130,10 +1176,10 @@
           <!-- Card 11: Set & Grip Essentials -->
           <div class="equip_item" data-category="Support">
             <div class="equip_card_wrap" 
-                 data-title="Set Accessories" 
+                 data-title="Accessories" 
                  data-category="Support"
-                 data-desc="Essential production accessories, power solutions, monitoring, and grip gear to support and keep your shoot running smoothly."
-                 data-specs='{"Support":"Tripods, Light Stands, and C-Stands", "Power":"V-Mount Batteries (high capacity)", "Monitoring":"On-camera HD Monitors", "Grip":"Reflectors, clamps, sandbags, and cords"}'
+                 data-desc="Tripods • Stands • C-Stands • Reflectors • V-Mount Batteries • Monitors"
+                 data-specs='{"Gear":"Tripods / Stands / C-Stands / Reflectors / V-Mount Batteries / Monitors"}'
                  data-img="assets/images/equipments/accessories_gear.png">
               
               <div class="card-drag-handle"></div>
@@ -1145,12 +1191,14 @@
                 <img src="assets/images/equipments/accessories_gear.png" alt="Set Accessories" class="equip_card_image" loading="lazy" decoding="async"/>
               </div>
               <div class="equip_card_details">
-                <h3 class="equip_card_name">Set Accessories</h3>
-                <span class="equip_card_category">Support</span>
+                <h3 class="equip_card_name">Accessories</h3>
+                <div class="equip_card_models">
+                  <div>Tripods • Stands • C-Stands • Reflectors • V-Mount Batteries • Monitors</div>
+                </div>
               </div>
               <div class="card_expanded_content">
                 <div class="expanded_desc_wrap">
-                  <p class="expanded_desc_text">Essential production accessories, power solutions, monitoring, and grip gear to support and keep your shoot running smoothly.</p>
+                  <p class="expanded_desc_text">Tripods • Stands • C-Stands • Reflectors • V-Mount Batteries • Monitors</p>
                 </div>
                 <div class="expanded_specs_wrap">
                   <h4 class="expanded_specs_title">Technical Specifications</h4>
@@ -1190,7 +1238,6 @@
         </div>
         <p class="panel_product_desc"></p>
         <div class="panel_specs_section">
-          <h4 class="panel_specs_title">Technical Specifications</h4>
           <div class="panel_specs_grid">
             <!-- specifications injected dynamically -->
           </div>
