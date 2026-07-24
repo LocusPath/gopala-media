@@ -419,7 +419,16 @@
 
 @media (max-width: 48rem) {
   .hero_luxury_title {
-    font-size: clamp(2.8rem, 10vw, 4.8rem) !important;
+    font-size: clamp(3.8rem, 14vw, 6.5rem) !important;
+    line-height: 1.08;
+    margin-bottom: 1.25rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 24rem) {
+  .hero_luxury_title {
+    font-size: clamp(3.2rem, 13vw, 4.5rem) !important;
     white-space: normal;
   }
 }
